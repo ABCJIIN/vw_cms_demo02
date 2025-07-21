@@ -75,7 +75,7 @@ header {
         width: 2.4rem;
         height: 2.4rem;
         &.menu-btn {
-          background: url(../../../assets/images/icon/menu.svg)
+          background: url(../../assets/images/icon/menu.svg)
             no-repeat center/contain;
         }
       }
@@ -117,7 +117,7 @@ header {
       }
       button {
         &.menu-btn {
-          background: url(../../../assets/images/icon/menu_bk.svg)
+          background: url(../../assets/images/icon/menu_bk.svg)
             no-repeat center/contain;
         }
       }
@@ -163,7 +163,7 @@ header {
       // }
       button {
         &.menu-btn {
-          background: url(../../../assets/images/icon/menu.svg)
+          background: url(../../assets/images/icon/menu.svg)
             no-repeat center/contain;
         }
       }
@@ -191,7 +191,7 @@ header {
           &.close-btn {
             width: 2.4rem;
             height: 2.4rem;
-            background: url(../../../assets/images/icon/close.svg)
+            background: url(../../assets/images/icon/close.svg)
               no-repeat center;
           }
         }
@@ -518,7 +518,7 @@ section {
 section {
   &.banner {
     height: 43rem;
-    background: url(../../../assets/images/common/banner_bg.png)
+    background: url(../../assets/images/common/banner_bg.png)
       no-repeat center/cover;
     padding: 4rem 0;
     @include flexbox(column, center, center);
@@ -539,7 +539,7 @@ section {
     }
 
     @include tablet {
-      background: url(../../../assets/images/common/mo/banner_bg.png)
+      background: url(../../assets/images/common/mo/banner_bg.png)
         no-repeat center/cover;
 
       .inner {
@@ -653,7 +653,7 @@ section {
                 transform: translateY(-50%);
                 width: 24px;
                 height: 24px;
-                background: url(../../../assets/images/icon/arrow_down.png)
+                background: url(../../assets/images/icon/arrow_down.png)
                   no-repeat center/contain;
                 transition: all 0.25s;
                 @include tablet {
@@ -702,7 +702,7 @@ section {
                   top: 0;
                   width: 4rem;
                   height: 4rem;
-                  background-image: url(../../../assets/images/icon/include_arrow.svg);
+                  background-image: url(../../assets/images/icon/include_arrow.svg);
                   background-size: contain;
                   background-repeat: no-repeat;
                   background-position: center;
