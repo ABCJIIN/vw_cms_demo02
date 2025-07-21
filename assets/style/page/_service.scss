@@ -1,0 +1,802 @@
+@import "../base/util.scss";
+@import "../base/color.scss";
+
+@keyframes processBefore {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 24.5rem;
+    opacity: 1;
+  }
+}
+
+@keyframes processBeforeMo {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 22.5rem;
+    opacity: 1;
+  }
+}
+
+@keyframes processAll {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 서비스 소개 페이지 */
+.service {
+  &.visual {
+    position: relative;
+    background-color: $bg;
+    overflow: hidden;
+    height: 96rem;
+
+    .inner {
+      position: relative;
+      margin-top: 20.7rem;
+      width: 100%;
+      @include flexbox(row, space-between, center);
+      padding-top: 8rem;
+      padding-left: 4rem;
+      z-index: 2;
+
+      .tit-wrap {
+        padding-bottom: 0;
+        align-items: start;
+        strong {
+          text-align: left;
+        }
+        p {
+          text-align: left;
+          font-size: 2.4rem;
+          font-weight: 500;
+          line-height: 1.37;
+          letter-spacing: -0.096rem;
+        }
+        button {
+          margin-top: 4rem;
+        }
+      }
+
+      .figure {
+        max-width: 49.8rem;
+        max-height: 51.6rem;
+        padding-right: 4rem;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          object-position: center;
+          animation: upDown 2s infinite;
+        }
+      }
+    }
+
+    .bg-square {
+      position: absolute;
+      width: 30.6rem;
+      height: 26.546rem;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 1;
+
+      &.pink {
+        top: 10.6rem;
+        left: -3%;
+        background-image: url(/humanframe/theme/vintwire/assets/images/service/bg_square_pink.svg);
+      }
+      &.green {
+        top: 10.6rem;
+        right: -3%;
+        background-image: url(/humanframe/theme/vintwire/assets/images/service/bg_square_green.svg);
+      }
+      &.beige {
+        bottom: -10%;
+        right: 30%;
+        background-image: url(/humanframe/theme/vintwire/assets/images/service/bg_square_beige.svg);
+      }
+    }
+
+    @include tablet {
+      height: 73.2rem;
+
+      .inner {
+        margin-top: 5.2rem;
+        padding-top: 6.2rem;
+        padding-left: 0;
+        justify-content: center;
+        flex-direction: column;
+        gap: 8rem;
+
+
+        .tit-wrap {
+          // margin-top: 5.3rem;
+          justify-content: center;
+          align-items: center;
+          strong {
+            text-align: center;
+            font-size: 2.4rem;
+            line-height: 1.5;
+            letter-spacing: -0.096rem;
+          }
+          p {
+            font-size: 1.6rem;
+            line-height: 1.37;
+            letter-spacing: -0.064rem;
+          }
+          button {
+            margin-top: 2.4rem;
+            font-size: 1.6rem;
+            line-height: 1.5;
+            letter-spacing: -0.032rem;
+          }
+        }
+
+        .figure {
+          padding-right: 0;
+          max-width: 24rem;
+          max-height: 24.9rem;
+        }
+      }
+
+      .bg-square {
+        width: 20rem;
+        height: 17.351rem;
+        &.pink {
+          top: 37.3rem;
+          left: -10rem;
+        }
+        &.green {
+          top: 29.2rem;
+          right: -10rem;
+        }
+        &.beige {
+          bottom: -10%;
+          right: 30%;
+        }
+      }
+    }
+  }
+
+  &.sec02 {
+    padding: 10rem 0;
+    background: #f5f6f8;
+    .inner {
+      @include notebook {
+        width: 100%;
+      }
+
+      .tit-wrap {
+        margin-bottom: 10rem;
+
+        @include tablet_junction {
+          strong {
+            font-size: 3.2rem;
+            line-height: 1.5;
+            letter-spacing: -0.128rem;
+          }
+          p {
+            font-size: 2rem;
+            line-height: 1.5;
+            letter-spacing: -0.08rem;
+          }
+        }
+      }
+
+      .manage-card-wrap {
+        padding: 0 7.5rem;
+        width: 100%;
+
+        > ul {
+          width: 100%;
+          gap: 10rem;
+          @include flexbox(column, flex-start, flex-start);
+
+          > li {
+            position: relative;
+            width: 100%;
+            height: 37.9rem;
+
+            .img-wrap {
+              position: absolute;
+              top: 0;
+              left: 1.5rem;
+              width: 37.9rem;
+              height: 100%;
+              border-radius: 50%;
+              transform: scale(-1, 1);
+            }
+
+            .info {
+              position: absolute;
+              right: 1.5rem;
+              width: 96.6rem;
+              @include flexbox(row, space-between, flex-start);
+              max-height: 37.9rem;
+              padding: 10rem;
+              border-radius: 28rem;
+
+              .left_cont {
+                @include flexbox(column, flex-start, flex-start);
+                gap: 2rem;
+                // padding-right: 4rem;
+
+                .title {
+                  color: $white;
+                  font-size: 4rem;
+                  font-weight: 700;
+                  line-height: 1.4;
+                  letter-spacing: -0.16rem;
+                }
+
+                .tag-wrap {
+                  .tag {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0.8rem 1.6rem;
+                    gap: 0.6rem;
+                    border-radius: 6.4rem;
+                    background: $white;
+
+                    span {
+                      font-size: 1.6rem;
+                      font-weight: 700;
+                      line-height: 1.5;
+                      letter-spacing: -0.032rem;
+                    }
+                  }
+                }
+              }
+              .right_cont {
+                padding-left: 4rem;
+                border-left: 1px solid $white;
+                .desc {
+                  li {
+                    color: $white;
+                    font-size: 2.4rem;
+                    font-weight: 500;
+                    line-height: 1.8;
+                    letter-spacing: -0.096rem;
+                  }
+                }
+              }
+            }
+
+            @for $i from 1 through 3 {
+              &:nth-of-type(#{$i}) {
+                $color-map: (
+                  1: $pink,
+                  2: $purple_40,
+                  3: $green_80,
+                );
+
+                $position-map: (
+                  1: (
+                    left: 1.5rem,
+                    right: auto,
+                    transform: scale(-1, 1),
+                  ),
+                  2: (
+                    left: auto,
+                    right: 1.5rem,
+                    transform: scale(-1, 1),
+                  ),
+                  3: (
+                    left: 1.5rem,
+                    right: auto,
+                    transform: scale(1, 1),
+                  ),
+                );
+
+                .img-wrap {
+                  background: url(/humanframe/theme/vintwire/assets/images/sub/manage_card_item0#{$i}.png)
+                    no-repeat
+                    center/cover;
+                  left: map-get(map-get($position-map, $i), left);
+                  right: map-get(map-get($position-map, $i), right);
+                  transform: map-get(map-get($position-map, $i), transform);
+                }
+
+                .info {
+                  @if $i == 2 {
+                    left: 1.5rem;
+                    right: auto;
+                  }
+                  background-color: map-get($color-map, $i);
+                  .tag-wrap .tag span {
+                    color: map-get($color-map, $i);
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        @include notebook {
+          padding: 0 0.375rem;
+          > ul {
+            > li {
+              @include flexbox(row, space-between, center);
+              height: 27rem;
+              .img-wrap {
+                width: 27rem;
+                height: 27rem;
+              }
+
+              .info {
+                width: calc(100% - 27rem);
+                height: 27rem;
+                border-radius: 23.5rem;
+                padding: 7.36rem;
+
+                position: absolute;
+                right: 1.5rem;
+                @include flexbox(row, space-between, flex-start);
+
+                .left_cont {
+                  @include flexbox(column, flex-start, flex-start);
+                  flex: 1;
+                  .title {
+                    width: 100%;
+                    font-size: 2.4rem;
+                    line-height: 1.5;
+                    letter-spacing: -0.096rem;
+                  }
+
+                  .tag-wrap {
+                    padding-bottom: 2.4rem;
+                    .tag {
+                      padding: 0.4rem 1.2rem;
+                      gap: 1rem;
+                      span {
+                        font-size: 1.4rem;
+                        line-height: 1.5;
+                        letter-spacing: -0.056rem;
+                      }
+                    }
+                  }
+                }
+                .right_cont {
+                  flex: 1;
+                  .desc {
+                    li {
+                      font-size: 1.6rem;
+                      line-height: 1.7;
+                      letter-spacing: -0.064rem;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        @include tablet_junction {
+          padding: 0;
+          > ul {
+            > li {
+              @include flexbox(column, center, center);
+              height: auto;
+
+              .img-wrap {
+                position: unset;
+                width: 33.5rem;
+                height: 33.5rem;
+              }
+              .info {
+                position: relative;
+                top: -10rem;
+                left: auto !important;
+                right: auto !important;
+                width: 33.5rem;
+                height: 49.2rem;
+                max-height: none !important;
+                @include flexbox(column, center, center);
+                border-radius: 23.5rem;
+                padding: 12rem 2rem;
+
+                .left_cont {
+                  padding-right: 0;
+                  .title {
+                    width: 100%;
+                    text-align: center;
+                    font-size: 2.4rem;
+                    line-height: 1.5;
+                    letter-spacing: -0.096rem;
+                  }
+
+                  .tag-wrap {
+                    padding-bottom: 2.4rem;
+                    .tag {
+                      padding: 0.4rem 1.2rem;
+                      gap: 1rem;
+                      span {
+                        font-size: 1.4rem;
+                        line-height: 1.5;
+                        letter-spacing: -0.056rem;
+                      }
+                    }
+                  }
+                }
+                .right_cont {
+                  // 초기화
+                  padding-left: 0;
+                  border-left: none;
+
+                  // 세팅
+                  padding-top: 2.4rem;
+                  border-top: 1px solid $white;
+                  text-align: center;
+                  width: 100%;
+
+                  .desc {
+                    li {
+                      font-size: 1.6rem;
+                      line-height: 1.7;
+                      letter-spacing: -0.064rem;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.sec03 {
+    background-image: url(/humanframe/theme/vintwire/assets/images/main/section_09_bg.png);
+    padding: 10rem 0 23.4rem;
+    @include tablet {
+      padding: 10rem 0;
+    }
+    .inner {
+      @include notebook {
+        width: 100%;
+      }
+
+      .tit-wrap {
+        margin-bottom: 7.4rem;
+      }
+    }
+    .icon-card-wrap {
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      @include notebook {
+        padding-left: 2rem;
+      }
+      > div {
+        @include notebook {
+          margin-right: 2rem;
+          overflow-x: auto;
+          -ms-overflow-style: none; /* IE, Edge */
+          scrollbar-width: none; /* Firefox */
+          &::-webkit-scrollbar {
+            display: none !important; /* Chrome, Safari, Opera */
+          }
+          cursor: grab;
+          user-select: none; /* 선택 방지 */
+          -webkit-overflow-scrolling: touch; /* iOS 자연 스크롤 */
+        }
+        ul {
+          width: 100%;
+          @include flexbox(row, flex-start, flex-start);
+          gap: 2rem;
+
+          &:first-child {
+            padding-bottom: 2rem;
+            @for $i from 1 through 5 {
+              li {
+                &:nth-child(#{$i}) {
+                  .img-wrap {
+                    $icon-path: "/humanframe/theme/vintwire/assets/images/service/icon_0#{$i}.svg";
+                    background: url($icon-path) no-repeat center;
+
+                    @include tablet {
+                      background-size: 9rem;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          &:last-child {
+            @for $i from 6 through 10 {
+              li {
+                &:nth-child(#{$i - 5}) {
+                  .img-wrap {
+                    @if $i == 10 {
+                      background: url("/humanframe/theme/vintwire/assets/images/service/icon_#{$i}.svg")
+                        no-repeat
+                        center/contain;
+                    } @else {
+                      background: url("/humanframe/theme/vintwire/assets/images/service/icon_0#{$i}.svg")
+                        no-repeat
+                        center/contain;
+                    }
+
+                    @include tablet {
+                      background-size: 9rem;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          li {
+            width: calc(20% - 1.6rem);
+            padding: 4rem 2rem 4.5rem;
+            border-radius: 1.6rem;
+            background: $white;
+            @include flexbox(column, center, center);
+            gap: 2rem;
+            transition: transform 0.3s ease;
+
+            @include notebook {
+              flex-shrink: 0;
+              width: 24.8rem;
+            }
+
+            @include tablet {
+              width: 16rem;
+              padding: 3rem 2rem;
+            }
+            .img-wrap {
+              width: 15rem;
+              height: 15rem;
+              border-radius: 50%;
+              background: $white;
+              @include tablet {
+                width: 9rem;
+                height: 9rem;
+              }
+            }
+            span {
+              font-size: 2.2rem;
+              font-weight: 700;
+              white-space: nowrap;
+              @include tablet {
+                font-size: 1.4rem;
+              }
+            }
+
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.sec04 {
+    padding: 20rem 0;
+    background: $white;
+    @include tablet {
+      padding: 10rem 0;
+    }
+    .tit-wrap {
+      margin-bottom: 8rem;
+
+      p {
+        display: none;
+        @include notebook {
+          display: block;
+          text-align: center;
+        }
+      }
+    }
+    .notice {
+      width: calc(100% - 4rem);
+      max-width: 1440px;
+      padding: 5rem 6rem;
+      margin: 0 auto;
+      margin-bottom: 14rem;
+      border-radius: 1.6rem;
+      background: $black;
+      @include flexbox(row, flex-start, center);
+      gap: 13.1rem;
+      @include notebook {
+        padding: 4rem 2rem;
+        justify-content: center;
+        gap: 0;
+      }
+
+      .left {
+        p {
+          font-size: 3.4rem;
+          font-weight: 700;
+          color: $white;
+          @include notebook {
+            display: none;
+          }
+        }
+      }
+      .right {
+        > p {
+          margin-bottom: 0.6rem;
+          font-size: 2rem;
+          font-weight: 700;
+          color: $white;
+          @include tablet {
+            font-size: 1.6rem;
+          }
+          @include mobile {
+            text-align: center;
+          }
+        }
+        ul {
+          width: 100%;
+          li {
+            @include flexbox(row, flex-start, flex-start);
+            gap: 0.8rem;
+            span,
+            p {
+              font-size: 1.6rem;
+              color: $white;
+              line-height: 1.7;
+              @include tablet {
+                font-size: 1.2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    .process-wrap {
+      .process {
+        ul {
+          margin: 0 auto;
+          max-width: 78.9rem;
+          @include flexbox(column, flex-start, flex-start);
+          gap: 12rem;
+          @include tablet {
+            gap: 8rem;
+            align-items: center;
+          }
+          li {
+            position: relative;
+            min-height: 18.2rem;
+            @include flexbox(row, flex-start, flex-start);
+            opacity: 0;
+            &::before {
+              position: relative;
+              z-index: 2;
+              content: "";
+              display: block;
+              width: 6rem;
+              height: 6rem;
+              line-height: 6rem;
+              border-radius: 50%;
+              margin-right: 2.1rem;
+              aspect-ratio: 1 / 1;
+              text-align: center;
+              font-weight: 700;
+              font-size: 3.2rem;
+              font-family: "Antique Olive", sans-serif;
+
+              @include tablet {
+                width: 4rem;
+                height: 4rem;
+                line-height: 4rem;
+                margin-right: 1.8rem;
+                font-size: 2.4rem;
+              }
+            }
+            @for $i from 1 through 7 {
+              &:nth-child(#{$i}) {
+                &::before {
+                  content: "0#{$i}";
+                  background-color: if(
+                    $i == 1,
+                    $pink,
+                    if(
+                      $i == 2,
+                      $purple_10,
+                      if(
+                        $i == 3,
+                        $green_80,
+                        if(
+                          $i == 4,
+                          $orange_40,
+                          if(
+                            $i == 5,
+                            $red_40,
+                            if($i == 6, $blue_40, if($i == 7, $orange_40, null))
+                          )
+                        )
+                      )
+                    )
+                  );
+                }
+              }
+            }
+
+            &:not(:last-child) {
+              &::after {
+                content: "";
+                position: absolute;
+                top: 6rem;
+                left: 2.6rem;
+                width: 0.7rem;
+                height: 24.5rem;
+                background: $gray_10;
+                @include tablet {
+                  width: 0.6rem;
+                  height: 22.5rem;
+                  top: 4rem;
+                  left: 1.6rem;
+                }
+              }
+            }
+            &.on {
+              animation: processAll 2s forwards;
+              &:not(:last-child) {
+                &::after {
+                  animation: processBefore 1s forwards;
+                  opacity: 0;
+                  @include tablet {
+                    animation: processBeforeMo 1s forwards;
+                  }
+                }
+              }
+            }
+            > span {
+              position: relative;
+              display: block;
+              width: 5.4rem;
+              font-size: 3.6rem;
+              font-weight: 700;
+              text-align: center;
+              @include tablet {
+                width: 3.4rem;
+                font-size: 2.4rem;
+                text-align: left;
+              }
+            }
+            > div {
+              @include tablet {
+                width: 25.6rem;
+              }
+              strong {
+                font-size: 3.6rem;
+                font-weight: 700;
+                @include tablet {
+                  font-size: 2.4rem;
+                }
+              }
+              p {
+                padding-top: 1rem;
+                font-size: 2rem;
+                line-height: 1.8;
+                @include tablet {
+                  font-size: 1.4rem;
+                }
+              }
+              a {
+                padding-top: 1rem;
+                font-size: 2rem;
+                font-weight: 700;
+                text-decoration: underline;
+                @include tablet {
+                  font-size: 1.4rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

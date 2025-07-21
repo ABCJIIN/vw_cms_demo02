@@ -1,0 +1,39 @@
+<svg width="473" height="124" viewBox="0 0 473 124" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_4221_704)">
+<path d="M0 10C0 4.47715 4.47715 0 10 0L463 0C468.523 0 473 4.47715 473 10V114C473 119.523 468.523 124 463 124L10 124C4.47715 124 0 119.523 0 114L0 10Z" fill="white" fill-opacity="0.4"/>
+<g clip-path="url(#clip1_4221_704)">
+<rect width="181.918" height="141" transform="translate(-5 -3.99976)" fill="#EAE3F1"/>
+<circle cx="12.1297" cy="2.68661" r="14.7313" fill="#D5C7E3"/>
+<circle cx="51.4618" cy="2.68661" r="14.7313" fill="#D5C7E3"/>
+<circle cx="90.7977" cy="2.68661" r="14.7313" fill="#D5C7E3"/>
+<circle cx="130.13" cy="2.68661" r="14.7313" fill="#D5C7E3"/>
+<circle cx="169.462" cy="2.68661" r="14.7313" fill="#D5C7E3"/>
+<circle cx="12.1297" cy="42.0201" r="14.7313" fill="#D5C7E3"/>
+<circle cx="51.4618" cy="42.0201" r="14.7313" fill="#D5C7E3"/>
+<circle cx="90.7977" cy="42.0201" r="14.7313" fill="#D5C7E3"/>
+<circle cx="130.13" cy="42.0201" r="14.7313" fill="#D5C7E3"/>
+<circle cx="169.462" cy="42.0201" r="14.7313" fill="#D5C7E3"/>
+<circle cx="12.1297" cy="81.3539" r="14.7313" fill="#D5C7E3"/>
+<circle cx="51.4618" cy="81.3539" r="14.7313" fill="#D5C7E3"/>
+<circle cx="90.7977" cy="81.3539" r="14.7313" fill="#D5C7E3"/>
+<circle cx="130.13" cy="81.3539" r="14.7313" fill="#D5C7E3"/>
+<circle cx="169.462" cy="81.3539" r="14.7313" fill="#D5C7E3"/>
+<circle cx="12.1297" cy="120.687" r="14.7313" fill="#D5C7E3"/>
+<circle cx="51.4618" cy="120.687" r="14.7313" fill="#D5C7E3"/>
+<circle cx="90.7977" cy="120.687" r="14.7313" fill="#D5C7E3"/>
+<circle cx="130.13" cy="120.687" r="14.7313" fill="#D5C7E3"/>
+<circle cx="169.462" cy="120.687" r="14.7313" fill="#D5C7E3"/>
+</g>
+<rect x="199" y="54" width="245.794" height="16" rx="4" fill="white" fill-opacity="0.5"/>
+<rect x="199.004" y="30.0005" width="89.2984" height="16" rx="4" fill="white" fill-opacity="0.5"/>
+<rect x="199.004" y="78.0005" width="247" height="16" rx="4" fill="white" fill-opacity="0.5"/>
+</g>
+<defs>
+<clipPath id="clip0_4221_704">
+<path d="M0 10C0 4.47715 4.47715 0 10 0L463 0C468.523 0 473 4.47715 473 10V114C473 119.523 468.523 124 463 124L10 124C4.47715 124 0 119.523 0 114L0 10Z" fill="white"/>
+</clipPath>
+<clipPath id="clip1_4221_704">
+<rect width="181.918" height="141" fill="white" transform="translate(-5 -3.99976)"/>
+</clipPath>
+</defs>
+</svg>

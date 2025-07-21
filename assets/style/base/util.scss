@@ -1,0 +1,123 @@
+/* font */
+$pretendard: "Pretendard";
+
+/* 변수선언 */
+$black: #000;
+$white: #fff;
+
+@mixin hide {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+@mixin flexbox($direction, $justfy, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justfy;
+  align-items: $align;
+}
+
+@mixin ellipsis($num: 1) {
+  @if ($num == 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: keep-all;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $num;
+  }
+}
+
+/* 노트북 */
+@mixin notebook {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin tablet_junction {
+  @media (max-width: 930px) {
+    @content;
+  }
+}
+
+/* 테블릿 */
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile_plus {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
+
+/* 모바일 */
+@mixin mobile {
+  @media (max-width: 420px) {
+    @content;
+  }
+}
+
+.d-pc {
+  display: block;
+}
+
+.d-mb {
+  display: none;
+}
+
+@include tablet {
+  .d-pc {
+    display: none;
+  }
+  .d-mb {
+    display: block;
+  }
+}
+
+// 무한 루프 애니메이션 키프레임 - 데스크톱용
+@keyframes flowRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes flowLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+

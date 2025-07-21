@@ -1,0 +1,391 @@
+/* 문의하기 페이지, 신청하기 페이지 */
+@import "../base/util.scss";
+@import "../base/color.scss";
+
+.contact,
+.apply {
+  background: $white;
+
+  > .inner {
+    @include flexbox(column, center, center);
+    gap: 6rem;
+
+    @include tablet {
+      gap: 4rem;
+    }
+    .tit-wrap {
+      width: 100%;
+      @include flexbox(column, flex-start, flex-start);
+      
+      @include tablet {
+        padding: 4rem 2.4rem 2rem 2.4rem;
+        @include flexbox(column, center, center);
+      }
+    }
+    .input-cont {
+      &.check {
+        @include flexbox(row, center, center);
+        gap: 0.6rem;
+      }
+    }
+  }
+  &.sec01 {
+    padding-top: 18rem;
+    padding-bottom: 6rem;
+    @include tablet {
+      padding-top: 10.2rem;
+      padding-bottom: 4rem;
+    }
+    > .inner {
+      > .con-wrap {
+        &:nth-of-type(3) {
+          padding-bottom: 6rem;
+          @include tablet {
+            padding-bottom: 8rem;
+          }
+        }
+        &:nth-of-type(5) {
+          padding-bottom: 6rem;
+          @include tablet {
+            padding-bottom: 2.4rem;
+          }
+        }
+      }
+    }
+    .form-tit {
+      width: 100%;
+      padding: 2rem 0;
+      @include flexbox(row, flex-start, center);
+      gap: 1.6rem;
+      border-bottom: 1px solid $black;
+      @include tablet {
+        gap: 1rem;
+        padding: 1.2rem 0;
+      }
+      strong {
+        font-size: 2.8rem;
+        font-weight: 700;
+        @include tablet {
+          font-size: 1.8rem;
+        }
+      }
+      p {
+        position: relative;
+        font-size: 1.6rem;
+        @include tablet {
+          font-size: 1.2rem;
+        }
+        &.required {
+          &::before {
+            content: "*";
+            display: inline-block;
+            font-size: 1.6rem;
+            color: #ee1408;
+            margin-right: 0.2rem;
+          }
+        }
+      }
+    }
+    .form-wrap {
+      width: 100%;
+    }
+    .input-list {
+      position: relative;
+      width: 100%;
+      @include flexbox(row, space-between, flex-start);
+      flex-wrap: wrap;
+      gap: 1.6rem 6rem;
+      padding-top: 2.4rem;
+      @include mobile {
+        gap: 1.2rem;
+      }
+      li {
+        width: 100%;
+        &.half {
+          @include flexbox(row, space-between, flex-start);
+          flex-wrap: wrap;
+          // gap: 1.6rem 6rem;
+          gap: 1.6rem 3.125vw;
+          @include tablet {
+            @include flexbox(column, flex-start, flex-start);
+          }
+          .input-cont {
+            // width: calc(50% - 6rem);
+            width: calc(50% - 3.125vw);
+            @include tablet {
+              width: 100%;
+            }
+          }
+        }
+        .input-cont {
+          width: 100%;
+          @include flexbox(row, flex-start, flex-start);
+          @include tablet {
+            @include flexbox(column, flex-start, flex-start);
+            gap: 0.4rem;
+          }
+          &.portfolio-select {
+            display: flex;
+          }
+          &.type01 {
+            .input-tit {
+              width: 19.5rem;
+            }
+            .input-wrap {
+              width: calc(100% - 19.5rem);
+              @include tablet {
+                width: 100%;
+              }
+            }
+          }
+          .input-tit {
+            width: 10rem;
+            height: 4.8rem;
+            @include flexbox(row, flex-start, center);
+            @include tablet {
+              height: auto;
+            }
+            label,
+            span {
+              position: relative;
+              font-size: 1.6rem;
+              font-weight: 700;
+              @include tablet {
+                font-size: 1.4rem;
+              }
+            }
+            &.required {
+              label,
+              span {
+                &::before {
+                  content: "*";
+                  display: inline-block;
+                  font-size: 1.6rem;
+                  color: #ee1408;
+                  margin-right: 0.4rem;
+                }
+                @include mobile {
+                  &::before {
+                    position: absolute;
+                    right: -12px;
+                    top: -4px;
+                    margin: 0;
+                  }
+                }
+              }
+            }
+          }
+          .input-wrap {
+            width: calc(100% - 10rem);
+            @include tablet {
+              width: 100%;
+            }
+            input {
+              width: 100%;
+            }
+            &.file-wrap {
+              > div {
+                position: relative;
+                @include flexbox(row, flex-start, center);
+                gap: 1.6rem;
+                @include mobile {
+                  gap: 0.8rem;
+                }
+                input {
+                  width: calc(100% - 15.8rem);
+                  @include tablet {
+                    width: calc(100% - 11.2rem);
+                  }
+                }
+              }
+              > p {
+                padding-top: 1.4rem;
+                padding-left: 2.7rem;
+                font-size: 1.6rem;
+                @include tablet {
+                  font-size: 1.3rem;
+                  padding-top: 1.2rem;
+                  padding-left: 0;
+                }
+                a {
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .contact-way {
+      width: 100%;
+      padding: 4rem;
+      border-radius: 0.8rem;
+      background: $bg;
+      @include flexbox(row, space-between, center);
+      @include tablet {
+        padding: 2rem;
+        @include flexbox(column, center, center);
+        gap: 1rem;
+      }
+      strong {
+        font-size: 2rem;
+        font-weight: 700;
+        @include tablet {
+          font-size: 1.6rem;
+        }
+        @include mobile {
+          font-size: 1.4rem;
+        }
+      }
+      > div {
+        @include flexbox(row, flex-end, center);
+        gap: 2.4rem;
+      }
+    }
+  }
+  &.sec02 {
+    background-color: $gray_1;
+    padding: 10rem;
+    @include tablet {
+      padding: 4rem 2rem;
+    }
+    > .inner {
+      width: 100%;
+      gap: 1.6rem;
+      > .con-wrap {
+        width: 100%;
+        .txt-area {
+          width: 100%;
+          min-height: 26.8rem;
+          padding: 2rem;
+          margin-bottom: 1rem;
+          border-radius: 0.8rem;
+          background: $white;
+          ul {
+            width: 100%;
+            @include flexbox(column, flex-start, flex-start);
+            gap: 2.4rem;
+            li {
+              p {
+                padding-top: 0.6rem;
+                font-size: 1.4rem;
+                text-align: left;
+                word-break: keep-all;
+                &:first-child {
+                  font-weight: 700;
+                }
+              }
+            }
+          }
+        }
+        .input-cont {
+          width: 100%;
+          padding: 2rem;
+          margin-bottom: 6rem;
+          @include tablet {
+            margin-bottom: 0;
+          }
+          &.check {
+            font-size: 1.4rem;
+            font-weight: 700;
+            gap: 1.2rem;
+            @include tablet {
+              justify-content: flex-start;
+            }
+          }
+        }
+        .btn-wrap {
+          width: 100%;
+          @include flexbox(row, center, center);
+          @include tablet {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 99;
+          }
+          button {
+            width: 33.4rem;
+            height: 6.4rem;
+            font-size: 2.1rem;
+            @include tablet {
+              width: 100%;
+              height: 6.9rem;
+              font-size: 1.9rem;
+              border-radius: 0;
+            }
+          }
+        }
+      }
+    }
+    .info-tit {
+      width: 100%;
+      padding-bottom: 1rem;
+      @include flexbox(column, flex-start, flex-start);
+      gap: 1rem;
+      strong {
+        font-size: 2.8rem;
+        font-weight: 700;
+        line-height: 1.5;
+        text-align: left;
+        @include tablet {
+          font-size: 1.8rem;
+        }
+      }
+      p {
+        font-size: 1.8rem;
+        line-height: 1.8;
+        color: #1a1b24;
+        text-align: left;
+        word-break: keep-all;
+        @include tablet {
+          font-size: 1.4rem;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+  & + .top-btn {
+    @include tablet {
+      bottom: 10.9rem;
+    }
+  }
+}
+
+/* 신청하기 */
+.apply {
+> .inner {
+    .tit-wrap {
+        width: 100%;
+        @include flexbox(row, space-between, center);
+        @include tablet {
+            @include flexbox(column-reverse, center, center);
+            gap: 1rem;
+        }
+        .txt {
+            @include flexbox(column, flex-start, flex-start);
+            @include tablet {
+                @include flexbox(column, center, center);
+                gap: 1.2rem;
+            }
+        }
+        .choice {
+            position: relative;
+            span {
+                width: 10rem;
+                height: 10rem;
+                font-size: 2rem;
+                font-weight: 700;
+                color: $white;
+                border-radius: 50%;
+                @include flexbox(row, center, center);
+                background: $gray_100;
+                @include tablet {
+                    width: 7rem;
+                    height: 7rem;
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+}
+}
