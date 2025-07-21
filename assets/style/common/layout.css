@@ -136,7 +136,7 @@ header .inner:not(.mo) button {
   height: 2.4rem;
 }
 header .inner:not(.mo) button.menu-btn {
-  background: url(/humanframe/theme/vintwire/assets/images/icon/menu.svg) no-repeat center/contain;
+  background: url(../../../assets/images/icon/menu.svg) no-repeat center/contain;
 }
 header.convert .inner .logo a img.d-pc.black {
   display: block;
@@ -159,7 +159,7 @@ header.convert .inner .gnb ul li a {
   color: #000;
 }
 header.convert .inner button.menu-btn {
-  background: url(/humanframe/theme/vintwire/assets/images/icon/menu_bk.svg) no-repeat center/contain;
+  background: url(../../../assets/images/icon/menu_bk.svg) no-repeat center/contain;
 }
 header.scrolled {
   background: #F1E4D3;
@@ -185,7 +185,7 @@ header.scrolled .inner .logo a img.d-pc.black {
   }
 }
 header.scrolled .inner button.menu-btn {
-  background: url(/humanframe/theme/vintwire/assets/images/icon/menu.svg) no-repeat center/contain;
+  background: url(../../../assets/images/icon/menu.svg) no-repeat center/contain;
 }
 header .inner.mo {
   display: none;
@@ -215,7 +215,7 @@ header .inner.mo .btn-wrap {
 header .inner.mo .btn-wrap button.close-btn {
   width: 2.4rem;
   height: 2.4rem;
-  background: url(/humanframe/theme/vintwire/assets/images/icon/close.svg) no-repeat center;
+  background: url(../../../assets/images/icon/close.svg) no-repeat center;
 }
 header .inner.mo .con-wrap {
   width: 100%;
@@ -589,7 +589,7 @@ section .tit-wrap.type01 p {
 /* 서비스 문의하기 배너 */
 section.banner {
   height: 43rem;
-  background: url(/humanframe/theme/vintwire/assets/images/common/banner_bg.png) no-repeat center/cover;
+  background: url(../../../assets/images/common/banner_bg.png) no-repeat center/cover;
   padding: 4rem 0;
   display: flex;
   flex-direction: column;
@@ -614,7 +614,7 @@ section.banner .inner strong {
 }
 @media (max-width: 768px) {
   section.banner {
-    background: url(/humanframe/theme/vintwire/assets/images/common/mo/banner_bg.png) no-repeat center/cover;
+    background: url(../../../assets/images/common/mo/banner_bg.png) no-repeat center/cover;
   }
   section.banner .inner {
     padding: 4rem 0;
@@ -739,7 +739,7 @@ section.qna .inner .con-wrap ul li .q-wrap::after {
   transform: translateY(-50%);
   width: 24px;
   height: 24px;
-  background: url(/humanframe/theme/vintwire/assets/images/icon/arrow_down.png) no-repeat center/contain;
+  background: url(../../../assets/images/icon/arrow_down.png) no-repeat center/contain;
   transition: all 0.25s;
 }
 @media (max-width: 768px) {
@@ -793,7 +793,7 @@ section.qna .inner .con-wrap ul li .a-wrap p:before {
   top: 0;
   width: 4rem;
   height: 4rem;
-  background-image: url(/humanframe/theme/vintwire/assets/images/icon/include_arrow.svg);
+  background-image: url(../../../assets/images/icon/include_arrow.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

@@ -86,10 +86,10 @@
             }
 
             &top {
-              background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-top.svg);
+              background-image: url(../../../assets/images/main/bun-top.svg);
             }
             &bottom {
-              background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-bottom.svg);
+              background-image: url(../../../assets/images/main/bun-bottom.svg);
             }
 
             &inside {
@@ -136,31 +136,31 @@
                   transition: background-image 0s;
 
                   &.item-01-01 {
-                    background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-01_01.svg);
+                    background-image: url(../../../assets/images/main/bun-01_01.svg);
                   }
                   &.item-01-02 {
-                    background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-01_02.svg);
+                    background-image: url(../../../assets/images/main/bun-01_02.svg);
                   }
                   &.item-01-03 {
-                    background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-01_03.svg);
+                    background-image: url(../../../assets/images/main/bun-01_03.svg);
                   }
                   &.item-02-01 {
-                    background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-02_01.svg);
+                    background-image: url(../../../assets/images/main/bun-02_01.svg);
                   }
                   &.item-02-02 {
-                    background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-02_02.svg);
+                    background-image: url(../../../assets/images/main/bun-02_02.svg);
                   }
                   &.item-02-03 {
-                    background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-02_03.svg);
+                    background-image: url(../../../assets/images/main/bun-02_03.svg);
                   }
                   &.item-03-01 {
-                    background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-03_01.svg);
+                    background-image: url(../../../assets/images/main/bun-03_01.svg);
                   }
                   &.item-03-02 {
-                    background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-03_02.svg);
+                    background-image: url(../../../assets/images/main/bun-03_02.svg);
                   }
                   &.item-03-03 {
-                    background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-03_03.svg);
+                    background-image: url(../../../assets/images/main/bun-03_03.svg);
                   }
                 }
               }
@@ -702,14 +702,14 @@
     background-color: $pink;
     .img-wrap {
       .circle {
-        background-image: url(/humanframe/theme/vintwire/assets/images/main/main_01.png);
+        background-image: url(../../../assets/images/main/main_01.png);
       }
       .ellipse {
-        background-image: url(/humanframe/theme/vintwire/assets/images/main/main_ellipse_01.png);
+        background-image: url(../../../assets/images/main/main_ellipse_01.png);
       }
       &::before {
         left: -22%;
-        background-image: url(/humanframe/theme/vintwire/assets/images/main/figure-01.svg);
+        background-image: url(../../../assets/images/main/figure-01.svg);
       }
 
       @include notebook {
@@ -720,21 +720,21 @@
     }
 
     &::before {
-      background-image: url(/humanframe/theme/vintwire/assets/images/main/figure-01.svg);
+      background-image: url(../../../assets/images/main/figure-01.svg);
     }
   }
   &.sec06 {
     background-color: $green_80;
     .img-wrap {
       .circle {
-        background-image: url(/humanframe/theme/vintwire/assets/images/main/main_02.png);
+        background-image: url(../../../assets/images/main/main_02.png);
       }
       .ellipse {
-        background-image: url(/humanframe/theme/vintwire/assets/images/main/main_ellipse_02.png);
+        background-image: url(../../../assets/images/main/main_ellipse_02.png);
       }
       &::before {
         right: -34%;
-        background-image: url(/humanframe/theme/vintwire/assets/images/main/figure-02.svg);
+        background-image: url(../../../assets/images/main/figure-02.svg);
       }
 
       @include notebook {
@@ -745,22 +745,22 @@
     }
 
     &::before {
-      background-image: url(/humanframe/theme/vintwire/assets/images/main/figure-02.svg);
+      background-image: url(../../../assets/images/main/figure-02.svg);
     }
   }
   &.sec07 {
     background-color: $purple_40;
     .img-wrap {
       .circle {
-        background-image: url(/humanframe/theme/vintwire/assets/images/main/main_03.png);
+        background-image: url(../../../assets/images/main/main_03.png);
       }
       .ellipse {
-        background-image: url(/humanframe/theme/vintwire/assets/images/main/main_ellipse_03.png);
+        background-image: url(../../../assets/images/main/main_ellipse_03.png);
       }
       &::before {
         bottom: -12%;
         left: -33%;
-        background-image: url(/humanframe/theme/vintwire/assets/images/main/figure-03.svg);
+        background-image: url(../../../assets/images/main/figure-03.svg);
       }
 
       @include notebook {
@@ -774,21 +774,21 @@
     &::before {
       bottom: -8%;
       left: 60%;
-      background-image: url(/humanframe/theme/vintwire/assets/images/main/figure-03.svg);
+      background-image: url(../../../assets/images/main/figure-03.svg);
     }
   }
   &.sec08 {
     background-color: $orange_40;
     .img-wrap {
       .circle {
-        background-image: url(/humanframe/theme/vintwire/assets/images/main/main_04.png);
+        background-image: url(../../../assets/images/main/main_04.png);
       }
       .ellipse {
-        background-image: url(/humanframe/theme/vintwire/assets/images/main/main_ellipse_04.png);
+        background-image: url(../../../assets/images/main/main_ellipse_04.png);
       }
       &::before {
         right: -33%;
-        background-image: url(/humanframe/theme/vintwire/assets/images/main/figure-04.svg);
+        background-image: url(../../../assets/images/main/figure-04.svg);
       }
 
       @include notebook {
@@ -799,7 +799,7 @@
     }
 
     &::before {
-      background-image: url(/humanframe/theme/vintwire/assets/images/main/figure-04.svg);
+      background-image: url(../../../assets/images/main/figure-04.svg);
     }
   }
 
@@ -807,7 +807,7 @@
     top: 8rem;
     max-height: 113rem;
     padding: 14.3rem 0 10.7rem 0;
-    background-image: url(/humanframe/theme/vintwire/assets/images/main/section_09_bg.png);
+    background-image: url(../../../assets/images/main/section_09_bg.png);
     background-repeat: repeat;
     overflow: hidden;
 

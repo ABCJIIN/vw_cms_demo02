@@ -705,7 +705,7 @@
   color: #FF7CC0;
 }
 .price.sec01 .price-card-wrap > ul .card.pink .info ul:nth-of-type(2) li::before {
-  background: url(/humanframe/theme/vintwire/assets/images/icon/check-circle-pink.svg) no-repeat center/contain;
+  background: url(../../../assets/images/icon/check-circle-pink.svg) no-repeat center/contain;
 }
 .price.sec01 .price-card-wrap > ul .card.green .title {
   background: #198A56;
@@ -714,7 +714,7 @@
   color: #198A56;
 }
 .price.sec01 .price-card-wrap > ul .card.green .info ul:nth-of-type(2) li::before {
-  background: url(/humanframe/theme/vintwire/assets/images/icon/check-circle-green.svg) no-repeat center/contain;
+  background: url(../../../assets/images/icon/check-circle-green.svg) no-repeat center/contain;
 }
 .price.sec01 .price-card-wrap > ul .card.purple .title {
   background: #9574BA;
@@ -723,7 +723,7 @@
   color: #9574BA;
 }
 .price.sec01 .price-card-wrap > ul .card.purple .info ul:nth-of-type(2) li::before {
-  background: url(/humanframe/theme/vintwire/assets/images/icon/check-circle-purple.svg) no-repeat center/contain;
+  background: url(../../../assets/images/icon/check-circle-purple.svg) no-repeat center/contain;
 }
 .price.sec01 .price-card-wrap > ul .card.orange .title {
   background: #FFAF19;
@@ -732,7 +732,7 @@
   color: #FFAF19;
 }
 .price.sec01 .price-card-wrap > ul .card.orange .info ul:nth-of-type(2) li::before {
-  background: url(/humanframe/theme/vintwire/assets/images/icon/check-circle-orange.svg) no-repeat center/contain;
+  background: url(../../../assets/images/icon/check-circle-orange.svg) no-repeat center/contain;
 }
 .price.sec01 .price-card-wrap > ul .card .info {
   padding: 3rem;
@@ -759,7 +759,7 @@
   padding-bottom: 2rem;
 }
 .price.sec01 .price-card-wrap > ul .card .info .txt-wrap ul:first-of-type li::before {
-  background: url(/humanframe/theme/vintwire/assets/images/icon/info.png) no-repeat center #5F5E5E;
+  background: url(../../../assets/images/icon/info.png) no-repeat center #5F5E5E;
 }
 .price.sec01 .price-card-wrap > ul .card .info .txt-wrap ul li {
   position: relative;
@@ -946,16 +946,16 @@
   }
 }
 .price.sec02 .tb-wrap.pink table span.include {
-  background: url(/humanframe/theme/vintwire/assets/images/icon/check-circle-pink.svg) no-repeat center/contain;
+  background: url(../../../assets/images/icon/check-circle-pink.svg) no-repeat center/contain;
 }
 .price.sec02 .tb-wrap.green table span.include {
-  background: url(/humanframe/theme/vintwire/assets/images/icon/check-circle-green.svg) no-repeat center/contain;
+  background: url(../../../assets/images/icon/check-circle-green.svg) no-repeat center/contain;
 }
 .price.sec02 .tb-wrap.purple table span.include {
-  background: url(/humanframe/theme/vintwire/assets/images/icon/check-circle-purple.svg) no-repeat center/contain;
+  background: url(../../../assets/images/icon/check-circle-purple.svg) no-repeat center/contain;
 }
 .price.sec02 .tb-wrap.orange table span.include {
-  background: url(/humanframe/theme/vintwire/assets/images/icon/check-circle-orange.svg) no-repeat center/contain;
+  background: url(../../../assets/images/icon/check-circle-orange.svg) no-repeat center/contain;
 }
 .price.sec02 .tb-wrap table {
   width: 100%;
@@ -1041,7 +1041,7 @@
   border-radius: 50%;
 }
 .price.sec02 .tb-wrap table tbody tr td span.exclude {
-  background: url(/humanframe/theme/vintwire/assets/images/icon/exclude.png) no-repeat center #e8e9ec;
+  background: url(../../../assets/images/icon/exclude.png) no-repeat center #e8e9ec;
 }
 .price.sec02 .tb-wrap table tbody tr td.btn_wrap {
   padding: 1.6rem 1.1rem;
@@ -1137,16 +1137,16 @@
   margin-right: 1rem;
 }
 .modal-wrap .modal .modal_header .center_header .btn_wrap button.pc_tab[aria-selected=false]::before {
-  background: url(/humanframe/theme/vintwire/assets/images/icon/pc_gray.svg) no-repeat center/contain;
+  background: url(../../../assets/images/icon/pc_gray.svg) no-repeat center/contain;
 }
 .modal-wrap .modal .modal_header .center_header .btn_wrap button.pc_tab[aria-selected=true]::before {
-  background: url(/humanframe/theme/vintwire/assets/images/icon/pc_white.svg) no-repeat center/contain;
+  background: url(../../../assets/images/icon/pc_white.svg) no-repeat center/contain;
 }
 .modal-wrap .modal .modal_header .center_header .btn_wrap button.mb_tab[aria-selected=false]::before {
-  background: url(/humanframe/theme/vintwire/assets/images/icon/mobile_gray.svg) no-repeat center/contain;
+  background: url(../../../assets/images/icon/mobile_gray.svg) no-repeat center/contain;
 }
 .modal-wrap .modal .modal_header .center_header .btn_wrap button.mb_tab[aria-selected=true]::before {
-  background: url(/humanframe/theme/vintwire/assets/images/icon/mobile_white.svg) no-repeat center/contain;
+  background: url(../../../assets/images/icon/mobile_white.svg) no-repeat center/contain;
 }
 @media (max-width: 768px) {
   .modal-wrap .modal .modal_header .center_header .btn_wrap button {
@@ -1212,7 +1212,7 @@
   display: inline-block;
   width: 2.4rem;
   height: 2.4rem;
-  background: url(/humanframe/theme/vintwire/assets/images/icon/close.svg) no-repeat center/contain;
+  background: url(../../../assets/images/icon/close.svg) no-repeat center/contain;
 }
 @media (max-width: 768px) {
   .modal-wrap .modal .modal_header .close_btn {
@@ -1370,7 +1370,7 @@
   display: block;
   width: 100%;
   height: 4.5rem;
-  background-image: url(/humanframe/theme/vintwire/assets/images/price/mb_header.png);
+  background-image: url(../../../assets/images/price/mb_header.png);
   background-repeat: no-repeat;
   background-position: top center;
   background-size: contain;
@@ -1569,17 +1569,17 @@
 .service.visual .bg-square.pink {
   top: 10.6rem;
   left: -3%;
-  background-image: url(/humanframe/theme/vintwire/assets/images/service/bg_square_pink.svg);
+  background-image: url(../../../assets/images/service/bg_square_pink.svg);
 }
 .service.visual .bg-square.green {
   top: 10.6rem;
   right: -3%;
-  background-image: url(/humanframe/theme/vintwire/assets/images/service/bg_square_green.svg);
+  background-image: url(../../../assets/images/service/bg_square_green.svg);
 }
 .service.visual .bg-square.beige {
   bottom: -10%;
   right: 30%;
-  background-image: url(/humanframe/theme/vintwire/assets/images/service/bg_square_beige.svg);
+  background-image: url(../../../assets/images/service/bg_square_beige.svg);
 }
 @media (max-width: 768px) {
   .service.visual {
@@ -1739,7 +1739,7 @@
   letter-spacing: -0.096rem;
 }
 .service.sec02 .inner .manage-card-wrap > ul > li:nth-of-type(1) .img-wrap {
-  background: url(/humanframe/theme/vintwire/assets/images/sub/manage_card_item01.png) no-repeat center/cover;
+  background: url(../../../assets/images/sub/manage_card_item01.png) no-repeat center/cover;
   left: 1.5rem;
   right: auto;
   transform: scale(-1, 1);
@@ -1751,7 +1751,7 @@
   color: #FF7CC0;
 }
 .service.sec02 .inner .manage-card-wrap > ul > li:nth-of-type(2) .img-wrap {
-  background: url(/humanframe/theme/vintwire/assets/images/sub/manage_card_item02.png) no-repeat center/cover;
+  background: url(../../../assets/images/sub/manage_card_item02.png) no-repeat center/cover;
   left: auto;
   right: 1.5rem;
   transform: scale(-1, 1);
@@ -1765,7 +1765,7 @@
   color: #9574BA;
 }
 .service.sec02 .inner .manage-card-wrap > ul > li:nth-of-type(3) .img-wrap {
-  background: url(/humanframe/theme/vintwire/assets/images/sub/manage_card_item03.png) no-repeat center/cover;
+  background: url(../../../assets/images/sub/manage_card_item03.png) no-repeat center/cover;
   left: 1.5rem;
   right: auto;
   transform: scale(1, 1);
@@ -1905,7 +1905,7 @@
   }
 }
 .service.sec03 {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/section_09_bg.png);
+  background-image: url(../../../assets/images/main/section_09_bg.png);
   padding: 10rem 0 23.4rem;
 }
 @media (max-width: 768px) {
@@ -1957,7 +1957,7 @@
   padding-bottom: 2rem;
 }
 .service.sec03 .icon-card-wrap > div ul:first-child li:nth-child(1) .img-wrap {
-  background: url("/humanframe/theme/vintwire/assets/images/service/icon_01.svg") no-repeat center;
+  background: url("../../../assets/images/service/icon_01.svg") no-repeat center;
 }
 @media (max-width: 768px) {
   .service.sec03 .icon-card-wrap > div ul:first-child li:nth-child(1) .img-wrap {
@@ -1965,7 +1965,7 @@
   }
 }
 .service.sec03 .icon-card-wrap > div ul:first-child li:nth-child(2) .img-wrap {
-  background: url("/humanframe/theme/vintwire/assets/images/service/icon_02.svg") no-repeat center;
+  background: url("../../../assets/images/service/icon_02.svg") no-repeat center;
 }
 @media (max-width: 768px) {
   .service.sec03 .icon-card-wrap > div ul:first-child li:nth-child(2) .img-wrap {
@@ -1973,7 +1973,7 @@
   }
 }
 .service.sec03 .icon-card-wrap > div ul:first-child li:nth-child(3) .img-wrap {
-  background: url("/humanframe/theme/vintwire/assets/images/service/icon_03.svg") no-repeat center;
+  background: url("../../../assets/images/service/icon_03.svg") no-repeat center;
 }
 @media (max-width: 768px) {
   .service.sec03 .icon-card-wrap > div ul:first-child li:nth-child(3) .img-wrap {
@@ -1981,7 +1981,7 @@
   }
 }
 .service.sec03 .icon-card-wrap > div ul:first-child li:nth-child(4) .img-wrap {
-  background: url("/humanframe/theme/vintwire/assets/images/service/icon_04.svg") no-repeat center;
+  background: url("../../../assets/images/service/icon_04.svg") no-repeat center;
 }
 @media (max-width: 768px) {
   .service.sec03 .icon-card-wrap > div ul:first-child li:nth-child(4) .img-wrap {
@@ -1989,7 +1989,7 @@
   }
 }
 .service.sec03 .icon-card-wrap > div ul:first-child li:nth-child(5) .img-wrap {
-  background: url("/humanframe/theme/vintwire/assets/images/service/icon_05.svg") no-repeat center;
+  background: url("../../../assets/images/service/icon_05.svg") no-repeat center;
 }
 @media (max-width: 768px) {
   .service.sec03 .icon-card-wrap > div ul:first-child li:nth-child(5) .img-wrap {
@@ -1997,7 +1997,7 @@
   }
 }
 .service.sec03 .icon-card-wrap > div ul:last-child li:nth-child(1) .img-wrap {
-  background: url("/humanframe/theme/vintwire/assets/images/service/icon_06.svg") no-repeat center/contain;
+  background: url("../../../assets/images/service/icon_06.svg") no-repeat center/contain;
 }
 @media (max-width: 768px) {
   .service.sec03 .icon-card-wrap > div ul:last-child li:nth-child(1) .img-wrap {
@@ -2005,7 +2005,7 @@
   }
 }
 .service.sec03 .icon-card-wrap > div ul:last-child li:nth-child(2) .img-wrap {
-  background: url("/humanframe/theme/vintwire/assets/images/service/icon_07.svg") no-repeat center/contain;
+  background: url("../../../assets/images/service/icon_07.svg") no-repeat center/contain;
 }
 @media (max-width: 768px) {
   .service.sec03 .icon-card-wrap > div ul:last-child li:nth-child(2) .img-wrap {
@@ -2013,7 +2013,7 @@
   }
 }
 .service.sec03 .icon-card-wrap > div ul:last-child li:nth-child(3) .img-wrap {
-  background: url("/humanframe/theme/vintwire/assets/images/service/icon_08.svg") no-repeat center/contain;
+  background: url("../../../assets/images/service/icon_08.svg") no-repeat center/contain;
 }
 @media (max-width: 768px) {
   .service.sec03 .icon-card-wrap > div ul:last-child li:nth-child(3) .img-wrap {
@@ -2021,7 +2021,7 @@
   }
 }
 .service.sec03 .icon-card-wrap > div ul:last-child li:nth-child(4) .img-wrap {
-  background: url("/humanframe/theme/vintwire/assets/images/service/icon_09.svg") no-repeat center/contain;
+  background: url("../../../assets/images/service/icon_09.svg") no-repeat center/contain;
 }
 @media (max-width: 768px) {
   .service.sec03 .icon-card-wrap > div ul:last-child li:nth-child(4) .img-wrap {
@@ -2029,7 +2029,7 @@
   }
 }
 .service.sec03 .icon-card-wrap > div ul:last-child li:nth-child(5) .img-wrap {
-  background: url("/humanframe/theme/vintwire/assets/images/service/icon_10.svg") no-repeat center/contain;
+  background: url("../../../assets/images/service/icon_10.svg") no-repeat center/contain;
 }
 @media (max-width: 768px) {
   .service.sec03 .icon-card-wrap > div ul:last-child li:nth-child(5) .img-wrap {
@@ -2464,10 +2464,10 @@
   z-index: 3;
 }
 .main-sec.sec01 .inner .bun-wrap li.bun-top {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-top.svg);
+  background-image: url(../../../assets/images/main/bun-top.svg);
 }
 .main-sec.sec01 .inner .bun-wrap li.bun-bottom {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-bottom.svg);
+  background-image: url(../../../assets/images/main/bun-bottom.svg);
 }
 .main-sec.sec01 .inner .bun-wrap li.bun-inside {
   width: 143.5rem;
@@ -2508,31 +2508,31 @@
   transition: background-image 0s;
 }
 .main-sec.sec01 .inner .bun-wrap li.bun-inside .inside-item.item-01-01 {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-01_01.svg);
+  background-image: url(../../../assets/images/main/bun-01_01.svg);
 }
 .main-sec.sec01 .inner .bun-wrap li.bun-inside .inside-item.item-01-02 {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-01_02.svg);
+  background-image: url(../../../assets/images/main/bun-01_02.svg);
 }
 .main-sec.sec01 .inner .bun-wrap li.bun-inside .inside-item.item-01-03 {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-01_03.svg);
+  background-image: url(../../../assets/images/main/bun-01_03.svg);
 }
 .main-sec.sec01 .inner .bun-wrap li.bun-inside .inside-item.item-02-01 {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-02_01.svg);
+  background-image: url(../../../assets/images/main/bun-02_01.svg);
 }
 .main-sec.sec01 .inner .bun-wrap li.bun-inside .inside-item.item-02-02 {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-02_02.svg);
+  background-image: url(../../../assets/images/main/bun-02_02.svg);
 }
 .main-sec.sec01 .inner .bun-wrap li.bun-inside .inside-item.item-02-03 {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-02_03.svg);
+  background-image: url(../../../assets/images/main/bun-02_03.svg);
 }
 .main-sec.sec01 .inner .bun-wrap li.bun-inside .inside-item.item-03-01 {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-03_01.svg);
+  background-image: url(../../../assets/images/main/bun-03_01.svg);
 }
 .main-sec.sec01 .inner .bun-wrap li.bun-inside .inside-item.item-03-02 {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-03_02.svg);
+  background-image: url(../../../assets/images/main/bun-03_02.svg);
 }
 .main-sec.sec01 .inner .bun-wrap li.bun-inside .inside-item.item-03-03 {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/bun-03_03.svg);
+  background-image: url(../../../assets/images/main/bun-03_03.svg);
 }
 @media (max-width: 930px) {
   .main-sec.sec01 .inner .tit-wrap strong {
@@ -2997,14 +2997,14 @@
   background-color: #FF7CC0;
 }
 .main-sec.sec05 .img-wrap .circle {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/main_01.png);
+  background-image: url(../../../assets/images/main/main_01.png);
 }
 .main-sec.sec05 .img-wrap .ellipse {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/main_ellipse_01.png);
+  background-image: url(../../../assets/images/main/main_ellipse_01.png);
 }
 .main-sec.sec05 .img-wrap::before {
   left: -22%;
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/figure-01.svg);
+  background-image: url(../../../assets/images/main/figure-01.svg);
 }
 @media (max-width: 1280px) {
   .main-sec.sec05 .img-wrap::before {
@@ -3012,20 +3012,20 @@
   }
 }
 .main-sec.sec05::before {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/figure-01.svg);
+  background-image: url(../../../assets/images/main/figure-01.svg);
 }
 .main-sec.sec06 {
   background-color: #198A56;
 }
 .main-sec.sec06 .img-wrap .circle {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/main_02.png);
+  background-image: url(../../../assets/images/main/main_02.png);
 }
 .main-sec.sec06 .img-wrap .ellipse {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/main_ellipse_02.png);
+  background-image: url(../../../assets/images/main/main_ellipse_02.png);
 }
 .main-sec.sec06 .img-wrap::before {
   right: -34%;
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/figure-02.svg);
+  background-image: url(../../../assets/images/main/figure-02.svg);
 }
 @media (max-width: 1280px) {
   .main-sec.sec06 .img-wrap::before {
@@ -3033,21 +3033,21 @@
   }
 }
 .main-sec.sec06::before {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/figure-02.svg);
+  background-image: url(../../../assets/images/main/figure-02.svg);
 }
 .main-sec.sec07 {
   background-color: #9574BA;
 }
 .main-sec.sec07 .img-wrap .circle {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/main_03.png);
+  background-image: url(../../../assets/images/main/main_03.png);
 }
 .main-sec.sec07 .img-wrap .ellipse {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/main_ellipse_03.png);
+  background-image: url(../../../assets/images/main/main_ellipse_03.png);
 }
 .main-sec.sec07 .img-wrap::before {
   bottom: -12%;
   left: -33%;
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/figure-03.svg);
+  background-image: url(../../../assets/images/main/figure-03.svg);
 }
 @media (max-width: 1280px) {
   .main-sec.sec07 .img-wrap::before {
@@ -3058,20 +3058,20 @@
 .main-sec.sec07::before {
   bottom: -8%;
   left: 60%;
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/figure-03.svg);
+  background-image: url(../../../assets/images/main/figure-03.svg);
 }
 .main-sec.sec08 {
   background-color: #FFAF19;
 }
 .main-sec.sec08 .img-wrap .circle {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/main_04.png);
+  background-image: url(../../../assets/images/main/main_04.png);
 }
 .main-sec.sec08 .img-wrap .ellipse {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/main_ellipse_04.png);
+  background-image: url(../../../assets/images/main/main_ellipse_04.png);
 }
 .main-sec.sec08 .img-wrap::before {
   right: -33%;
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/figure-04.svg);
+  background-image: url(../../../assets/images/main/figure-04.svg);
 }
 @media (max-width: 1280px) {
   .main-sec.sec08 .img-wrap::before {
@@ -3079,13 +3079,13 @@
   }
 }
 .main-sec.sec08::before {
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/figure-04.svg);
+  background-image: url(../../../assets/images/main/figure-04.svg);
 }
 .main-sec.sec09 {
   top: 8rem;
   max-height: 113rem;
   padding: 14.3rem 0 10.7rem 0;
-  background-image: url(/humanframe/theme/vintwire/assets/images/main/section_09_bg.png);
+  background-image: url(../../../assets/images/main/section_09_bg.png);
   background-repeat: repeat;
   overflow: hidden;
 }

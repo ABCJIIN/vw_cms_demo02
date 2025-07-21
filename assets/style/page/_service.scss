@@ -91,17 +91,17 @@
       &.pink {
         top: 10.6rem;
         left: -3%;
-        background-image: url(/humanframe/theme/vintwire/assets/images/service/bg_square_pink.svg);
+        background-image: url(../../../assets/images/service/bg_square_pink.svg);
       }
       &.green {
         top: 10.6rem;
         right: -3%;
-        background-image: url(/humanframe/theme/vintwire/assets/images/service/bg_square_green.svg);
+        background-image: url(../../../assets/images/service/bg_square_green.svg);
       }
       &.beige {
         bottom: -10%;
         right: 30%;
-        background-image: url(/humanframe/theme/vintwire/assets/images/service/bg_square_beige.svg);
+        background-image: url(../../../assets/images/service/bg_square_beige.svg);
       }
     }
 
@@ -298,7 +298,7 @@
                 );
 
                 .img-wrap {
-                  background: url(/humanframe/theme/vintwire/assets/images/sub/manage_card_item0#{$i}.png)
+                  background: url(../../../assets/images/sub/manage_card_item0#{$i}.png)
                     no-repeat
                     center/cover;
                   left: map-get(map-get($position-map, $i), left);
@@ -454,7 +454,7 @@
   }
 
   &.sec03 {
-    background-image: url(/humanframe/theme/vintwire/assets/images/main/section_09_bg.png);
+    background-image: url(../../../assets/images/main/section_09_bg.png);
     padding: 10rem 0 23.4rem;
     @include tablet {
       padding: 10rem 0;
@@ -499,7 +499,7 @@
               li {
                 &:nth-child(#{$i}) {
                   .img-wrap {
-                    $icon-path: "/humanframe/theme/vintwire/assets/images/service/icon_0#{$i}.svg";
+                    $icon-path: "../../../assets/images/service/icon_0#{$i}.svg";
                     background: url($icon-path) no-repeat center;
 
                     @include tablet {
@@ -516,11 +516,11 @@
                 &:nth-child(#{$i - 5}) {
                   .img-wrap {
                     @if $i == 10 {
-                      background: url("/humanframe/theme/vintwire/assets/images/service/icon_#{$i}.svg")
+                      background: url("../../../assets/images/service/icon_#{$i}.svg")
                         no-repeat
                         center/contain;
                     } @else {
-                      background: url("/humanframe/theme/vintwire/assets/images/service/icon_0#{$i}.svg")
+                      background: url("../../../assets/images/service/icon_0#{$i}.svg")
                         no-repeat
                         center/contain;
                     }
