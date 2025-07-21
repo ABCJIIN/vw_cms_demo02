@@ -463,7 +463,7 @@ $(function () {
     }
 
     var mode = $modal.attr("data-mode");
-    $modalInner.find("img").attr("src", "/humanframe/theme/vintwire/assets/images/price/".concat(mode, "_").concat(type, ".png"));
+    $modalInner.find("img").attr("src", "../../assets/images/price/".concat(mode, "_").concat(type, ".png"));
   }
 
   function changeMode() {

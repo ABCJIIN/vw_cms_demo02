@@ -149,7 +149,7 @@ body {
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
-  background: url(/humanframe/theme/vintwire/assets/images/icon/arrow_top.png) no-repeat center/24px #fff;
+  background: url(../../assetsassets/images/icon/arrow_top.png) no-repeat center/24px #fff;
   cursor: pointer;
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.25);
   z-index: 888;
@@ -268,7 +268,7 @@ input[type=checkbox]::before {
   background: #FFFFFF;
 }
 input[type=checkbox]:checked::before {
-  background: url(/humanframe/theme/vintwire/assets/images/icon/check.png) no-repeat center #FFFFFF;
+  background: url(../../assetsassets/images/icon/check.png) no-repeat center #FFFFFF;
 }
 input[type=checkbox]:focus-visible {
   outline: 2px solid black;
@@ -379,7 +379,7 @@ textarea::placeholder {
   right: 2.3rem;
   top: 50%;
   transform: translateY(-50%);
-  background: url(/humanframe/theme/vintwire/assets/images/icon/arrow_down_bk.png) no-repeat center/contain;
+  background: url(../../assetsassets/images/icon/arrow_down_bk.png) no-repeat center/contain;
   transition: all 0.25s;
 }
 @media (max-width: 768px) {

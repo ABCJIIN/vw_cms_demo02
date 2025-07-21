@@ -481,7 +481,7 @@ $(".btn_wrap.apply button").on("click", function () {
       .find("img")
       .attr(
         "src",
-        `/humanframe/theme/vintwire/assets/images/price/${mode}_${type}.png`
+        `../../assets/images/price/${mode}_${type}.png`
       );
   }
 

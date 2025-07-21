@@ -26,7 +26,7 @@ $(document).ready(function () {
       this.ctx = this.canvas.getContext("2d");
       console.log("Canvas context:", this.ctx);
       this.boxes = [];
-      this.images = ["/humanframe/theme/vintwire/assets/images/main/falling-item_01.svg", "/humanframe/theme/vintwire/assets/images/main/falling-item_02.svg", "/humanframe/theme/vintwire/assets/images/main/falling-item_03.svg", "/humanframe/theme/vintwire/assets/images/main/falling-item_04.svg", "/humanframe/theme/vintwire/assets/images/main/falling-item_05.svg", "/humanframe/theme/vintwire/assets/images/main/falling-item_06.svg", "/humanframe/theme/vintwire/assets/images/main/falling-item_07.svg", "/humanframe/theme/vintwire/assets/images/main/falling-item_08.svg", "/humanframe/theme/vintwire/assets/images/main/falling-item_09.svg", "/humanframe/theme/vintwire/assets/images/main/falling-item_10.svg"];
+      this.images = ["../../assets/images/main/falling-item_01.svg", "../../assets/images/main/falling-item_02.svg", "../../assets/images/main/falling-item_03.svg", "../../assets/images/main/falling-item_04.svg", "../../assets/images/main/falling-item_05.svg", "../../assets/images/main/falling-item_06.svg", "../../assets/images/main/falling-item_07.svg", "../../assets/images/main/falling-item_08.svg", "../../assets/images/main/falling-item_09.svg", "../../assets/images/main/falling-item_10.svg"];
       this.loadedImages = [];
       this.gravity = 0.4;
       this.friction = 0.98;
