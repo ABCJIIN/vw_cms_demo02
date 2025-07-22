@@ -13,16 +13,16 @@ $(document).ready(function () {
       console.log("Canvas context:", this.ctx);
       this.boxes = [];
       this.images = [
-        "../assets/images/main/falling-item_01.svg",
-        "../assets/images/main/falling-item_02.svg",
-        "../assets/images/main/falling-item_03.svg",
-        "../assets/images/main/falling-item_04.svg",
-        "../assets/images/main/falling-item_05.svg",
-        "../assets/images/main/falling-item_06.svg",
-        "../assets/images/main/falling-item_07.svg",
-        "../assets/images/main/falling-item_08.svg",
-        "../assets/images/main/falling-item_09.svg",
-        "../assets/images/main/falling-item_10.svg",
+        "../../assets/images/main/falling-item_01.svg",
+        "../../assets/images/main/falling-item_02.svg",
+        "../../assets/images/main/falling-item_03.svg",
+        "../../assets/images/main/falling-item_04.svg",
+        "../../assets/images/main/falling-item_05.svg",
+        "../../assets/images/main/falling-item_06.svg",
+        "../../assets/images/main/falling-item_07.svg",
+        "../../assets/images/main/falling-item_08.svg",
+        "../../assets/images/main/falling-item_09.svg",
+        "../../assets/images/main/falling-item_10.svg",
       ];
       this.loadedImages = [];
 
