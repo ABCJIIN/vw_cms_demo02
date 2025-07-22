@@ -12,18 +12,27 @@ $(document).ready(function () {
       this.ctx = this.canvas.getContext("2d");
       console.log("Canvas context:", this.ctx);
       this.boxes = [];
-      this.images = [
-        "../../assets/images/main/falling-item_01.svg",
-        "../../assets/images/main/falling-item_02.svg",
-        "../../assets/images/main/falling-item_03.svg",
-        "../../assets/images/main/falling-item_04.svg",
-        "../../assets/images/main/falling-item_05.svg",
-        "../../assets/images/main/falling-item_06.svg",
-        "../../assets/images/main/falling-item_07.svg",
-        "../../assets/images/main/falling-item_08.svg",
-        "../../assets/images/main/falling-item_09.svg",
-        "../../assets/images/main/falling-item_10.svg",
-      ];
+      
+        const baseUrl = window.location.origin;
+        const basePath = window.location.pathname.split("/")[1]; // 저장소 이름
+        const isGithub = window.location.hostname.includes("github.io");
+
+        // GitHub Pages에서는 저장소명 포함, 로컬에선 생략
+        const prefix = isGithub ? `/${basePath}/assets/images/main/` : `assets/images/main/`;
+
+        this.images = [
+        `${prefix}falling-item_01.svg`,
+        `${prefix}falling-item_02.svg`,
+        `${prefix}falling-item_03.svg`,
+        `${prefix}falling-item_04.svg`,
+        `${prefix}falling-item_05.svg`,
+        `${prefix}falling-item_06.svg`,
+        `${prefix}falling-item_07.svg`,
+        `${prefix}falling-item_08.svg`,
+        `${prefix}falling-item_09.svg`,
+        `${prefix}falling-item_10.svg`
+        ];
+
       this.loadedImages = [];
 
       this.gravity = 0.4;
