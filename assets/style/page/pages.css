@@ -935,14 +935,19 @@
   .price.sec02 .tb-wrap {
     padding-right: 2rem;
     overflow-x: auto;
-    -ms-overflow-style: none; /* IE, Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    /* IE, Edge */
+    scrollbar-width: none;
+    /* Firefox */
     cursor: grab;
-    user-select: none; /* 선택 방지 */
-    -webkit-overflow-scrolling: touch; /* iOS 자연 스크롤 */
+    user-select: none;
+    /* 선택 방지 */
+    -webkit-overflow-scrolling: touch;
+    /* iOS 자연 스크롤 */
   }
   .price.sec02 .tb-wrap::-webkit-scrollbar {
-    display: none !important; /* Chrome, Safari, Opera */
+    display: none !important;
+    /* Chrome, Safari, Opera */
   }
 }
 .price.sec02 .tb-wrap.pink table span.include {
@@ -1935,14 +1940,19 @@
   .service.sec03 .icon-card-wrap > div {
     margin-right: 2rem;
     overflow-x: auto;
-    -ms-overflow-style: none; /* IE, Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    /* IE, Edge */
+    scrollbar-width: none;
+    /* Firefox */
     cursor: grab;
-    user-select: none; /* 선택 방지 */
-    -webkit-overflow-scrolling: touch; /* iOS 자연 스크롤 */
+    user-select: none;
+    /* 선택 방지 */
+    -webkit-overflow-scrolling: touch;
+    /* iOS 자연 스크롤 */
   }
   .service.sec03 .icon-card-wrap > div::-webkit-scrollbar {
-    display: none !important; /* Chrome, Safari, Opera */
+    display: none !important;
+    /* Chrome, Safari, Opera */
   }
 }
 .service.sec03 .icon-card-wrap > div ul {
@@ -2213,7 +2223,7 @@
   text-align: center;
   font-weight: 700;
   font-size: 3.2rem;
-  font-family: "Antique Olive", sans-serif;
+  font-family: "Antique Olive";
 }
 @media (max-width: 768px) {
   .service.sec04 .process-wrap .process ul li::before {
@@ -2383,11 +2393,6 @@
 .main-sec section {
   min-height: 70rem;
 }
-.main-sec.sec02, .main-sec.sec03, .main-sec.sec05, .main-sec.sec06, .main-sec.sec07, .main-sec.sec08 {
-  position: sticky;
-  top: 0;
-  z-index: -1;
-}
 .main-sec.sec01 {
   position: relative;
   padding-top: 8rem;
@@ -2418,20 +2423,10 @@
   text-align: center;
 }
 .main-sec.sec01 .inner .tit-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
   margin-bottom: 2.4rem;
-}
-.main-sec.sec01 .inner .tit-wrap strong {
-  text-align: center;
 }
 .main-sec.sec01 .inner button.h58 {
   margin-bottom: 4.6rem;
-  padding: 0 2.3rem;
-  gap: 1rem;
 }
 .main-sec.sec01 .inner .bun-wrap {
   display: flex;
@@ -2451,17 +2446,16 @@
 .main-sec.sec01 .inner .bun-wrap li.bun-top, .main-sec.sec01 .inner .bun-wrap li.bun-bottom {
   width: 45rem;
   height: 10.7rem;
+  z-index: 3;
+}
+.main-sec.sec01 .inner .bun-wrap li.bun-top span, .main-sec.sec01 .inner .bun-wrap li.bun-bottom span {
   line-height: 10.7rem;
   text-align: center;
-  leading-trim: both;
-  text-edge: cap;
   font-family: "Antique Olive";
-  font-size: 3.6124rem;
-  font-weight: 900;
-  letter-spacing: -0.1445rem;
-  font-style: normal;
+  font-size: 3.2rem;
+  letter-spacing: -0.05em;
   text-transform: uppercase;
-  z-index: 3;
+  white-space: nowrap;
 }
 .main-sec.sec01 .inner .bun-wrap li.bun-top {
   background-image: url(../../../assets/images/main/bun-top.svg);
@@ -2470,7 +2464,7 @@
   background-image: url(../../../assets/images/main/bun-bottom.svg);
 }
 .main-sec.sec01 .inner .bun-wrap li.bun-inside {
-  width: 143.5rem;
+  width: 144rem;
   height: calc(100% - 20.7rem);
   scrollbar-width: none;
 }
@@ -2483,10 +2477,11 @@
   width: 100%;
   height: 100%;
   margin: 0 auto;
+  gap: 4rem;
 }
 .main-sec.sec01 .inner .bun-wrap li.bun-inside .inside-01 {
   top: -0.2rem;
-  height: 8.543rem;
+  height: 8.5rem;
   z-index: 2;
 }
 .main-sec.sec01 .inner .bun-wrap li.bun-inside .inside-02 {
@@ -2534,54 +2529,31 @@
 .main-sec.sec01 .inner .bun-wrap li.bun-inside .inside-item.item-03-03 {
   background-image: url(../../../assets/images/main/bun-03_03.svg);
 }
-@media (max-width: 930px) {
-  .main-sec.sec01 .inner .tit-wrap strong {
-    font-size: 3.2rem;
-    letter-spacing: -0.128rem;
-  }
-  .main-sec.sec01 .inner .tit-wrap p {
-    font-size: 2rem;
-    letter-spacing: -0.08rem;
-  }
-}
 @media (max-width: 768px) {
   .main-sec.sec01 {
-    max-height: 77.6rem;
     padding-top: 6.2rem;
     margin-bottom: 1.3rem;
   }
   .main-sec.sec01 .inner {
     padding-top: 5.1rem;
   }
-  .main-sec.sec01 .inner .tit-wrap {
-    gap: 1rem;
-  }
-  .main-sec.sec01 .inner .tit-wrap strong {
-    font-size: 2.4rem;
-    letter-spacing: -0.096rem;
-  }
-  .main-sec.sec01 .inner .tit-wrap p {
-    font-size: 1.6rem;
-    letter-spacing: -0.064rem;
-  }
   .main-sec.sec01 .inner button.h58 {
-    margin-bottom: 7rem;
+    width: 14.6rem;
+    height: 4rem;
     font-size: 1.6rem;
-    letter-spacing: -0.032rem;
-    padding: 0 2.3rem;
+    margin-bottom: 7rem;
   }
   .main-sec.sec01 .inner .bun-wrap {
-    height: 21.33rem;
-    margin-bottom: 3.2rem;
+    height: 24.4rem;
+    margin-bottom: 5.2rem;
   }
   .main-sec.sec01 .inner .bun-wrap li.bun-top, .main-sec.sec01 .inner .bun-wrap li.bun-bottom {
-    width: 23.51rem;
-    height: 5.621rem;
-    line-height: 5.621rem;
+    width: 23.5rem;
+    height: 5.6rem;
   }
   .main-sec.sec01 .inner .bun-wrap li.bun-top span, .main-sec.sec01 .inner .bun-wrap li.bun-bottom span {
-    font-size: 2rem;
-    letter-spacing: -0.08rem;
+    line-height: 5.6rem;
+    font-size: 1.8rem;
   }
   .main-sec.sec01 .inner .bun-wrap li.bun-bottom {
     position: relative;
@@ -2606,25 +2578,21 @@
     height: 8rem;
   }
 }
+.main-sec.sec02, .main-sec.sec03, .main-sec.sec05, .main-sec.sec06, .main-sec.sec07, .main-sec.sec08 {
+  position: sticky;
+  top: 0;
+  z-index: -1;
+}
 .main-sec.sec02 {
   padding: 12rem 0;
   z-index: -1;
 }
 .main-sec.sec02 .tit-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 1.6rem;
-  margin-bottom: 10rem;
+  margin-bottom: 9rem;
 }
 .main-sec.sec02 .tit-wrap strong {
   font-size: 5.2rem;
-  letter-spacing: -0.208rem;
-}
-.main-sec.sec02 .tit-wrap p {
-  font-size: 2.4rem;
-  letter-spacing: -0.096rem;
 }
 .main-sec.sec02 .inner {
   position: relative;
@@ -2643,11 +2611,13 @@
 }
 .main-sec.sec02 .inner::before {
   top: -1px;
-  background: linear-gradient(180deg, white, rgba(255, 255, 255, 0.85));
+  background: linear-gradient(180deg, #FFF 30.06%, rgba(255, 255, 255, 0) 100%);
+  backdrop-filter: blur(2px);
 }
 .main-sec.sec02 .inner::after {
   bottom: -1px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.98));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFF 66.35%);
+  backdrop-filter: blur(2px);
 }
 .main-sec.sec02 .inner .list-wrap {
   height: 100%;
@@ -2676,7 +2646,7 @@
 .main-sec.sec02 .inner .list-wrap .list-inner .list-item p {
   font-weight: 600;
   font-size: 2.4rem;
-  letter-spacing: -0.096rem;
+  letter-spacing: -0.02em;
 }
 .main-sec.sec02 .inner .list-wrap .list-inner .list-item.active {
   width: 100%;
@@ -2684,7 +2654,6 @@
 }
 .main-sec.sec02 .inner .list-wrap .list-inner .list-item.active p {
   font-size: 3.2rem;
-  letter-spacing: -0.128rem;
   color: #fff;
 }
 .main-sec.sec02 .inner .list-wrap .list-inner .list-item.prev, .main-sec.sec02 .inner .list-wrap .list-inner .list-item.next {
@@ -2710,37 +2679,28 @@
 }
 @media (max-width: 768px) {
   .main-sec.sec02 {
-    padding: 16rem 2rem 12rem 2rem;
+    padding: 16rem 0 12rem;
     max-height: 75.3rem;
   }
   .main-sec.sec02 .tit-wrap {
     gap: 1.2rem;
-    margin-bottom: 6.75rem;
+    margin-bottom: 7.75rem;
   }
   .main-sec.sec02 .tit-wrap strong {
     font-size: 2.8rem;
-    letter-spacing: -0.112rem;
-  }
-  .main-sec.sec02 .tit-wrap p {
-    font-size: 1.6rem;
-    letter-spacing: -0.064rem;
   }
   .main-sec.sec02 .inner {
     height: 21.33rem;
-    max-width: 33.4rem;
+    max-width: 50rem;
   }
   .main-sec.sec02 .inner::before, .main-sec.sec02 .inner::after {
-    width: 102%;
     height: 7.8rem;
-  }
-  .main-sec.sec02 .inner .list-wrap {
-    overflow: hidden;
   }
   .main-sec.sec02 .inner .list-wrap .list-inner {
     gap: 0.47rem;
   }
   .main-sec.sec02 .inner .list-wrap .list-inner .list-item {
-    width: 26.3rem;
+    width: 80%;
     padding: 0.94rem;
     border-radius: 0.94rem;
   }
@@ -2752,11 +2712,10 @@
     padding: 1.41rem 0.94rem;
   }
   .main-sec.sec02 .inner .list-wrap .list-inner .list-item.active p {
-    font-size: 1.5035rem;
-    letter-spacing: -0.0601rem;
+    font-size: 1.5rem;
   }
   .main-sec.sec02 .inner .list-wrap .list-inner .list-item.prev, .main-sec.sec02 .inner .list-wrap .list-inner .list-item.next {
-    width: 28.2rem;
+    width: 90%;
   }
   .main-sec.sec02 .inner .list-wrap .list-inner .list-item.item-01 {
     background-color: #6CC8F5;
@@ -2778,13 +2737,13 @@
   }
 }
 .main-sec.sec03 {
-  background-color: rgba(255, 255, 255, 0.95);
   width: 100%;
   height: 100vh;
-  padding: 0 2.3rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
 }
 .main-sec.sec03 .img-wrap {
-  width: 100%;
+  width: calc(100% - 4.6rem);
   height: 100%;
   max-width: 81.9rem;
   margin: 0 auto;
@@ -2807,9 +2766,11 @@
 }
 .main-sec.sec04 {
   position: relative;
+  min-height: 100vh;
+  height: 100vh;
   background: #222222;
   margin: 0 auto;
-  padding-top: 34.9rem;
+  padding-top: 10%;
 }
 .main-sec.sec04 .canvas {
   position: absolute;
@@ -2824,24 +2785,16 @@
   pointer-events: none;
 }
 .main-sec.sec04 .tit-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.6rem;
   margin-bottom: 10rem;
   position: relative;
   z-index: 2;
 }
 .main-sec.sec04 .tit-wrap strong {
   font-size: 5.2rem;
-  letter-spacing: -0.208rem;
-  text-align: center;
+  font-size: clamp(4rem, 2.71vw, 5.2rem);
   color: #fff;
 }
 .main-sec.sec04 .tit-wrap p {
-  font-size: 2.4rem;
-  letter-spacing: -0.096rem;
   color: #fff;
 }
 @media (max-width: 768px) {
@@ -2849,16 +2802,10 @@
     padding-top: 17.3rem;
   }
   .main-sec.sec04 .tit-wrap {
-    gap: 1.2rem;
     margin-bottom: 3.2rem;
   }
   .main-sec.sec04 .tit-wrap strong {
-    font-size: 2.8rem;
-    letter-spacing: -0.112rem;
-  }
-  .main-sec.sec04 .tit-wrap p {
-    font-size: 1.6rem;
-    letter-spacing: -0.064rem;
+    font-size: 2.6rem;
   }
 }
 .main-sec.sec05, .main-sec.sec06, .main-sec.sec07, .main-sec.sec08 {

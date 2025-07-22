@@ -3,721 +3,806 @@
 
 /** 인터렉션 **/
 .fade-up {
-  opacity: 0;
-  transform: translateY(100px);
-  transition: opacity 1.5s ease, transform 1.5s ease;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
 }
 
 .fade-up-end {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 header {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 8rem;
-  z-index: 999;
-  transition: background-color 0.3s ease;
-  background-color: transparent; /* 초기 상태 */
-  @include flexbox(row, center, center);
-  @include tablet {
-    height: 6.2rem;
-  }
-  .inner {
-    &:not(.mo) {
-      width: calc(100% - 4rem);
-      max-width: 1440px;
-      margin: 0 auto;
-      @include flexbox(row, space-between, center);
-      .logo {
-        width: 16.6rem;
-        height: 4rem;
-        @include tablet {
-          width: 13.2rem;
-          height: 3.2rem;
-        }
-        a {
-          display: block;
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            &.black {
-              display: none;
-            }
-          }
-        }
-      }
-      .gnb {
-        ul {
-          @include flexbox(row, center, center);
-          gap: 8rem;
-          @include notebook {
-            gap: 6rem;
-          }
-          li {
-            a {
-              font-size: 2rem;
-              font-weight: 400;
-              color: $gray_100;
-              @include notebook {
-                font-size: 1.6rem;
-              }
-            }
-          }
-        }
-      }
-      button {
-        width: 2.4rem;
-        height: 2.4rem;
-        &.menu-btn {
-          background: url(../../assets/images/icon/menu.svg)
-            no-repeat center/contain;
-        }
-      }
-    }
-  }
-  &.convert {
-    .inner {
-      .logo {
-        a {
-          img {
-            &.d-pc.black {
-              display: block;
-            }
-            &.d-pc.white {
-              display: none;
-            }
-            @include tablet {
-              &.d-mb.black {
-                display: block;
-              }
-              &.d-mb.white {
-                display: none;
-              }
-              &.d-pc.black {
-                display: none;
-              }
-            }
-          }
-        }
-      }
-      .gnb {
-        ul {
-          li {
-            a {
-              color: $black;
-            }
-          }
-        }
-      }
-      button {
-        &.menu-btn {
-          background: url(../../assets/images/icon/menu_bk.svg)
-            no-repeat center/contain;
-        }
-      }
-    }
-  }
-  &.scrolled {
-    background: $bg;
-    .inner {
-      .logo {
-        a {
-          img {
-            &.d-pc.white {
-              display: block;
-            }
-            &.d-pc.black {
-              display: none;
-            }
-            @include tablet {
-              &.d-mb.white {
-                display: block;
-              }
-              &.d-pc.white {
-                display: none;
-              }
-              &.d-mb.black {
-                display: none;
-              }
-              &.d-pc.black {
-                display: none;
-              }
-            }
-          }
-        }
-      }
-      // .gnb {
-      //     ul {
-      //         li {
-      //             a {
-      //                 color: $white;
-      //             }
-      //         }
-      //     }
-      // }
-      button {
-        &.menu-btn {
-          background: url(../../assets/images/icon/menu.svg)
-            no-repeat center/contain;
-        }
-      }
-    }
-  }
-  .inner {
-    &.mo {
-      display: none;
-      position: absolute;
-      top: 0;
-      right: -110vw;
-      width: 100vw;
-      height: 100vh;
-      background: $gray_100;
-      z-index: 999;
-      transition: right 0.5s;
-      @include flexbox(column, flex-start, flex-start);
-      overflow-y: auto;
-      .btn-wrap {
-        width: 100%;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 8rem;
+    z-index: 999;
+    transition: background-color 0.3s ease;
+    background-color: transparent;
+    /* 초기 상태 */
+    @include flexbox(row, center, center);
+
+    @include tablet {
         height: 6.2rem;
-        padding: 0 2rem;
-        @include flexbox(row, flex-end, center);
-        button {
-          &.close-btn {
-            width: 2.4rem;
-            height: 2.4rem;
-            background: url(../../assets/images/icon/close.svg)
-              no-repeat center;
-          }
-        }
-      }
-      .con-wrap {
-        width: 100%;
-        height: calc(100vh - 6.2rem);
-        margin-bottom: 4.9rem;
-        @include flexbox(column, space-between, flex-start);
-          .gnb {
-            width: 100%;
-            // padding-bottom: 6.8rem;
-            ul {
-              width: 100%;
-              @include flexbox(column, flex-start, flex-start);
-              gap: .8rem;
-              li {
-                width: 100%;
-                padding: 1.2rem 4rem;
-                a {
-                  font-size: 2.4rem;
-                  font-weight: 700;
-                  color: $white;
-                  line-height: 1.5;
-                }
-              }
-            }
-          }
-          .family-site {
-            width: 100%;
-            padding: 1.2rem 4rem;
-            span {
-              font-size: 2rem;
-              font-weight: 700;
-              color: $gray_40;
-              line-height: 1.5;
-            }
-            ul {
-              width: 100%;
-              padding-top: 1.6rem;
-              @include flexbox(column, flex-start, flex-start);
-              gap: .8rem;
-              li {
-                width: 100%;
-                a {
-                  font-size: 1.6rem;
-                  font-weight: 700;
-                  color: $gray_40;
-                  line-height: 1.5;
-                }
-              }
-            }
-          }
-      }
-      &.on {
-        right: 0;
-        transition: right 0.5s;
-      }
     }
-  }
+
+    .inner {
+        &:not(.mo) {
+            width: calc(100% - 4rem);
+            max-width: 1440px;
+            margin: 0 auto;
+            @include flexbox(row, space-between, center);
+
+            .logo {
+                width: 16.6rem;
+                height: 4rem;
+
+                @include tablet {
+                    width: 13.2rem;
+                    height: 3.2rem;
+                }
+
+                a {
+                    display: block;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+
+                        &.black {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .gnb {
+                ul {
+                    @include flexbox(row, center, center);
+                    gap: 8rem;
+
+                    @include notebook {
+                        gap: 6rem;
+                    }
+
+                    li {
+                        a {
+                            font-size: 2rem;
+                            font-weight: 400;
+                            color: $gray_100;
+
+                            @include notebook {
+                                font-size: 1.6rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            button {
+                width: 2.4rem;
+                height: 2.4rem;
+
+                &.menu-btn {
+                    background: url(../../assets/images/icon/menu.svg) no-repeat center/contain;
+                }
+            }
+        }
+    }
+
+    &.convert {
+        .inner {
+            .logo {
+                a {
+                    img {
+                        &.d-pc.black {
+                            display: block;
+                        }
+
+                        &.d-pc.white {
+                            display: none;
+                        }
+
+                        @include tablet {
+                            &.d-mb.black {
+                                display: block;
+                            }
+
+                            &.d-mb.white {
+                                display: none;
+                            }
+
+                            &.d-pc.black {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .gnb {
+                ul {
+                    li {
+                        a {
+                            color: $black;
+                        }
+                    }
+                }
+            }
+
+            button {
+                &.menu-btn {
+                    background: url(../../assets/images/icon/menu_bk.svg) no-repeat center/contain;
+                }
+            }
+        }
+    }
+
+    &.scrolled {
+        background: $bg;
+
+        .inner {
+            .logo {
+                a {
+                    img {
+                        &.d-pc.white {
+                            display: block;
+                        }
+
+                        &.d-pc.black {
+                            display: none;
+                        }
+
+                        @include tablet {
+                            &.d-mb.white {
+                                display: block;
+                            }
+
+                            &.d-pc.white {
+                                display: none;
+                            }
+
+                            &.d-mb.black {
+                                display: none;
+                            }
+
+                            &.d-pc.black {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // .gnb {
+            //     ul {
+            //         li {
+            //             a {
+            //                 color: $white;
+            //             }
+            //         }
+            //     }
+            // }
+            button {
+                &.menu-btn {
+                    background: url(../../assets/images/icon/menu.svg) no-repeat center/contain;
+                }
+            }
+        }
+    }
+
+    .inner {
+        &.mo {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: -110vw;
+            width: 100vw;
+            height: 100vh;
+            background: $gray_100;
+            z-index: 999;
+            transition: right 0.5s;
+            @include flexbox(column, flex-start, flex-start);
+            overflow-y: auto;
+
+            .btn-wrap {
+                width: 100%;
+                height: 6.2rem;
+                padding: 0 2rem;
+                @include flexbox(row, flex-end, center);
+
+                button {
+                    &.close-btn {
+                        width: 2.4rem;
+                        height: 2.4rem;
+                        background: url(../../assets/images/icon/close.svg) no-repeat center;
+                    }
+                }
+            }
+
+            .con-wrap {
+                width: 100%;
+                height: calc(100vh - 6.2rem);
+                margin-bottom: 4.9rem;
+                @include flexbox(column, space-between, flex-start);
+
+                .gnb {
+                    width: 100%;
+
+                    // padding-bottom: 6.8rem;
+                    ul {
+                        width: 100%;
+                        @include flexbox(column, flex-start, flex-start);
+                        gap: .8rem;
+
+                        li {
+                            width: 100%;
+                            padding: 1.2rem 4rem;
+
+                            a {
+                                font-size: 2.4rem;
+                                font-weight: 700;
+                                color: $white;
+                                line-height: 1.5;
+                            }
+                        }
+                    }
+                }
+
+                .family-site {
+                    width: 100%;
+                    padding: 1.2rem 4rem;
+
+                    span {
+                        font-size: 2rem;
+                        font-weight: 700;
+                        color: $gray_40;
+                        line-height: 1.5;
+                    }
+
+                    ul {
+                        width: 100%;
+                        padding-top: 1.6rem;
+                        @include flexbox(column, flex-start, flex-start);
+                        gap: .8rem;
+
+                        li {
+                            width: 100%;
+
+                            a {
+                                font-size: 1.6rem;
+                                font-weight: 700;
+                                color: $gray_40;
+                                line-height: 1.5;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.on {
+                right: 0;
+                transition: right 0.5s;
+            }
+        }
+    }
 }
 
 footer {
-  width: 100%;
-
-  background: $black;
-  @include tablet {
-    background: $gray_100;
-  }
-
-  .inner {
     width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 8rem 2rem 16rem 2rem;
     background: $black;
-    gap: 1.6rem;
-    @include flexbox(row, space-between, flex-start);
     @include tablet {
-      padding: 8rem 2rem;
-      @include flexbox(column, flex-start, flex-start);
-      gap: 4rem;
-      border-radius: 4rem 4rem 0 0;
+        background: $gray_100;
     }
 
-    .info {
-      @include flexbox(column, flex-start, flex-start);
-      gap: 1.6rem;
-
-      &.d-pc {
-        display: flex;
-        @include tablet {
-          display: none;
-        }
-      }
-
-      &.d-mb {
-        display: none;
-        @include tablet {
-          display: flex;
-        }
-      }
-
-      > div {
-        > strong {
-          padding-bottom: 1.6rem;
-          font-size: 1.6rem;
-          font-weight: 700;
-          color: $white;
-          @include tablet {
-            padding-bottom: 0.8rem;
-          }
-        }
-
-        ul {
-          margin-bottom: 0.8rem;
-          @include flexbox(column, flex-start, flex-start);
-          gap: 0.8rem;
-
-          &.d-pc {
-            display: flex;
-            @include tablet {
-              display: none;
-            }
-          }
-
-          &.d-mb {
-            display: none;
-            @include tablet {
-              display: flex;
-            }
-          }
-
-          li {
-            @include flexbox(row, flex-start, flex-start);
-            gap: 2rem;
-            font-size: 1.4rem;
-            color: $gray_30;
-            a {
-              font-size: 1.4rem;
-              color: $gray_30;
-            }
-            p {
-              position: relative;
-
-              &:not(:last-child)::before {
-                content: "";
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                right: -10px;
-                width: 1px;
-                height: 12px;
-                background: $gray_30;
-                @include notebook {
-                  content: none;
-                }
-              }
-            }
-          }
-        }
-        p {
-          font-size: 1.4rem;
-          color: $gray_30;
-        }
-      }
-
-      > ul {
-        @include flexbox(row, flex-start, flex-start);
-        gap: 2rem;
-
-        &.d-pc {
-          display: flex;
-          @include tablet {
-            display: none;
-          }
-        }
-
-        &.d-mb {
-          display: none;
-          @include tablet {
-            display: flex;
-          }
-        }
-
-        li {
-          position: relative;
-          a {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: $gray_30;
-          }
-          &:first-child {
-            &::before {
-              content: "";
-              position: absolute;
-              top: 50%;
-              transform: translateY(-50%);
-              right: -10px;
-              width: 1px;
-              height: 12px;
-              background: $gray_30;
-            }
-          }
-        }
-      }
-
-      &.info-mb {
-        > div {
-          @include tablet {
-            @include flexbox(column, flex-start, flex-start);
-            gap: 0.8rem;
-            ul {
-              li {
-                @include flexbox(column, flex-start, flex-start);
-                gap: 0;
-              }
-            }
-          }
-        }
-      }
-    }
-    .wrapper {
-      @include flexbox(row, space-between, flex-start);
-      gap: 4rem;
-
-      @include tablet {
-        @include flexbox(column, flex-start, flex-start);
-      }
-
-      .family-site,
-      .customer-center {
-        @include flexbox(column, flex-start, flex-start);
+    .inner {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 8rem 2rem 16rem 2rem;
+        background: $black;
         gap: 1.6rem;
+        @include flexbox(row, space-between, flex-start);
 
-        > strong {
-          font-size: 1.6rem;
-          font-weight: 700;
-          color: $white;
+        @include tablet {
+            padding: 8rem 2rem;
+            @include flexbox(column, flex-start, flex-start);
+            gap: 4rem;
+            border-radius: 4rem 4rem 0 0;
         }
 
-        ul {
-          @include flexbox(column, flex-start, flex-start);
-          gap: 0.8rem;
+        .info {
+            @include flexbox(column, flex-start, flex-start);
+            gap: 1.6rem;
 
-          li {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: $gray_30;
-            a {
-              font-size: 1.4rem;
-              font-weight: 700;
-              color: $gray_30;
+            &.d-pc {
+                display: flex;
+
+                @include tablet {
+                    display: none;
+                }
             }
-          }
+
+            &.d-mb {
+                display: none;
+
+                @include tablet {
+                    display: flex;
+                }
+            }
+
+            >div {
+                >strong {
+                    padding-bottom: 1.6rem;
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    color: $white;
+
+                    @include tablet {
+                        padding-bottom: 0.8rem;
+                    }
+                }
+
+                ul {
+                    margin-bottom: 0.8rem;
+                    @include flexbox(column, flex-start, flex-start);
+                    gap: 0.8rem;
+
+                    &.d-pc {
+                        display: flex;
+
+                        @include tablet {
+                            display: none;
+                        }
+                    }
+
+                    &.d-mb {
+                        display: none;
+
+                        @include tablet {
+                            display: flex;
+                        }
+                    }
+
+                    li {
+                        @include flexbox(row, flex-start, flex-start);
+                        gap: 2rem;
+                        font-size: 1.4rem;
+                        color: $gray_30;
+
+                        a {
+                            font-size: 1.4rem;
+                            color: $gray_30;
+                        }
+
+                        p {
+                            position: relative;
+
+                            &:not(:last-child)::before {
+                                content: "";
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                right: -10px;
+                                width: 1px;
+                                height: 12px;
+                                background: $gray_30;
+
+                                @include notebook {
+                                    content: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                p {
+                    font-size: 1.4rem;
+                    color: $gray_30;
+                }
+            }
+
+            >ul {
+                @include flexbox(row, flex-start, flex-start);
+                gap: 2rem;
+
+                &.d-pc {
+                    display: flex;
+
+                    @include tablet {
+                        display: none;
+                    }
+                }
+
+                &.d-mb {
+                    display: none;
+
+                    @include tablet {
+                        display: flex;
+                    }
+                }
+
+                li {
+                    position: relative;
+
+                    a {
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                        color: $gray_30;
+                    }
+
+                    &:first-child {
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            right: -10px;
+                            width: 1px;
+                            height: 12px;
+                            background: $gray_30;
+                        }
+                    }
+                }
+            }
+
+            &.info-mb {
+                >div {
+                    @include tablet {
+                        @include flexbox(column, flex-start, flex-start);
+                        gap: 0.8rem;
+
+                        ul {
+                            li {
+                                @include flexbox(column, flex-start, flex-start);
+                                gap: 0;
+                            }
+                        }
+                    }
+                }
+            }
         }
-      }
+
+        .wrapper {
+            @include flexbox(row, space-between, flex-start);
+            gap: 4rem;
+
+            @include tablet {
+                @include flexbox(column, flex-start, flex-start);
+            }
+
+            .family-site,
+            .customer-center {
+                @include flexbox(column, flex-start, flex-start);
+                gap: 1.6rem;
+
+                >strong {
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    color: $white;
+                }
+
+                ul {
+                    @include flexbox(column, flex-start, flex-start);
+                    gap: 0.8rem;
+
+                    li {
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                        color: $gray_30;
+
+                        a {
+                            font-size: 1.4rem;
+                            font-weight: 700;
+                            color: $gray_30;
+                        }
+                    }
+                }
+            }
+        }
     }
-  }
 }
 
 /* 메인&서브 공통 레이아웃 */
 section {
-  width: 100%;
-  > .inner {
-    width: calc(100% - 4rem);
-    max-width: 1440px;
-    margin: 0 auto;
-  }
-  /* 문의하기&서비스 신청하기 */
-  &.w1116 {
-    > .inner {
-      max-width: 1116px;
+    width: 100%;
+    >.inner {
+        width: calc(100% - 4rem);
+        max-width: 1440px;
+        margin: 0 auto;
     }
-  }
-  .tit-wrap {
-    @include flexbox(column, center, center);
-    gap: 1.2rem;
-
-    strong {
-      font-size: 5.2rem;
-      font-weight: 700;
-      line-height: 150%;
-      text-align: center;
-      letter-spacing: -0.208rem;
-      @include tablet {
-        font-size: 2.9rem;
-      }
-    }
-    p {
-      font-size: 2.4rem;
-      line-height: 137%;
-      text-align: center;
-      letter-spacing: -0.08em;
-      @include tablet {
-        font-size: 1.6rem;
-      }
-    }
-    &.type01 {
-      @include flexbox(column, flex-start, flex-start);
-      @include tablet {
-        align-items: center;
-        justify-content: center;
-      }
-      strong {
-        color: $gray_100;
-        text-align: left;
-        @include tablet {
-          text-align: center;
+    /* 문의하기&서비스 신청하기 */
+    &.w1116 {
+        >.inner {
+            max-width: 1116px;
         }
-      }
-      p {
-        color: $gray_100;
-        text-align: left;
-        @include tablet {
-          text-align: center;
-        }
-      }
     }
-  }
+    .tit-wrap {
+        @include flexbox(column, center, center);
+        gap: 2rem;
+        @include tablet {
+            gap: 1rem;
+        }
+        strong {
+            font-size: 4.4rem;
+            font-size: clamp(3rem, 2.29vw, 4.4rem);
+            font-weight: 700;
+            line-height: 1.5;
+            text-align: center;
+            letter-spacing: -0.02em;
+            @include tablet {
+                font-size: 2.4rem;
+            }
+        }
+        p {
+            font-size: 2.4rem;
+            font-size: clamp(1.8rem, 1.25vw, 2.4rem);
+            line-height: 1.4;
+            font-weight: 500;
+            text-align: center;
+            letter-spacing: -0.02em;
+            @include tablet {
+                font-size: 1.6rem;
+            }
+        }
+        // &.type01 {
+        //     @include flexbox(column, flex-start, flex-start);
+        //     @include tablet {
+        //         align-items: center;
+        //         justify-content: center;
+        //     }
+        //     strong {
+        //         color: $gray_100;
+        //         text-align: left;
+        //         @include tablet {
+        //             text-align: center;
+        //         }
+        //     }
+        //     p {
+        //         color: $gray_100;
+        //         text-align: left;
+        //         @include tablet {
+        //             text-align: center;
+        //         }
+        //     }
+        // }
+    }
 }
 
 /* 서비스 문의하기 배너 */
 section {
-  &.banner {
-    height: 43rem;
-    background: url(../../assets/images/common/banner_bg.png)
-      no-repeat center/cover;
-    padding: 4rem 0;
-    @include flexbox(column, center, center);
-
-    .inner {
-      padding: 4rem 0;
-      @include flexbox(column, center, center);
-      gap: 4rem;
-
-      strong {
-        color: $white;
-        text-align: center;
-        font-size: 5.2rem;
-        font-weight: 700;
-        line-height: 150%;
-        letter-spacing: -0.208rem;
-      }
-    }
-
-    @include tablet {
-      background: url(../../assets/images/common/mo/banner_bg.png)
-        no-repeat center/cover;
-
-      .inner {
+    &.banner {
+        height: 43rem;
+        background: url(../../assets/images/common/banner_bg.png) no-repeat center/cover;
         padding: 4rem 0;
-        border-radius: 0.8rem;
+        @include flexbox(column, center, center);
 
-        strong {
-          font-size: 2.8rem;
-          letter-spacing: -0.112rem;
+        .inner {
+            padding: 4rem 0;
+            @include flexbox(column, center, center);
+            gap: 4rem;
+
+            strong {
+                color: $white;
+                text-align: center;
+                font-size: 5.2rem;
+                font-weight: 700;
+                line-height: 150%;
+                letter-spacing: -0.208rem;
+            }
         }
-      }
+
+        @include tablet {
+            background: url(../../assets/images/common/mo/banner_bg.png) no-repeat center/cover;
+
+            .inner {
+                padding: 4rem 0;
+                border-radius: 0.8rem;
+
+                strong {
+                    font-size: 2.8rem;
+                    letter-spacing: -0.112rem;
+                }
+            }
+        }
     }
-  }
 }
 
 /* 자주 묻는 질문 */
 section {
-  &.qna {
-    padding: 10rem 0;
-    background: $gray_100;
-    @include tablet {
-      padding: 4rem 0;
-    }
-    .inner {
-      > .title {
-        margin-bottom: 8rem;
-        text-align: center;
+    &.qna {
+        padding: 10rem 0;
+        background: $gray_100;
+
         @include tablet {
-          margin-bottom: 2rem;
+            padding: 4rem 0;
         }
-        strong {
-          font-size: 4.8rem;
-          font-weight: 700;
-          line-height: 1.5;
-          color: $white;
-          @include tablet {
-            font-size: 2.9rem;
-          }
-        }
-      }
-      .con-wrap {
-        ul {
-          width: 100%;
-          border-top: 1px solid #545961;
-          @include flexbox(column, center, center);
-          @include tablet {
-            border-top: none;
-          }
-          li {
-            width: 100%;
-            border-bottom: 1px solid #545961;
 
-            @for $i from 1 through 6 {
-              &:nth-child(#{$i}) {
-                .q-wrap::before {
-                  content: "0#{$i}";
-                  @if $i == 1 {
-                    background: $pink;
-                  } @else if $i == 2 {
-                    background: $purple_40;
-                  } @else if $i == 3 {
-                    background: $green_80;
-                  } @else if $i == 4 {
-                    background: $orange_40;
-                  } @else if $i == 5 {
-                    background: $red_40;
-                  } @else if $i == 6 {
-                    background: $blue_40;
-                  }
-                }
-              }
-            }
-
-            .q-wrap {
-              position: relative;
-              padding: 2.8rem 4.4rem 2.8rem 8rem;
-              cursor: pointer;
-              @include tablet {
-                padding: 2.8rem 2.4rem 2.8rem 4.8rem;
-              }
-
-              &::before {
-                position: absolute;
-                left: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 6rem;
-                height: 6rem;
-                line-height: 6rem;
-                border-radius: 50%;
+        .inner {
+            >.title {
+                margin-bottom: 8rem;
                 text-align: center;
-                font-family: "Antique Olive";
-                font-size: 3.2rem;
-                font-weight: 700;
-                letter-spacing: -0.128rem;
 
                 @include tablet {
-                  width: 4rem;
-                  height: 4rem;
-                  line-height: 4rem;
-                  font-size: 2.133rem;
-                  letter-spacing: -0.0853rem;
+                    margin-bottom: 2rem;
                 }
-              }
 
-              &::after {
-                content: "";
-                position: absolute;
-                right: 2rem;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 24px;
-                height: 24px;
-                background: url(../../assets/images/icon/arrow_down.png)
-                  no-repeat center/contain;
-                transition: all 0.25s;
-                @include tablet {
-                  right: 0;
+                strong {
+                    font-size: 4.8rem;
+                    font-weight: 700;
+                    line-height: 1.5;
+                    color: $white;
+
+                    @include tablet {
+                        font-size: 2.9rem;
+                    }
                 }
-              }
-              strong {
-                font-size: 3.6rem;
-                font-weight: 700;
-                line-height: 1.5;
-                letter-spacing: -0.144rem;
-                color: $white;
-                @include tablet {
-                  font-size: 2rem;
-                  word-break: keep-all;
-                }
-              }
-              &.on {
-                &::after {
-                  transform: translateY(-50%) rotate(180deg);
-                  transition: all 0.25s;
-                }
-              }
             }
-            .a-wrap {
-              padding: 2rem 2rem 2rem 8rem;
-              display: none;
-              color: $gray_30;
-              @include tablet {
-                padding: 2rem 2.8rem 2rem 6.8rem;
-              }
-              p {
-                position: relative;
-                font-size: 2.8rem;
-                line-height: 1.5;
-                letter-spacing: -0.112rem;
-                @include tablet {
-                  font-size: 1.6rem;
-                  word-break: keep-all;
-                }
 
-                &:before {
-                  content: "";
-                  position: absolute;
-                  left: -5.2rem;
-                  top: 0;
-                  width: 4rem;
-                  height: 4rem;
-                  background-image: url(../../assets/images/icon/include_arrow.svg);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  background-position: center;
+            .con-wrap {
+                ul {
+                    width: 100%;
+                    border-top: 1px solid #545961;
+                    @include flexbox(column, center, center);
 
-                  @include tablet {
-                    width: 3rem;
-                    height: 3rem;
-                    left: -3.8rem;
-                  }
+                    @include tablet {
+                        border-top: none;
+                    }
+
+                    li {
+                        width: 100%;
+                        border-bottom: 1px solid #545961;
+
+                        @for $i from 1 through 6 {
+                            &:nth-child(#{$i}) {
+                                .q-wrap::before {
+                                    content: "0#{$i}";
+
+                                    @if $i ==1 {
+                                        background: $pink;
+                                    }
+
+                                    @else if $i ==2 {
+                                        background: $purple_40;
+                                    }
+
+                                    @else if $i ==3 {
+                                        background: $green_80;
+                                    }
+
+                                    @else if $i ==4 {
+                                        background: $orange_40;
+                                    }
+
+                                    @else if $i ==5 {
+                                        background: $red_40;
+                                    }
+
+                                    @else if $i ==6 {
+                                        background: $blue_40;
+                                    }
+                                }
+                            }
+                        }
+
+                        .q-wrap {
+                            position: relative;
+                            padding: 2.8rem 4.4rem 2.8rem 8rem;
+                            cursor: pointer;
+
+                            @include tablet {
+                                padding: 2.8rem 2.4rem 2.8rem 4.8rem;
+                            }
+
+                            &::before {
+                                position: absolute;
+                                left: 0;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                width: 6rem;
+                                height: 6rem;
+                                line-height: 6rem;
+                                border-radius: 50%;
+                                text-align: center;
+                                font-family: $AntiqueOlive;
+                                font-size: 3.2rem;
+                                font-weight: 700;
+                                letter-spacing: -0.128rem;
+
+                                @include tablet {
+                                    width: 4rem;
+                                    height: 4rem;
+                                    line-height: 4rem;
+                                    font-size: 2.133rem;
+                                    letter-spacing: -0.0853rem;
+                                }
+                            }
+
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                right: 2rem;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                width: 24px;
+                                height: 24px;
+                                background: url(../../assets/images/icon/arrow_down.png) no-repeat center/contain;
+                                transition: all 0.25s;
+
+                                @include tablet {
+                                    right: 0;
+                                }
+                            }
+
+                            strong {
+                                font-size: 3.6rem;
+                                font-weight: 700;
+                                line-height: 1.5;
+                                letter-spacing: -0.144rem;
+                                color: $white;
+
+                                @include tablet {
+                                    font-size: 2rem;
+                                    word-break: keep-all;
+                                }
+                            }
+
+                            &.on {
+                                &::after {
+                                    transform: translateY(-50%) rotate(180deg);
+                                    transition: all 0.25s;
+                                }
+                            }
+                        }
+
+                        .a-wrap {
+                            padding: 2rem 2rem 2rem 8rem;
+                            display: none;
+                            color: $gray_30;
+
+                            @include tablet {
+                                padding: 2rem 2.8rem 2rem 6.8rem;
+                            }
+
+                            p {
+                                position: relative;
+                                font-size: 2.8rem;
+                                line-height: 1.5;
+                                letter-spacing: -0.112rem;
+
+                                @include tablet {
+                                    font-size: 1.6rem;
+                                    word-break: keep-all;
+                                }
+
+                                &:before {
+                                    content: "";
+                                    position: absolute;
+                                    left: -5.2rem;
+                                    top: 0;
+                                    width: 4rem;
+                                    height: 4rem;
+                                    background-image: url(../../assets/images/icon/include_arrow.svg);
+                                    background-size: contain;
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+
+                                    @include tablet {
+                                        width: 3rem;
+                                        height: 3rem;
+                                        left: -3.8rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-              }
             }
-          }
         }
-      }
     }
-  }
 }

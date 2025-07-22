@@ -66,13 +66,6 @@
 	font-weight: 700;
 	font-display: swap;
 	src: local('Antique Olive'), local('Antique-Olive'),
-		url(../../../assets/font/AntiqueOlive/Antique-Olive-Std-Black_3861.woff),
-		url(../../../assets/font/AntiqueOlive/Antique-Olive-Std-Bold-Condensed_3862.woff),
-		url(../../../assets/font/AntiqueOlive/Antique-Olive-Std-Bold_3863.woff),
-		url(../../../assets/font/AntiqueOlive/Antique-Olive-Std-Condensed_3864.woff),
-		url(../../../assets/font/AntiqueOlive/Antique-Olive-Std-Light-Condensed_3865.woff),
-		url(../../../assets/font/AntiqueOlive/Antique-Olive-Std-Light_3866.woff),
-		url(../../../assets/font/AntiqueOlive/Antique-Olive-Std-Medium-Condensed_3867.woff),
-		url(../../../assets/font/AntiqueOlive/Antique-Olive-Std-Medium_3868.woff),
-		url(../../../assets/font/AntiqueOlive/Antique-Olive-Std-Regular-Condensed_3869.woff);
+    url(../../../assets/font/AntiqueOlive/AntiqueOlive_Bold.ttf) format('truetype'),
+    url(../../../assets/font/AntiqueOlive/AntiqueOlive_Bold.otf) format('opentype');
 }
