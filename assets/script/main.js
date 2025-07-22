@@ -478,7 +478,7 @@ $(function () {
       .find("img")
       .attr(
         "src",
-        `../../assets/images/price/${mode}_${type}.png`
+        `../assets/images/price/${mode}_${type}.png`
       );
   }
 
