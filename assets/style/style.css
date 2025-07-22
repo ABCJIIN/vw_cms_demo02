@@ -4,42 +4,42 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local("Pretendard Bold"), local("Pretendard-Bold"), url(/humanframe/global/assets/font/Pretendard/Pretendard-Bold.eot), url(/humanframe/global/assets/font/Pretendard/Pretendard-Bold.eot?#iefix) format("embedded-opentype"), url(/humanframe/global/assets/font/Pretendard/Pretendard-Bold.woff) format("woff"), url(/humanframe/global/assets/font/Pretendard/Pretendard-Bold.otf) format("opentype");
+  src: local("Pretendard Bold"), local("Pretendard-Bold"), url(../../../assets/font/Pretendard/Pretendard-Bold.eot), url(../../../assets/font/Pretendard/Pretendard-Bold.eot?#iefix) format("embedded-opentype"), url(../../../assets/font/Pretendard/Pretendard-Bold.woff) format("woff"), url(../../../assets/font/Pretendard/Pretendard-Bold.otf) format("opentype");
 }
 @font-face {
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: local("Pretendard SemiBold"), local("Pretendard-SemiBold"), url(/humanframe/global/assets/font/Pretendard/Pretendard-SemiBold.eot), url(/humanframe/global/assets/font/Pretendard/Pretendard-SemiBold.eot?#iefix) format("embedded-opentype"), url(/humanframe/global/assets/font/Pretendard/Pretendard-SemiBold.woff) format("woff"), url(/humanframe/global/assets/font/Pretendard/Pretendard-SemiBold.otf) format("opentype");
+  src: local("Pretendard SemiBold"), local("Pretendard-SemiBold"), url(../../../assets/font/Pretendard/Pretendard-SemiBold.eot), url(../../../assets/font/Pretendard/Pretendard-SemiBold.eot?#iefix) format("embedded-opentype"), url(../../../assets/font/Pretendard/Pretendard-SemiBold.woff) format("woff"), url(../../../assets/font/Pretendard/Pretendard-SemiBold.otf) format("opentype");
 }
 @font-face {
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local("Pretendard Medium"), local("Pretendard-Medium"), url(/humanframe/global/assets/font/Pretendard/Pretendard-Medium.eot), url(/humanframe/global/assets/font/Pretendard/Pretendard-Medium.eot?#iefix) format("embedded-opentype"), url(/humanframe/global/assets/font/Pretendard/Pretendard-Medium.woff) format("woff"), url(/humanframe/global/assets/font/Pretendard/Pretendard-Medium.otf) format("opentype");
+  src: local("Pretendard Medium"), local("Pretendard-Medium"), url(../../../assets/font/Pretendard/Pretendard-Medium.eot), url(../../../assets/font/Pretendard/Pretendard-Medium.eot?#iefix) format("embedded-opentype"), url(../../../assets/font/Pretendard/Pretendard-Medium.woff) format("woff"), url(../../../assets/font/Pretendard/Pretendard-Medium.otf) format("opentype");
 }
 @font-face {
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Pretendard Regular"), local("Pretendard-Regular"), url(/humanframe/global/assets/font/Pretendard/Pretendard-Regular.eot), url(/humanframe/global/assets/font/Pretendard/Pretendard-Regular.eot?#iefix) format("embedded-opentype"), url(/humanframe/global/assets/font/Pretendard/Pretendard-Regular.woff) format("woff"), url(/humanframe/global/assets/font/Pretendard/Pretendard-Regular.otf) format("opentype");
+  src: local("Pretendard Regular"), local("Pretendard-Regular"), url(../../../assets/font/Pretendard/Pretendard-Regular.eot), url(../../../assets/font/Pretendard/Pretendard-Regular.eot?#iefix) format("embedded-opentype"), url(../../../assets/font/Pretendard/Pretendard-Regular.woff) format("woff"), url(../../../assets/font/Pretendard/Pretendard-Regular.otf) format("opentype");
 }
 @font-face {
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: local("Pretendard Light"), local("Pretendard-Light"), url(/humanframe/global/assets/font/Pretendard/Pretendard-Light.eot), url(/humanframe/global/assets/font/Pretendard/Pretendard-Light.eot?#iefix) format("embedded-opentype"), url(/humanframe/global/assets/font/Pretendard/Pretendard-Light.woff) format("woff"), url(/humanframe/global/assets/font/Pretendard/Pretendard-Light.otf) format("opentype");
+  src: local("Pretendard Light"), local("Pretendard-Light"), url(../../../assets/font/Pretendard/Pretendard-Light.eot), url(../../../assets/font/Pretendard/Pretendard-Light.eot?#iefix) format("embedded-opentype"), url(../../../assets/font/Pretendard/Pretendard-Light.woff) format("woff"), url(../../../assets/font/Pretendard/Pretendard-Light.otf) format("opentype");
 }
 @font-face {
   font-family: "Antique Olive";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local("Antique Olive"), local("Antique-Olive"), url(/humanframe/global/assets/font/AntiqueOlive/Antique-Olive-Std-Black_3861.woff), url(/humanframe/global/assets/font/AntiqueOlive/Antique-Olive-Std-Bold-Condensed_3862.woff), url(/humanframe/global/assets/font/AntiqueOlive/Antique-Olive-Std-Bold_3863.woff), url(/humanframe/global/assets/font/AntiqueOlive/Antique-Olive-Std-Condensed_3864.woff), url(/humanframe/global/assets/font/AntiqueOlive/Antique-Olive-Std-Light-Condensed_3865.woff), url(/humanframe/global/assets/font/AntiqueOlive/Antique-Olive-Std-Light_3866.woff), url(/humanframe/global/assets/font/AntiqueOlive/Antique-Olive-Std-Medium-Condensed_3867.woff), url(/humanframe/global/assets/font/AntiqueOlive/Antique-Olive-Std-Medium_3868.woff), url(/humanframe/global/assets/font/AntiqueOlive/Antique-Olive-Std-Regular-Condensed_3869.woff);
+  src: local("Antique Olive"), local("Antique-Olive"), url(../../../assets/font/AntiqueOlive/Antique-Olive-Std-Black_3861.woff), url(../../../assets/font/AntiqueOlive/Antique-Olive-Std-Bold-Condensed_3862.woff), url(../../../assets/font/AntiqueOlive/Antique-Olive-Std-Bold_3863.woff), url(../../../assets/font/AntiqueOlive/Antique-Olive-Std-Condensed_3864.woff), url(../../../assets/font/AntiqueOlive/Antique-Olive-Std-Light-Condensed_3865.woff), url(../../../assets/font/AntiqueOlive/Antique-Olive-Std-Light_3866.woff), url(../../../assets/font/AntiqueOlive/Antique-Olive-Std-Medium-Condensed_3867.woff), url(../../../assets/font/AntiqueOlive/Antique-Olive-Std-Medium_3868.woff), url(../../../assets/font/AntiqueOlive/Antique-Olive-Std-Regular-Condensed_3869.woff);
 }
 /* font */
 /* 변수선언 */
@@ -240,7 +240,7 @@ body {
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
-  background: url(/humanframe/theme/vintwire/assets/images/icon/arrow_top.png) no-repeat center/24px #fff;
+  background: url(../../assets/images/icon/arrow_top.png) no-repeat center/24px #fff;
   cursor: pointer;
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.25);
   z-index: 888;
@@ -359,7 +359,7 @@ input[type=checkbox]::before {
   background: #FFFFFF;
 }
 input[type=checkbox]:checked::before {
-  background: url(/humanframe/theme/vintwire/assets/images/icon/check.png) no-repeat center #FFFFFF;
+  background: url(../../assets/images/icon/check.png) no-repeat center #FFFFFF;
 }
 input[type=checkbox]:focus-visible {
   outline: 2px solid black;
@@ -470,7 +470,7 @@ textarea::placeholder {
   right: 2.3rem;
   top: 50%;
   transform: translateY(-50%);
-  background: url(/humanframe/theme/vintwire/assets/images/icon/arrow_down_bk.png) no-repeat center/contain;
+  background: url(../../assets/images/icon/arrow_down_bk.png) no-repeat center/contain;
   transition: all 0.25s;
 }
 @media (max-width: 768px) {
