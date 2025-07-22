@@ -388,12 +388,9 @@ $(function () {
   // 1단계: 버튼 클릭 → 페이지 이동
   $(".btn_wrap.apply button").on("click", function () {
     const grade = $(this).data("grade");
-    const url = `/html/apply.html?grade=${grade}`;
+    const url = `./html/apply.html?grade=${grade}`;
     window.location.href = url;
   });
-// $(".btn_wrap.apply button").on("click", function () {
-//   window.location.href = "../html/apply.html";
-// });
 
   // 2단계: 이동한 페이지에서 grade 파라미터 반영
   const urlParams = new URLSearchParams(window.location.search);
