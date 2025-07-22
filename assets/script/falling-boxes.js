@@ -688,16 +688,16 @@ document.addEventListener("DOMContentLoaded", () => {
     : "assets/images/main/";
 
   const images = [
-    { file: "falling-item_01.svg", x: 0.10, y: 0.5, rotation: -102, delay: 1 },
-    { file: "falling-item_02.svg", x: 0.17, y: 0.68, rotation: -10, delay: 0.7 },
-    { file: "falling-item_03.svg", x: 0.16, y: 0.82, rotation: -12, delay: 0.5 },
-    { file: "falling-item_04.svg", x: 0.36, y: 0.83, rotation: -25, delay: 0.3 },
+    { file: "falling-item_01.svg", x: 0.10, y: 0.5, rotation: -102, delay: 1.2 },
+    { file: "falling-item_02.svg", x: 0.17, y: 0.68, rotation: -10, delay: 0.9 },
+    { file: "falling-item_03.svg", x: 0.16, y: 0.82, rotation: -12, delay: 0.7 },
+    { file: "falling-item_04.svg", x: 0.36, y: 0.83, rotation: -25, delay: 0.5 },
     { file: "falling-item_05.svg", x: 0.45, y: 0.95, rotation: 0, delay: 0 },
-    { file: "falling-item_06.svg", x: 0.67, y: 0.88, rotation: -25, delay: 0.4 },
-    { file: "falling-item_07.svg", x: 0.75, y: 0.92, rotation: 0, delay: 0.3 },
-    { file: "falling-item_08.svg", x: 0.80, y: 0.85, rotation: 20, delay: 0.5 },
-    { file: "falling-item_09.svg", x: 0.83, y: 0.77, rotation: -5, delay: 0.6 },
-    { file: "falling-item_10.svg", x: 0.85, y: 0.60, rotation: -120, delay: 1.4 },
+    { file: "falling-item_06.svg", x: 0.67, y: 0.88, rotation: -25, delay: 0.6 },
+    { file: "falling-item_07.svg", x: 0.75, y: 0.92, rotation: 0, delay: 0.5 },
+    { file: "falling-item_08.svg", x: 0.80, y: 0.85, rotation: 20, delay: 0.7 },
+    { file: "falling-item_09.svg", x: 0.83, y: 0.77, rotation: -5, delay: 0.8 },
+    { file: "falling-item_10.svg", x: 0.85, y: 0.60, rotation: -120, delay: 1.6 },
   ];
 
   const boxes = [];
@@ -735,7 +735,7 @@ document.addEventListener("DOMContentLoaded", () => {
       y: box.targetY,
       rotation: box.targetRotation,
       delay: box.delay,
-      duration: 1.8,
+      duration: 3,
       ease: "bounce.out"
     });
   }
