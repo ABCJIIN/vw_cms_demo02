@@ -197,6 +197,7 @@ $(function () {
   }
 
   changeBun();
+  
 
   // 버티컬 슬라이드
   function verticalSlide() {
