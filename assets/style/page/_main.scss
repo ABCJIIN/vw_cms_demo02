@@ -407,6 +407,7 @@
         height: calc(var(--vh, 1vh) * 100);
         background: $gray_100;
         margin: 0 auto;
+        // padding-top: calc(8rem + 10%);
         padding-top: 10%;
         // padding-top: 34.9rem;
         // padding-top: clamp(17.3rem, 18.18vw, 34.9rem);
@@ -441,7 +442,8 @@
             }
         }
         @include tablet {
-            padding-top: 17.3rem;
+            // padding-top: 17.3rem;
+            padding-top: calc(6.2rem + 10%);
             .tit-wrap {
                 margin-bottom: 3.2rem;
                 strong {
