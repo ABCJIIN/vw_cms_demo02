@@ -2705,7 +2705,7 @@
     border-radius: 0.94rem;
   }
   .main-sec.sec02 .inner .list-wrap .list-inner .list-item p {
-    font-size: 1.1276rem;
+    font-size: 1.1rem;
     letter-spacing: -0.0451rem;
   }
   .main-sec.sec02 .inner .list-wrap .list-inner .list-item.active {
@@ -2716,6 +2716,10 @@
   }
   .main-sec.sec02 .inner .list-wrap .list-inner .list-item.prev, .main-sec.sec02 .inner .list-wrap .list-inner .list-item.next {
     width: 90%;
+    padding: 0.94rem;
+  }
+  .main-sec.sec02 .inner .list-wrap .list-inner .list-item.prev p, .main-sec.sec02 .inner .list-wrap .list-inner .list-item.next p {
+    font-size: 1.1rem;
   }
   .main-sec.sec02 .inner .list-wrap .list-inner .list-item.item-01 {
     background-color: #6CC8F5;

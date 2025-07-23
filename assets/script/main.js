@@ -200,99 +200,97 @@ $(function () {
   
 
   // 버티컬 슬라이드
-  function verticalSlide() {
-    const $slideWrap = $(".sec02 .list-wrap .list-inner");
-    const $originSlideItems = $(".sec02 .list-wrap .list-inner .list-item");
+function verticalSlide() {
+  const $slideWrap = $(".sec02 .list-wrap .list-inner");
+  const $originSlideItems = $(".sec02 .list-wrap .list-inner .list-item");
 
-    function setTransition(set) {
-      $slideWrap.css("transition", set);
-      $slideWrap.find(".list-item").each(function () {
-        $(this).css("transition", set);
-        $(this).find("p").css("transition", set);
-      });
-    }
+  function setTransition(set) {
+    $slideWrap.css("transition", set);
+    $slideWrap.find(".list-item").each(function () {
+      $(this).css("transition", set);
+      $(this).find("p").css("transition", set);
+    });
+  }
 
-    function init() {
-      // 처음 세개는 뒤에, 마지막 두개는 앞에 추가
-      const firstItems = $originSlideItems.slice(0, 3);
-      const lastTwoItems = $originSlideItems.slice(-2);
-      lastTwoItems.clone().prependTo($slideWrap);
-      firstItems.clone().appendTo($slideWrap);
+  function activeSlide(index) {
+    const $slideItems = $slideWrap.find(".list-item");
+    $slideItems.removeClass("active prev next");
+    $slideItems.eq(index).addClass("active");
+    $slideItems.eq(index).prev().addClass("prev");
+    $slideItems.eq(index).next().addClass("next");
+  }
 
+  function getSlideGap() {
+    const $activeItem = $slideWrap.find(".list-item").eq(currentIndex);
+    const height = $activeItem.outerHeight(true); // padding 포함
+    return height || 86;
+  }
+
+  function init() {
+    // 처음 세 개는 뒤에, 마지막 두 개는 앞에 추가
+    const firstItems = $originSlideItems.slice(0, 3);
+    const lastTwoItems = $originSlideItems.slice(-2);
+    lastTwoItems.clone().prependTo($slideWrap);
+    firstItems.clone().appendTo($slideWrap);
+
+    setTransition("none"); // 처음엔 트랜지션 없이
+
+    currentIndex = 2;
+    activeSlide(currentIndex);
+
+    // 초기 위치 이동
+    const initialGap = getSlideGap();
+    $slideWrap.css("transform", `translateY(-${(currentIndex - 2) * initialGap}px)`);
+
+    // 트랜지션 다시 활성화
+    setTimeout(() => {
       setTransition("all 0.5s ease");
-    }
+    }, 20);
+  }
 
-    function activeSlide(index) {
+  let currentIndex = 2;
+  let lastTime = 0;
+  const interval = 1500;
+
+  function animate(currentTime) {
+    if (!lastTime) lastTime = currentTime;
+    const elapsed = currentTime - lastTime;
+
+    if (elapsed > interval) {
+      setTransition("all 0.5s ease");
+      lastTime = currentTime;
+
+      currentIndex++;
+      activeSlide(currentIndex);
+
+      const gap = getSlideGap();
+      $slideWrap.css("transform", `translateY(-${(currentIndex - 2) * gap}px)`);
+
       const $slideItems = $slideWrap.find(".list-item");
-      $slideItems.removeClass("active prev next");
-      $slideItems.eq(index).addClass("active");
-      $slideItems.eq(index).prev().addClass("prev");
-      $slideItems.eq(index).next().addClass("next");
-    }
 
-    init();
-    activeSlide(2);
-
-    // 현재 슬라이드 인덱스 (2번째 슬라이드부터 시작)
-    let currentIndex = 2;
-    // 마지막 애니메이션 실행 시간
-    let lastTime = 0;
-    // 슬라이드 전환 간격 (2초)
-    const interval = 1500;
-
-    // 슬라이드 애니메이션 함수
-    function animate(currentTime) {
-      // 첫 실행시 lastTime 초기화
-      if (!lastTime) lastTime = currentTime;
-
-      // 마지막 애니메이션으로부터 경과 시간 계산
-      const elapsed = currentTime - lastTime;
-
-      // 설정된 간격보다 경과 시간이 크면 다음 슬라이드로 전환
-      if (elapsed > interval) {
-        // 부드러운 전환을 위한 트랜지션 설정
-        setTransition("all 0.5s ease");
-        lastTime = currentTime;
-
-        // 다음 슬라이드로 이동
-        currentIndex++;
-
-        // 이전/다음 슬라이드 표시 초기화
-        activeSlide(currentIndex);
-
-        // 슬라이드 위치 이동 (desktop : 86px 간격, tablet : 50px 간격)
-        const slideGap = window.innerWidth <= 768 ? 40.4 : 86;
-        $slideWrap.css(
-          "transform",
-          `translateY(-${(currentIndex - 2) * slideGap}px)`
-        );
-        const $slideItems = $slideWrap.find(".list-item");
-
-        // 마지막 이후 첫 슬라이드 도달시 처음으로 순간 이동
-        if (currentIndex >= $slideItems.length - 2) {
+      if (currentIndex >= $slideItems.length - 2) {
+        requestAnimationFrame(() => {
+          currentIndex = 2;
+          setTransition("none");
+          $slideWrap.css("transform", "translateY(0)");
+          activeSlide(currentIndex);
           requestAnimationFrame(() => {
-            currentIndex = 2; // 초기 위치로
-            setTransition("none"); // 부드러운 전환 효과 제거
-            $slideWrap.css("transform", "translateY(0)"); // 처음 위치로 이동
-
-            // 슬라이드 상태 초기화
-            activeSlide(currentIndex);
-
-            // 다음 프레임에서 트랜지션 다시 활성화
-            requestAnimationFrame(() => {
-              setTransition("all 0.5s ease");
-            });
+            setTransition("all 0.5s ease");
           });
-        }
+        });
       }
-
-      requestAnimationFrame(animate);
     }
 
     requestAnimationFrame(animate);
   }
 
-  verticalSlide();
+  init();
+  requestAnimationFrame(animate);
+}
+
+verticalSlide();
+
+
 
   function checkIsMobile() {
     const isMobile = window.innerWidth <= 768;
