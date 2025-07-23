@@ -2636,6 +2636,7 @@
 }
 .main-sec.sec02 .inner .list-wrap .list-inner .list-item {
   width: 60rem;
+  height: 7.6rem;
   border-radius: 1.6rem;
   padding: 2rem;
   display: flex;
@@ -2650,6 +2651,7 @@
 }
 .main-sec.sec02 .inner .list-wrap .list-inner .list-item.active {
   width: 100%;
+  height: 10.8rem;
   padding: 3rem 2rem;
 }
 .main-sec.sec02 .inner .list-wrap .list-inner .list-item.active p {
@@ -2701,14 +2703,15 @@
   }
   .main-sec.sec02 .inner .list-wrap .list-inner .list-item {
     width: 80%;
+    height: 3.58rem;
     padding: 0.94rem;
     border-radius: 0.94rem;
   }
   .main-sec.sec02 .inner .list-wrap .list-inner .list-item p {
     font-size: 1.1rem;
-    letter-spacing: -0.0451rem;
   }
   .main-sec.sec02 .inner .list-wrap .list-inner .list-item.active {
+    height: 5.2rem;
     padding: 1.41rem 0.94rem;
   }
   .main-sec.sec02 .inner .list-wrap .list-inner .list-item.active p {
@@ -2716,7 +2719,6 @@
   }
   .main-sec.sec02 .inner .list-wrap .list-inner .list-item.prev, .main-sec.sec02 .inner .list-wrap .list-inner .list-item.next {
     width: 90%;
-    padding: 0.94rem;
   }
   .main-sec.sec02 .inner .list-wrap .list-inner .list-item.prev p, .main-sec.sec02 .inner .list-wrap .list-inner .list-item.next p {
     font-size: 1.1rem;
