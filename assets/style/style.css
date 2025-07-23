@@ -50,10 +50,28 @@
   display: block;
 }
 
+.d-no {
+  display: none;
+}
+
+.d-tj {
+  display: none;
+}
+
 .d-mb {
   display: none;
 }
 
+@media (max-width: 1280px) {
+  .d-no {
+    display: block;
+  }
+}
+@media (max-width: 930px) {
+  .d-tj {
+    display: block;
+  }
+}
 @media (max-width: 768px) {
   .d-pc {
     display: none;
@@ -567,10 +585,28 @@ textarea::placeholder {
   display: block;
 }
 
+.d-no {
+  display: none;
+}
+
+.d-tj {
+  display: none;
+}
+
 .d-mb {
   display: none;
 }
 
+@media (max-width: 1280px) {
+  .d-no {
+    display: block;
+  }
+}
+@media (max-width: 930px) {
+  .d-tj {
+    display: block;
+  }
+}
 @media (max-width: 768px) {
   .d-pc {
     display: none;

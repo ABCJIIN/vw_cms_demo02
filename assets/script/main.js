@@ -306,34 +306,53 @@ $(function () {
     }
     verticalSlide();
 
-    function checkIsMobile() {
-        const isMobile = window.innerWidth <= 768;
-        return isMobile;
-    }
+    // function checkIsMobile() {
+    //     const isMobile = window.innerWidth <= 768;
+    //     return isMobile;
+    // }
 
-    let swiper = null;
+    // let swiper = null;
 
-    function dynamicSlide() {
-        // 모바일 환경에서만 실행, desktop > mobile > desktop 시에, swiper 초기화 필요
-        if (checkIsMobile()) {
-        if (!swiper) {
-            swiper = new Swiper(".sec09 .dynamic-swiper", {
-            slidesPerView: 3,
-            centeredSlides: true,
-            });
-        }
-        } else {
-        if (swiper) {
-            swiper.destroy();
-            swiper = null;
-        }
-        }
-    }
-    dynamicSlide();
+    // // 메인 슬라이드
+    // var Swiper = new Swiper('.dynamic-swiper', {
+    //     slidesPerView: 3,
+    //     navigation: {
+    //         nextEl: '.dynamic-next',
+    //         prevEl: '.dynamic-prev'
+    //     },
+    //     autoplay: {
+    //         delay: 3000, // 3초마다 자동 재생
+    //         disableOnInteraction: false // 사용자 상호 작용 후에도 자동 재생 유지
+    //     },
+    //     effect: 'fade', // 페이드 인/아웃 효과
+    //     direction: 'horizontal', // 슬라이드 방향 (수평)
+    //     touchRatio: 1, // 슬라이드 드래그 감도
+    //     mousewheel: true, // 마우스 휠로 슬라이드 이동 가능
+    //     centeredSlides: true, // 슬라이드 중앙 정렬
+    //     watchOverflow: true // 슬라이드가 화면을 넘어갈 때의 처리 설정
+    // });
 
-    $(window).on("resize", function () {
-        dynamicSlide();
-    });
+    // function dynamicSlide() {
+    //     // 모바일 환경에서만 실행, desktop > mobile > desktop 시에, swiper 초기화 필요
+    //     if (checkIsMobile()) {
+    //     if (!swiper) {
+    //         swiper = new Swiper(".sec09 .dynamic-swiper", {
+    //         slidesPerView: 3,
+    //         centeredSlides: true,
+    //         });
+    //     }
+    //     } else {
+    //     if (swiper) {
+    //         swiper.destroy();
+    //         swiper = null;
+    //     }
+    //     }
+    // }
+    // dynamicSlide();
+
+    // $(window).on("resize", function () {
+    //     dynamicSlide();
+    // });
 
   // 서비스 소개
     function checkItemsOnScroll() {
