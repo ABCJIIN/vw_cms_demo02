@@ -204,6 +204,8 @@ function verticalSlide() {
   const $slideWrap = $(".sec02 .list-wrap .list-inner");
   const $originSlideItems = $(".sec02 .list-wrap .list-inner .list-item");
 
+  const fixedSlideHeight = 8.2 * 10; // active item 기준 rem → px (8.2rem * 10 assuming root font-size = 10px)
+
   function setTransition(set) {
     $slideWrap.css("transition", set);
     $slideWrap.find(".list-item").each(function () {
@@ -220,51 +222,41 @@ function verticalSlide() {
     $slideItems.eq(index).next().addClass("next");
   }
 
-  function getSlideGap() {
-    const $activeItem = $slideWrap.find(".list-item").eq(currentIndex);
-    const height = $activeItem.outerHeight(true); // padding 포함
-    return height || 86;
-  }
-
   function init() {
-    // 처음 세 개는 뒤에, 마지막 두 개는 앞에 추가
     const firstItems = $originSlideItems.slice(0, 3);
     const lastTwoItems = $originSlideItems.slice(-2);
     lastTwoItems.clone().prependTo($slideWrap);
     firstItems.clone().appendTo($slideWrap);
 
-    setTransition("none"); // 처음엔 트랜지션 없이
+    setTransition("none");
 
     currentIndex = 2;
     activeSlide(currentIndex);
 
-    // 초기 위치 이동
-    const initialGap = getSlideGap();
-    $slideWrap.css("transform", `translateY(-${(currentIndex - 2) * initialGap}px)`);
+    $slideWrap.css("transform", `translateY(-${(currentIndex - 2) * fixedSlideHeight}px)`);
 
-    // 트랜지션 다시 활성화
-    setTimeout(() => {
+    // ✅ 초기 화면 숨김 후 표시 (layout shift 방지)
+    $(".sec02 .list-wrap").css("visibility", "visible");
+
+    requestAnimationFrame(() => {
       setTransition("all 0.5s ease");
-    }, 20);
+    });
   }
 
   let currentIndex = 2;
   let lastTime = 0;
-  const interval = 1500;
+  const interval = 2000;
 
   function animate(currentTime) {
     if (!lastTime) lastTime = currentTime;
     const elapsed = currentTime - lastTime;
 
     if (elapsed > interval) {
-      setTransition("all 0.5s ease");
       lastTime = currentTime;
-
       currentIndex++;
-      activeSlide(currentIndex);
 
-      const gap = getSlideGap();
-      $slideWrap.css("transform", `translateY(-${(currentIndex - 2) * gap}px)`);
+      activeSlide(currentIndex);
+      $slideWrap.css("transform", `translateY(-${(currentIndex - 2) * fixedSlideHeight}px)`);
 
       const $slideItems = $slideWrap.find(".list-item");
 
@@ -284,11 +276,13 @@ function verticalSlide() {
     requestAnimationFrame(animate);
   }
 
+  $(".sec02 .list-wrap").css("visibility", "hidden"); // 초기 숨김
   init();
   requestAnimationFrame(animate);
 }
 
 verticalSlide();
+
 
 
 
