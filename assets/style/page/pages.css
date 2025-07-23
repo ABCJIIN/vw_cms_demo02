@@ -2805,7 +2805,7 @@
 }
 @media (max-width: 768px) {
   .main-sec.sec04 {
-    padding-top: calc(6.2rem + 10%);
+    padding-top: 40%;
   }
   .main-sec.sec04 .tit-wrap {
     margin-bottom: 3.2rem;
