@@ -77,8 +77,28 @@ $white: #fff;
     display: block;
 }
 
+.d-no {
+    display: none;
+}
+
+.d-tj {
+    display: none;
+}
+
 .d-mb {
     display: none;
+}
+
+@include notebook() {
+    .d-no {
+        display: block;
+    }
+}
+
+@include tablet_junction() {
+    .d-tj {
+        display: block;
+    }
 }
 
 @include tablet {
