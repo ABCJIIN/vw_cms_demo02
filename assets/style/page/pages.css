@@ -3043,7 +3043,7 @@
   font-size: clamp(4rem, 2.708vw, 5.2rem);
 }
 @media (max-width: 768px) {
-  .main-sec.sec09 .tit-wrap {
+  .main-sec.sec09 .tit-wrap strong {
     font-size: 2.8rem;
   }
 }
