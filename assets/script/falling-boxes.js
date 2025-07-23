@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+
     const canvas = document.getElementById("fallingBoxesCanvas");
     const ctx = canvas.getContext("2d");
 
@@ -134,5 +135,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("resize", debounce(updateBoxPositions, 200));
 
-    init();
+    gsap.registerPlugin(ScrollTrigger);
+    
+    ScrollTrigger.create({
+        trigger: ".main-sec.sec04",
+        start: "top 70%", // 요소가 뷰포트 30% 지점쯤 도달할 때
+        once: true,
+        onEnter: () => {
+            init();
+        }
+    });
+
 });
