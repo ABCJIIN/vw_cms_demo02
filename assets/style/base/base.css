@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -97,6 +98,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 html {
   font-size: 10px;
+  -webkit-text-size-adjust: 100%; /* 텍스트 확대 방지 */
 }
 
 body {
@@ -107,6 +109,7 @@ body {
   color: #222222;
   width: 100%;
   letter-spacing: -0.04em;
+  -webkit-text-size-adjust: 100%; /* 텍스트 확대 방지 */
 }
 
 #skipnav {

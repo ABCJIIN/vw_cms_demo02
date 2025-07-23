@@ -321,13 +321,15 @@
                         .list-item {
                             // width: 26.3rem;
                             width: 80%;
+                            // height: 3.5rem;
                             padding: 0.94rem;
                             border-radius: 0.94rem;
                             p {
-                                font-size: 1.1276rem;
+                                font-size: 1.1rem;
                                 letter-spacing: -0.0451rem;
                             }
                             &.active {
+                                // height: 5.2rem;
                                 padding: 1.41rem 0.94rem;
                                 p {
                                     font-size: 1.5rem;
@@ -337,6 +339,11 @@
                             &.next {
                                 // width: 28.2rem;
                                 width: 90%;
+                                padding: 0.94rem;
+                                // height: 3.5rem;
+                                p {
+                                    font-size: 1.1rem;
+                                }
                             }
                             &.item-01 {
                                 background-color: $blue_40;
