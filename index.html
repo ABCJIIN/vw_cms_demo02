@@ -276,7 +276,7 @@
             <section class="main-sec sec09">
                 <div class="tit-wrap fade-up">
                     <strong>
-                    개발을 몰라도, 내 홈페이지는 <br class="d-mb">직접 관리할 수 있도록!
+                    개발을 몰라도, 내 홈페이지는 <br class="d-tj">직접 관리할 수 있도록!
                     </strong>
                 </div>
                 <div class="dynamic-swiper fade-up">
@@ -571,11 +571,17 @@
                 prevEl: '.swiper-button-prev',
             },
             breakpoints: {
+                700: {
+                    slidesPerView: 2,
+                    centeredSlides: false,
+                    loop: false,
+                    autoplay: false
+                },
                 1070: {
-                slidesPerView: 3,
-                centeredSlides: false,
-                loop: false,
-                autoplay: false
+                    slidesPerView: 3,
+                    centeredSlides: false,
+                    loop: false,
+                    autoplay: false
                 }
             }
         });
