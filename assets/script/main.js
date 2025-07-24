@@ -378,10 +378,10 @@ $(function () {
     // 문의하기 페이지 select
     $(".contact .option-list li").on("click", function (e) {
         e.preventDefault();
-        if ($(this).hasClass("portfolio") == true) {
-            $(".input-cont.portfolio-select").addClass("on");
+        if ($(this).hasClass("template") == true) {
+            $(".input-cont.template-select").addClass("on");
         } else {
-            $(".input-cont.portfolio-select").removeClass("on");
+            $(".input-cont.template-select").removeClass("on");
         }
     });
 

@@ -150,8 +150,11 @@
                         gap: 0.4rem;
                     }
 
-                    &.portfolio-select {
-                        display: flex;
+                    &.template-select {
+                        display: none;
+                        &.on {
+                            display: flex;
+                        }
                     }
 
                     &.type01 {
