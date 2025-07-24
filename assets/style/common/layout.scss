@@ -696,7 +696,7 @@ section {
                             cursor: pointer;
 
                             @include tablet {
-                                padding: 2.8rem 2.4rem 2.8rem 4.8rem;
+                                padding: 2.8rem 3.4rem 2.8rem 4.8rem;
                             }
 
                             &::before {
@@ -745,7 +745,9 @@ section {
                                 line-height: 1.5;
                                 letter-spacing: -0.144rem;
                                 color: $white;
-
+                                @include tablet_junction {
+                                    font-size: 3rem;
+                                }
                                 @include tablet {
                                     font-size: 2rem;
                                     word-break: keep-all;
@@ -777,7 +779,7 @@ section {
 
                                 @include tablet {
                                     font-size: 1.6rem;
-                                    word-break: keep-all;
+                                    // word-break: keep-all;
                                 }
 
                                 &:before {
