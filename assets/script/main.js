@@ -1,15 +1,5 @@
 $(function () {
 
-    // 전체 공통
-    // vh 단위 보정 (모바일 Safari 대응)
-    // function setVhUnit() {
-    //     const vh = window.innerHeight * 0.01;
-    //     document.documentElement.style.setProperty('--vh', `${vh}px`);
-    // }
-    // window.addEventListener('resize', setVhUnit);
-    // setVhUnit();
-
-
     // Top 이동 버튼
     $(".top-btn").hide();
     $(window).scroll(function () {
@@ -155,7 +145,7 @@ $(function () {
         $(".sub-sec.visual > .inner").addClass("fade-up-end");
     });
 
-  // 번 변경
+    // 번 변경
     function changeBun() {
         const $bunInside = $(".main-sec.sec01 > .inner .bun-inside");
         const $bunInsideRow01 = $bunInside.find(".inside-01 .inside-item");
@@ -212,7 +202,7 @@ $(function () {
     }
     changeBun();
 
-  // 버티컬 슬라이드
+    // 버티컬 슬라이드
     function verticalSlide() {
         const $slideWrap = $(".sec02 .list-wrap .list-inner");
         const $originSlideItems = $(".sec02 .list-wrap .list-inner .list-item");
@@ -306,55 +296,7 @@ $(function () {
     }
     verticalSlide();
 
-    // function checkIsMobile() {
-    //     const isMobile = window.innerWidth <= 768;
-    //     return isMobile;
-    // }
-
-    // let swiper = null;
-
-    // // 메인 슬라이드
-    // var Swiper = new Swiper('.dynamic-swiper', {
-    //     slidesPerView: 3,
-    //     navigation: {
-    //         nextEl: '.dynamic-next',
-    //         prevEl: '.dynamic-prev'
-    //     },
-    //     autoplay: {
-    //         delay: 3000, // 3초마다 자동 재생
-    //         disableOnInteraction: false // 사용자 상호 작용 후에도 자동 재생 유지
-    //     },
-    //     effect: 'fade', // 페이드 인/아웃 효과
-    //     direction: 'horizontal', // 슬라이드 방향 (수평)
-    //     touchRatio: 1, // 슬라이드 드래그 감도
-    //     mousewheel: true, // 마우스 휠로 슬라이드 이동 가능
-    //     centeredSlides: true, // 슬라이드 중앙 정렬
-    //     watchOverflow: true // 슬라이드가 화면을 넘어갈 때의 처리 설정
-    // });
-
-    // function dynamicSlide() {
-    //     // 모바일 환경에서만 실행, desktop > mobile > desktop 시에, swiper 초기화 필요
-    //     if (checkIsMobile()) {
-    //     if (!swiper) {
-    //         swiper = new Swiper(".sec09 .dynamic-swiper", {
-    //         slidesPerView: 3,
-    //         centeredSlides: true,
-    //         });
-    //     }
-    //     } else {
-    //     if (swiper) {
-    //         swiper.destroy();
-    //         swiper = null;
-    //     }
-    //     }
-    // }
-    // dynamicSlide();
-
-    // $(window).on("resize", function () {
-    //     dynamicSlide();
-    // });
-
-  // 서비스 소개
+    // 서비스 소개
     function checkItemsOnScroll() {
         let windowHeight = $(window).height();
         let scrollTop = $(window).scrollTop();
@@ -376,7 +318,7 @@ $(function () {
     checkItemsOnScroll();
 
 
-  // 커스텀 select
+    // 커스텀 select
     function selectCustom() {
         $(".select-item").on("click", function (e) {
             e.preventDefault();
@@ -414,13 +356,41 @@ $(function () {
                 .siblings(".direct-input")
                 .removeClass("on");
         });
+    }
+    selectCustom();
 
+    // 가격안내 페이지 select
+    $(".select-box.type01 .option-list li").on("click", function (e) {
+        e.preventDefault();
+        const searchWrap = $(this).closest(".search-wrap");
+        const tbWrap = $(this).closest(".sub-sec").find(".tb-wrap");
+        const colors = ["green", "purple", "pink", "orange"];
+
+        // 현재 li에 있는 색상 클래스를 찾아서 적용
+        const selectedColor = colors.find((color) => $(this).hasClass(color));
+
+        if (selectedColor) {
+            searchWrap.removeClass(colors.join(" ")).addClass(selectedColor);
+            tbWrap.removeClass(colors.join(" ")).addClass(selectedColor);
+        }
+    });
+
+    // 문의하기 페이지 select
+    $(".contact .option-list li").on("click", function (e) {
+        e.preventDefault();
+        if ($(this).hasClass("portfolio") == true) {
+            $(".input-cont.portfolio-select").addClass("on");
+        } else {
+            $(".input-cont.portfolio-select").removeClass("on");
+        }
+    });
 
     // 가격안내 -> 서비스 신청하기 페이지 이동
     // 1단계: 버튼 클릭 → 페이지 이동
     $(".btn_wrap.apply button").on("click", function () {
         const grade = $(this).data("grade");
-        const url = `./html/apply.html?grade=${grade}`;
+        // const url = `./html/apply.html?grade=${grade}`;
+        const url = `../html/apply.html?grade=${grade}`;
         window.location.href = url;
     });
 
@@ -444,218 +414,188 @@ $(function () {
         .text(gradeLabels[grade] || grade);
     }
 
-        // 가격안내 페이지 select
-        $(".select-box.type01 .option-list li").on("click", function (e) {
-        e.preventDefault();
-        const searchWrap = $(this).closest(".search-wrap");
-        const tbWrap = $(this).closest(".sub-sec").find(".tb-wrap");
-        const colors = ["green", "purple", "pink", "orange"];
+    // 파일명 불러오기
+    $("input[type=file]").change(function (e) {
+        $(this).siblings(".input-name").val(e.target.files[0].name);
+    });
 
-        // 현재 li에 있는 색상 클래스를 찾아서 적용
-        const selectedColor = colors.find((color) => $(this).hasClass(color));
+    // 가격 안내 모달 토글
+    function toggleModal(type) {
+        const $modal = $(".modal-wrap");
+        const modalState = $modal.attr("aria-modal");
 
-        if (selectedColor) {
-            searchWrap.removeClass(colors.join(" ")).addClass(selectedColor);
-            tbWrap.removeClass(colors.join(" ")).addClass(selectedColor);
-        }
-        });
+        type && $modal.attr("data-type", type); // business, hospital, education, interior
 
-        // 문의하기 페이지 select
-        $(".contact .option-list li").on("click", function (e) {
-        e.preventDefault();
-        if ($(this).hasClass("portfolio") == true) {
-            $(".input-cont.portfolio-select").addClass("on");
+        if (modalState == "true") {
+        $modal.attr("aria-modal", "false");
+        $("body").css("overflow", "auto");
         } else {
-            $(".input-cont.portfolio-select").removeClass("on");
+        $modal.attr("aria-modal", "true");
+        $("body").css("overflow", "hidden");
         }
+    }
+
+    // 모달 이미지 소스 매핑
+    // clickType = business, hospital, education, interior
+    // setMode = pc, mb
+    function mappedImageSrc(clickType, setMode) {
+        const $modal = $(".modal-wrap");
+        const $modalInner = $modal.find(".modal_body .inner");
+        const type = clickType || $modal.attr("data-type");
+        if (setMode) {
+        $modal.attr("data-mode", setMode);
+        }
+
+        const mode = $modal.attr("data-mode");
+
+        $modalInner
+        .find("img")
+        .attr(
+            "src",
+            `../assets/images/price/${mode}_${type}.png`
+        );
+    }
+
+    function changeMode() {
+        const $modal = $(".modal-wrap");
+        const isMobile = window.innerWidth <= 500;
+
+        let mode = $modal.attr("data-mode");
+
+        if (isMobile) {
+        $modal.attr("data-mode", "mb");
+        } else {
+        $modal.attr("data-mode", mode); // 기본값 pc 추가
+        }
+
+        const $modalTab = $modal.find(
+        ".modal_header .center_header .btn_wrap .tabs"
+        );
+        $modalTab.each(function () {
+        const $item = $(this);
+        const itemMode = $item.attr("data-mode");
+        $item.attr(
+            "aria-selected",
+            itemMode === (isMobile ? "mb" : $modal.attr("data-mode"))
+        );
+        });
+
+        mappedImageSrc();
+    }
+
+    window.addEventListener("resize", changeMode);
+
+    // 가격 안내 카드 버튼 클릭
+    function clickPriceCardDetail() {
+        const $cardBtns = $(".price-card-wrap .card button");
+        const $modal = $(".modal-wrap");
+
+        
+        $cardBtns.on("click", function (e) {
+        e.preventDefault();
+        
+        const type = $(this).closest(".card").attr("data-type");
+        const mode = window.innerWidth <= 500 ? "mb" : "pc"; // 현재 화면 크기에 따라 모드 설정
+        $modal.attr("data-mode", mode);
+        $("html, body").animate({ scrollTop: 0 }, 400); // 모달 오픈 시 페이지 상단으로 이동
+        
+        changeMode();
+        toggleModal(type);
+        mappedImageSrc(type, mode);
         });
     }
-    selectCustom();
 
-  // 파일명 불러오기
-  $("input[type=file]").change(function (e) {
-    $(this).siblings(".input-name").val(e.target.files[0].name);
-  });
+    clickPriceCardDetail();
 
-  // 가격 안내 모달 토글
-  function toggleModal(type) {
-    const $modal = $(".modal-wrap");
-    const modalState = $modal.attr("aria-modal");
-
-    type && $modal.attr("data-type", type); // business, hospital, education, interior
-
-    if (modalState == "true") {
-      $modal.attr("aria-modal", "false");
-      $("body").css("overflow", "auto");
-    } else {
-      $modal.attr("aria-modal", "true");
-      $("body").css("overflow", "hidden");
-    }
-  }
-
-  // 모달 이미지 소스 매핑
-  // clickType = business, hospital, education, interior
-  // setMode = pc, mb
-  function mappedImageSrc(clickType, setMode) {
-    const $modal = $(".modal-wrap");
-    const $modalInner = $modal.find(".modal_body .inner");
-    const type = clickType || $modal.attr("data-type");
-    if (setMode) {
-      $modal.attr("data-mode", setMode);
-    }
-
-    const mode = $modal.attr("data-mode");
-
-    $modalInner
-      .find("img")
-      .attr(
-        "src",
-        `../assets/images/price/${mode}_${type}.png`
-      );
-  }
-
-  function changeMode() {
-    const $modal = $(".modal-wrap");
-    const isMobile = window.innerWidth <= 500;
-
-    let mode = $modal.attr("data-mode");
-
-    if (isMobile) {
-      $modal.attr("data-mode", "mb");
-    } else {
-      $modal.attr("data-mode", mode); // 기본값 pc 추가
-    }
-
-    const $modalTab = $modal.find(
-      ".modal_header .center_header .btn_wrap .tabs"
-    );
-    $modalTab.each(function () {
-      const $item = $(this);
-      const itemMode = $item.attr("data-mode");
-      $item.attr(
-        "aria-selected",
-        itemMode === (isMobile ? "mb" : $modal.attr("data-mode"))
-      );
-    });
-
-    mappedImageSrc();
-  }
-
-  window.addEventListener("resize", changeMode);
-
-  // 가격 안내 카드 버튼 클릭
-  function clickPriceCardDetail() {
-    const $cardBtns = $(".price-card-wrap .card button");
-    const $modal = $(".modal-wrap");
-
-    
-    $cardBtns.on("click", function (e) {
-      e.preventDefault();
-      
-      const type = $(this).closest(".card").attr("data-type");
-      const mode = window.innerWidth <= 500 ? "mb" : "pc"; // 현재 화면 크기에 따라 모드 설정
-      $modal.attr("data-mode", mode);
-      $("html, body").animate({ scrollTop: 0 }, 400); // 모달 오픈 시 페이지 상단으로 이동
-      
-      changeMode();
-      toggleModal(type);
-      mappedImageSrc(type, mode);
-    });
-  }
-
-  clickPriceCardDetail();
-
-  // 가격 안내 모달 닫기
-  function clickModalClose() {
-    $(".modal-wrap .modal_header .close_btn").on("click", function (e) {
-      e.preventDefault();
-      toggleModal();
-    });
-  }
-
-  clickModalClose();
-
-  function handleModalTabClick() {
-    const $tabButtons = $(".modal-wrap .center_header .btn_wrap .tabs");
-
-    $tabButtons.on("click", function (e) {
-      e.preventDefault();
-      // 모든 탭 비활성화
-      $tabButtons.attr("aria-selected", false);
-      // 클릭한 탭만 활성화
-      $(this).attr("aria-selected", true);
-
-      const mode = $(this).attr("data-mode");
-      $(".modal-wrap").attr("data-mode", mode);
-      mappedImageSrc();
-    });
-  }
-
-  handleModalTabClick();
-
-  // PC환경 마우스 터치 스크롤
-  function bindDragScroll(selector) {
-    const elements = document.querySelectorAll(selector);
-
-    elements.forEach((el) => {
-      let isDown = false;
-      let startX;
-      let scrollLeft;
-
-      // 마우스 이벤트
-      el.addEventListener("mousedown", (e) => {
-        isDown = true;
-        el.classList.add("dragging");
-        startX = e.pageX - el.offsetLeft;
-        scrollLeft = el.scrollLeft;
-      });
-
-      el.addEventListener("mouseleave", () => {
-        isDown = false;
-        el.classList.remove("dragging");
-      });
-
-      el.addEventListener("mouseup", () => {
-        isDown = false;
-        el.classList.remove("dragging");
-      });
-
-      el.addEventListener("mousemove", (e) => {
-        if (!isDown) return;
+    // 가격 안내 모달 닫기
+    function clickModalClose() {
+        $(".modal-wrap .modal_header .close_btn").on("click", function (e) {
         e.preventDefault();
-        const x = e.pageX - el.offsetLeft;
-        const walk = x - startX; // 드래그 거리
-        el.scrollLeft = scrollLeft - walk;
-      });
+        toggleModal();
+        });
+    }
+    clickModalClose();
 
-      // 터치 이벤트
-      el.addEventListener("touchstart", (e) => {
-        startX = e.touches[0].pageX - el.offsetLeft;
-        scrollLeft = el.scrollLeft;
-      });
+    function handleModalTabClick() {
+        const $tabButtons = $(".modal-wrap .center_header .btn_wrap .tabs");
 
-      el.addEventListener("touchmove", (e) => {
-        const x = e.touches[0].pageX - el.offsetLeft;
-        const walk = x - startX;
-        el.scrollLeft = scrollLeft - walk;
-      });
+        $tabButtons.on("click", function (e) {
+        e.preventDefault();
+        // 모든 탭 비활성화
+        $tabButtons.attr("aria-selected", false);
+        // 클릭한 탭만 활성화
+        $(this).attr("aria-selected", true);
+
+        const mode = $(this).attr("data-mode");
+        $(".modal-wrap").attr("data-mode", mode);
+        mappedImageSrc();
+        });
+    }
+    handleModalTabClick();
+
+    // PC환경 마우스 터치 스크롤
+    function bindDragScroll(selector) {
+        const elements = document.querySelectorAll(selector);
+
+        elements.forEach((el) => {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        // 마우스 이벤트
+        el.addEventListener("mousedown", (e) => {
+            isDown = true;
+            el.classList.add("dragging");
+            startX = e.pageX - el.offsetLeft;
+            scrollLeft = el.scrollLeft;
+        });
+
+        el.addEventListener("mouseleave", () => {
+            isDown = false;
+            el.classList.remove("dragging");
+        });
+
+        el.addEventListener("mouseup", () => {
+            isDown = false;
+            el.classList.remove("dragging");
+        });
+
+        el.addEventListener("mousemove", (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - el.offsetLeft;
+            const walk = x - startX; // 드래그 거리
+            el.scrollLeft = scrollLeft - walk;
+        });
+
+        // 터치 이벤트
+        el.addEventListener("touchstart", (e) => {
+            startX = e.touches[0].pageX - el.offsetLeft;
+            scrollLeft = el.scrollLeft;
+        });
+
+        el.addEventListener("touchmove", (e) => {
+            const x = e.touches[0].pageX - el.offsetLeft;
+            const walk = x - startX;
+            el.scrollLeft = scrollLeft - walk;
+        });
+        });
+    }
+    bindDragScroll(".main-sec.sec04 .detail ul");
+    bindDragScroll(".main-sec.sec05 .list-wrap ul");
+    // bindDragScroll(".sub-sec.service .manage-card-wrap > ul");
+    bindDragScroll(".sub-sec.service .icon-card-wrap > div");
+    bindDragScroll(".sub-sec.price .tb-wrap");
+
+    $("img").on("dragstart", function (e) {
+        e.preventDefault();
     });
-  }
-  bindDragScroll(".main-sec.sec04 .detail ul");
-  bindDragScroll(".main-sec.sec05 .list-wrap ul");
-  // bindDragScroll(".sub-sec.service .manage-card-wrap > ul");
-  bindDragScroll(".sub-sec.service .icon-card-wrap > div");
-  bindDragScroll(".sub-sec.price .tb-wrap");
 
-  $("img").on("dragstart", function (e) {
-    e.preventDefault();
-  });
+    // textarea 자동 높이조절
+    $("textarea").on("keydown", function () {
+        $(this).css("height", "auto");
 
-  // textarea 자동 높이조절
-  $("textarea").on("keydown", function () {
-    $(this).css("height", "auto");
-
-    const offset = window.innerWidth <= 786 ? 28 : 46;
-    $(this).height(this.scrollHeight - offset);
-  });
+        const offset = window.innerWidth <= 786 ? 28 : 46;
+        $(this).height(this.scrollHeight - offset);
+    });
 });
