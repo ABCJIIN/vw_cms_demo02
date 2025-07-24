@@ -2502,20 +2502,11 @@
   height: 10.7rem;
   z-index: 3;
 }
-.main-sec.sec01 .inner .bun-wrap li.bun-top span, .main-sec.sec01 .inner .bun-wrap li.bun-bottom span {
-  line-height: 10.7rem;
-  text-align: center;
-  font-family: "Antique Olive";
-  font-size: 3.2rem;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
 .main-sec.sec01 .inner .bun-wrap li.bun-top {
-  background-image: url(../../../assets/images/main/bun-top.svg);
+  background-image: url(../../../assets/images/main/sec01_bun_top.svg);
 }
 .main-sec.sec01 .inner .bun-wrap li.bun-bottom {
-  background-image: url(../../../assets/images/main/bun-bottom.svg);
+  background-image: url(../../../assets/images/main/sec01_bun_bottom.svg);
 }
 .main-sec.sec01 .inner .bun-wrap li.bun-inside {
   width: 144rem;
@@ -2604,10 +2595,6 @@
   .main-sec.sec01 .inner .bun-wrap li.bun-top, .main-sec.sec01 .inner .bun-wrap li.bun-bottom {
     width: 23.5rem;
     height: 5.6rem;
-  }
-  .main-sec.sec01 .inner .bun-wrap li.bun-top span, .main-sec.sec01 .inner .bun-wrap li.bun-bottom span {
-    line-height: 5.6rem;
-    font-size: 1.8rem;
   }
   .main-sec.sec01 .inner .bun-wrap li.bun-bottom {
     position: relative;
