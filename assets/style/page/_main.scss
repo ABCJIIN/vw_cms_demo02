@@ -716,15 +716,26 @@
 
     &.sec10 {
         position: relative;
-        height: 100vh;
+        min-height: 100vh;
         background: $white;
+        @include notebook {
+            padding: 10rem 0 6rem;
+        }
         .inner {
             height: 100vh;
-            @include flexbox(row, center, center);
-            gap: 26.1rem;
+            @include flexbox(row, space-between, center);
+            @include notebook {
+                @include flexbox(column, center, center);
+                gap: 6rem;
+            }
             .tit-wrap {
+                margin-bottom: 15rem;
                 @include flexbox(column, flex-start, flex-start);
                 gap: 1.6rem;
+                @include notebook {
+                    margin-bottom: 0;
+                    @include flexbox(column, center, center);
+                }
                 @include tablet {
                     gap: 1.2rem;
                 }
@@ -732,6 +743,9 @@
                     text-align: left;
                     font-size: 5.2rem;
                     font-size: clamp(4rem, 2.708vw, 5.2rem);
+                    @include notebook {
+                        text-align: center;
+                    }
                     @include tablet {
                         font-size: 2.8rem;
                     }
@@ -747,13 +761,67 @@
                 position: relative;
                 width: 79.1rem;
                 height: 57.2rem;
-                .inhouse {
+                @include tablet_junction {
+                    max-width: 63.28rem;
+                    width: 100%;
+                    height: 45.76rem;
+                }
+                @include tablet {
+                    height: 38rem;
+                }
+                @include mobile {
+                    width: 33.5rem;
+                    height: 34.2rem;
+                }
+                > div {
                     position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 42.4rem;
+                    top: 50%;
+                    transform: translateY(-50%);
                     height: 100%;
                     @include flexbox(column, space-between, center);
+                    @include tablet_junction {
+                        width: 32.4rem;
+                    }
+                    .top {
+                        width: 100%;
+                        height: 10.3rem;
+                        @include flexbox(row, center, center);
+                            gap: 1.2em;
+                        @include tablet_junction {
+                            height: 8rem;
+                        }
+                    }
+                    > ul {
+                        width: 100%;
+                        @include flexbox(column, center, center);
+                        gap: 1rem;
+                        @include tablet_junction {
+                            gap: .8rem;
+                        }
+                        @include tablet {
+                            gap: .6rem;
+                        }
+                        li {
+                            width: 98%;
+                            padding: 1rem 2rem;
+                            text-align: center;
+                            font-size: 2.4rem;
+                            letter-spacing: -0.02em;
+                            line-height: 1.5;
+                            border-radius: 1rem;
+                        }
+                    }
+                    .bottom {
+                        width: 100%;
+                        height: 10.3rem;
+                        @include tablet_junction {
+                            height: 8rem;
+                        }
+                    }
+                }
+                .inhouse {
+                    left: 0;
+                    width: 42.4rem;
                     z-index: 2;
                     .tag {
                         position: absolute;
@@ -789,86 +857,106 @@
                             }
                         }
                     }
+                    @media (max-width: 1360px) {
+                        .tag {
+                            display: none;
+                        }
+                    }
                     .top {
-                        width: 100%;
-                        height: 10.3rem;
                         background: url(../../../assets/images/main/bun-top.svg) no-repeat center/contain;
-                        @include flexbox(row, center, center);
-                        gap: 1.2em;
                         span {
                             color: $white;
                             font-weight: 700;
                             &.ko {
                                 font-family: $pretendard;
                                 font-size: 3.6rem;
+                                @include tablet_junction {
+                                    font-size: 3rem;
+                                }
+                                @include tablet {
+                                    font-size: 2.1rem;
+                                }
                             }
                             &.en {
                                 font-family: $AntiqueOlive;
                                 font-size: 3.2rem;
+                                @include tablet_junction {
+                                    font-size: 2.8rem;
+                                }
+                                @include tablet {
+                                    font-size: 1.9rem;
+                                }
                             }
                         }
                     }
                     > ul {
-                        width: 100%;
-                        @include flexbox(column, center, center);
-                        gap: 1rem;
                         li {
-                            width: 98%;
-                            padding: 1rem 2rem;
-                            text-align: center;
-                            font-size: 2.4rem;
                             font-weight: 600;
-                            line-height: 1.5;
-                            border-radius: 1rem;
                             background: $white;
                             box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
+                            @include tablet_junction {
+                                padding: .8rem 1.2rem;
+                                font-size: 1.8rem;
+                            }
+                            @include tablet {
+                                padding: .6rem 1.2rem;
+                                font-size: 1.4rem;
+                            }
                         }
                     }
                     .bottom {
-                        width: 100%;
-                        height: 10.3rem;
                         background: url(../../../assets/images/main/bun-bottom.svg) no-repeat center/contain;
                     }
                 }
                 .external {
-                    position: absolute;
-                    top: 0;
                     right: 0;
                     width: 43.4rem;
-                    height: 100%;
-                    @include flexbox(column, space-between, center);
                     .top {
-                        width: 100%;
-                        height: 10.3rem;
                         background: url(../../../assets/images/main/bun-top_g.svg) no-repeat center/contain;
-                        @include flexbox(row, center, center);
-                        gap: 1.2em;
                         span {
                             color: $gray_60;
                             font-size: 2.8rem;
                             font-weight: 700;
+                            @include tablet {
+                                font-size: 1.7rem;
+                            }
                         }
                     }
                     > ul {
-                        width: 100%;
-                        @include flexbox(column, center, center);
-                        gap: 1rem;
                         li {
-                            width: 98%;
-                            padding: 1rem 2rem;
-                            text-align: center;
-                            font-size: 2.4rem;
                             color: $gray_40;
                             font-weight: 400;
-                            line-height: 1.5;
-                            border-radius: 1rem;
                             background: #F8F7F7;
+                            @include tablet_junction {
+                                padding: .8rem 5rem;
+                                font-size: 1.8rem;
+                            }
+                            @include tablet {
+                                padding: .6rem;
+                                font-size: 1.4rem;
+                            }
+                            @include mobile {
+                                text-align: right;
+                            }
+                        }
+                        @media (max-width: 630px) {
+                            li {
+                                text-align: right;
+                            }
                         }
                     }
                     .bottom {
-                        width: 100%;
-                        height: 10.3rem;
                         background: url(../../../assets/images/main/bun-bottom_g.svg) no-repeat center/contain;
+                    }
+                }
+                @media (max-width: 500px) {
+                    .inhouse, .external {
+                        width: clamp(20.4rem, 64.80vw ,32.4rem);
+                    }
+                }
+                @include mobile {
+                    .inhouse, .external {
+                        width: 20.4rem;
                     }
                 }
             }
