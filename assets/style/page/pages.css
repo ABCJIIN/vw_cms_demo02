@@ -2259,7 +2259,7 @@
   text-align: center;
   font-weight: 700;
   font-size: 3.2rem;
-  font-family: "Antique Olive";
+  font-family: "antique-olive", sans-serif;
 }
 @media (max-width: 768px) {
   .service.sec04 .process-wrap .process ul li::before {
@@ -3079,7 +3079,7 @@
   height: 8.7rem;
   height: clamp(3.8rem, 4.53vw, 8.7rem);
   margin-bottom: 5rem;
-  font-family: "Antique Olive";
+  font-family: "antique-olive", sans-serif;
   font-size: 4rem;
   font-size: clamp(2rem, 2.08vw, 4rem);
   font-weight: 700;
@@ -3377,7 +3377,8 @@
   }
 }
 .main-sec.sec10 .inner .con-wrap .inhouse .top span.en {
-  font-family: "Antique Olive";
+  font-family: "antique-olive", sans-serif;
+  font-weight: 700;
   font-size: 3.2rem;
 }
 @media (max-width: 930px) {

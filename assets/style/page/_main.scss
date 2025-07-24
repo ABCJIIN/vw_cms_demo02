@@ -866,6 +866,7 @@
                             }
                             &.en {
                                 font-family: $AntiqueOlive;
+                                font-weight: 700;
                                 font-size: 3.2rem;
                                 @include tablet_junction {
                                     font-size: 2.8rem;
