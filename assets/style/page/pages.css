@@ -262,8 +262,12 @@
     gap: 0.4rem;
   }
 }
-.contact.sec01 .input-list li .input-cont.portfolio-select,
-.apply.sec01 .input-list li .input-cont.portfolio-select {
+.contact.sec01 .input-list li .input-cont.template-select,
+.apply.sec01 .input-list li .input-cont.template-select {
+  display: none;
+}
+.contact.sec01 .input-list li .input-cont.template-select.on,
+.apply.sec01 .input-list li .input-cont.template-select.on {
   display: flex;
 }
 .contact.sec01 .input-list li .input-cont.type01 .input-tit,
