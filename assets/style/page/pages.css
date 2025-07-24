@@ -3363,7 +3363,7 @@
   font-weight: 700;
 }
 .main-sec.sec10 .inner .con-wrap .inhouse .top span.ko {
-  font-family: "Pretendard";
+  font-family: "Pretendard", sans-serif;
   font-size: 3.6rem;
 }
 @media (max-width: 930px) {
