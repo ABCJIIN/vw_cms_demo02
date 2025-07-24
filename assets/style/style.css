@@ -1271,7 +1271,7 @@ section.qna .inner .con-wrap ul li .q-wrap {
 }
 @media (max-width: 768px) {
   section.qna .inner .con-wrap ul li .q-wrap {
-    padding: 2.8rem 2.4rem 2.8rem 4.8rem;
+    padding: 2.8rem 3.4rem 2.8rem 4.8rem;
   }
 }
 section.qna .inner .con-wrap ul li .q-wrap::before {
@@ -1321,6 +1321,11 @@ section.qna .inner .con-wrap ul li .q-wrap strong {
   letter-spacing: -0.144rem;
   color: #fff;
 }
+@media (max-width: 930px) {
+  section.qna .inner .con-wrap ul li .q-wrap strong {
+    font-size: 3rem;
+  }
+}
 @media (max-width: 768px) {
   section.qna .inner .con-wrap ul li .q-wrap strong {
     font-size: 2rem;
@@ -1350,7 +1355,6 @@ section.qna .inner .con-wrap ul li .a-wrap p {
 @media (max-width: 768px) {
   section.qna .inner .con-wrap ul li .a-wrap p {
     font-size: 1.6rem;
-    word-break: keep-all;
   }
 }
 section.qna .inner .con-wrap ul li .a-wrap p:before {
