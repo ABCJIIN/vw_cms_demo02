@@ -1,5 +1,18 @@
 $(function () {
 
+    //skipnav
+    $('#skipnav a').click(function() {
+        var skipTo="#"+this.href.split('#')[1];
+        $(skipTo).attr('tabindex', -1).on('blur focusout', function() {
+            $(this).removeAttr('tabindex');
+        }).focus();
+        return false;
+    });
+    
+    $('.location > ul > li').hover(function(){
+        $(this).children('a').siblings('ul').toggle();
+    });  
+
     // Top 이동 버튼
     $(".top-btn").hide();
     $(window).scroll(function () {
@@ -100,7 +113,6 @@ $(function () {
         menuBtn.focus();
     });
 
-
     // 자주 묻는 질문
     $(".qna .q-wrap").on("click", function () {
         if ($(this).hasClass("on") == false) {
@@ -145,7 +157,7 @@ $(function () {
         $(".sub-sec.visual > .inner").addClass("fade-up-end");
     });
 
-    // 번 변경
+    // 메인화면 .sec01 번 변경
     function changeBun() {
         const $bunInside = $(".main-sec.sec01 > .inner .bun-inside");
         const $bunInsideRow01 = $bunInside.find(".inside-01 .inside-item");
@@ -202,7 +214,7 @@ $(function () {
     }
     changeBun();
 
-    // 버티컬 슬라이드
+    // 메인화면 .sec02 버티컬 슬라이드
     function verticalSlide() {
         const $slideWrap = $(".sec02 .list-wrap .list-inner");
         const $originSlideItems = $(".sec02 .list-wrap .list-inner .list-item");
@@ -295,6 +307,68 @@ $(function () {
         requestAnimationFrame(animate);
     }
     verticalSlide();
+
+    // 메인화면 .sec03 타이핑 효과
+    let hasTyped = false;
+    const text = "마크롱에서 도와드릴게요!";
+    let index = 0;
+    let speed = 100;
+
+    function typeWriter() {
+        if (index < text.length) {
+            $("#text").text($("#text").text() + text.charAt(index));
+            index++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+
+    $(window).on("scroll", function () {
+        if (hasTyped) return;
+
+        const scrollTop = $(window).scrollTop();
+        const windowHeight = $(window).height();
+        const triggerPoint = scrollTop + windowHeight * 0.2; // 아래쪽 20%쯤에 도달할 때
+
+        const sec03Top = $(".sec03").offset().top;
+
+        if (triggerPoint >= sec03Top) {
+            hasTyped = true;
+            typeWriter();
+        }
+    });
+
+    // 메인화면 .sec09 슬라이드
+    var storySlide = new Swiper('.dynamic-swiper', {
+        effect: 'coverflow',
+        slidesPerView: 1.2, // 모바일 기준
+        centeredSlides: true,
+        loop: false,
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 80,
+            depth: 0,
+            modifier: 1,
+            slideShadows: false,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            700: {
+                slidesPerView: 2,
+                centeredSlides: false,
+                loop: false,
+                autoplay: false
+            },
+            1070: {
+                slidesPerView: 3,
+                centeredSlides: false,
+                loop: false,
+                autoplay: false
+            }
+        }
+    });
 
     // 서비스 소개
     function checkItemsOnScroll() {

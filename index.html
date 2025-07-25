@@ -12,36 +12,28 @@
     <meta property="og:title" content="마크롱" />
     <meta property="og:description" content="홈페이지 제작은 전문가와 함께, 운영은 누구나 쉽게!" />
     <meta property="og:image" content="./assets/images/og_img.jpg" />
-
     <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.ico">
 
+    <!-- Antique Olive 폰트 -->
     <link rel="stylesheet" href="https://use.typekit.net/caw2mgi.css">
 
-    <!-- global common -->
-    <script src="./assets/script/jquery-1.12.4.min.js"></script>
-
-    <!-- theme -->
-    <script src="./assets/script/layout.js"></script>
-    <link rel="stylesheet" href="./assets/style/style.css" />
-
-    <!-- 퍼블리싱 ia와 연동 임시 파일 -->
-    <script src="./assets/script/_ia_layout.js"></script>
-
-    <!-- main -->
-    <script src="./assets/script/swiper.js"></script>
-    <script src="./assets/script/main.js"></script>
+    <!-- css -->
     <link rel="stylesheet" href="./assets/style/swiper.css" />
-    <!-- <link rel="stylesheet" href="./assets/style/page/main.css" /> -->
+    <link rel="stylesheet" href="./assets/style/style.css" />
     <link rel="stylesheet" href="./assets/style/page/pages.css" />
 
+    <!-- script -->
+    <script src="./assets/script/jquery-1.12.4.min.js"></script>
+    <script src="./assets/script/main.js"></script>
+    <script src="./assets/script/falling-boxes.js"></script>
 
+    <!-- gsap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-
-
+    <!-- swiper -->
+    <script src="./assets/script/swiper.js"></script>
 </head>
-
 <body>
     <div id="skipnav">
         <a href="#gnb">주메뉴 바로가기</a>
@@ -111,9 +103,7 @@
                         </strong>
                         <p>취향대로 고르는 마카롱처럼, 홈페이지도 다양하게</p>
                     </div>
-                    <a href="./html/service.html">
-                        <button class="h58" type="button">자세히 알아보기</button>
-                    </a>
+                    <button class="h58" type="button" onclick="location.href='./html/service.html'">자세히 알아보기</button>
                     <ul class="bun-wrap">
                         <li class="bun-top"></li>
                         <li class="bun-inside">
@@ -174,9 +164,15 @@
 
             <!-- main-content -->
             <section class="main-sec sec03">
-                <figure class="img-wrap">
-                    <img src="./assets/images/main/help-makron.svg" alt="빈트와이어 홈페이지 이미지"/>
-                </figure>
+                <div class="figure-wrap">
+                    <figure class="img-wrap">
+                        <img class="type01" src="./assets/images/main/help-makron.svg" alt="빈트와이어 홈페이지 이미지"/>
+                        <img class="type02" src="./assets/images/main/help-makron_02.svg" alt="빈트와이어 홈페이지 이미지"/>
+                    </figure>
+                    <div class="typing-container">
+                        <span id="text"></span><span id="cursor"></span>
+                    </div>
+                </div>
             </section>
             <!-- // main-content -->
 
@@ -192,7 +188,6 @@
                     <p>스타일만 선택하세요, 홈페이지는 저희가 완성해드려요.</p>
                 </div>
             </section>
-            <script type="text/javascript" src="./assets/script/falling-boxes.js"></script>
             <!-- // main-content -->
 
             <!-- main-content pink -->
@@ -377,13 +372,13 @@
                         <div class="card card01">
                             <p>어떻게 시작해야 할지 <br class="d-mb">감이 안 잡힌다면?</p>
                             <strong>템플릿 선택형</strong>
-                            <button type="button">제작하기</button>
+                            <button type="button" onclick="alert('준비중입니다.'); return false;">제작하기</button>
                             <figure class="character"></figure>
                         </div>
                         <div class="card card02">
                             <p>원하는 기능만 <br class="d-mb">쏙쏙 넣고 싶다면?</p>
                             <strong>1:1 주문 제작형</strong>
-                            <button type="button">제작하기</button>
+                            <button type="button" onclick="location.href='./html/price.html'">제작하기</button>
                             <figure class="character"></figure>
                         </div>
                     </div>
@@ -394,9 +389,7 @@
             <section class="main-sec banner">
                 <div class="inner">
                     <strong>궁금한 점이 있으시면 <br class="d-mb" />언제든지 물어보세요!</strong>
-                    <a href="./html/contact.html">
-                        <button class="h62" type="button">서비스 문의하기</button>
-                    </a>
+                    <button class="h62" type="button" onclick="location.href='./html/contact.html'">서비스 문의하기</button>
                 </div>
             </section>
             <!--// banner -->
@@ -568,39 +561,5 @@
         </footer>
         <!--// footer -->
     </div>
-    <script>
-        // 메인 슬라이드
-        var storySlide = new Swiper('.dynamic-swiper', {
-            effect: 'coverflow',
-            slidesPerView: 1.2, // 모바일 기준
-            centeredSlides: true,
-            loop: false,
-            coverflowEffect: {
-                rotate: 0,
-                stretch: 80,
-                depth: 0,
-                modifier: 1,
-                slideShadows: false,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                700: {
-                    slidesPerView: 2,
-                    centeredSlides: false,
-                    loop: false,
-                    autoplay: false
-                },
-                1070: {
-                    slidesPerView: 3,
-                    centeredSlides: false,
-                    loop: false,
-                    autoplay: false
-                }
-            }
-        });
-    </script>
 </body>
 </html>

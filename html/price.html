@@ -14,24 +14,21 @@
     <meta property="og:image" content="../assets/images/og_img.jpg" />
     <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.ico">
 
-    <!-- global common -->
-    <script src="../assets/script/jquery-1.12.4.min.js"></script>
+    <!-- Antique Olive 폰트 -->
+    <link rel="stylesheet" href="https://use.typekit.net/caw2mgi.css">
 
-    <!-- theme -->
-    <script src="../assets/script/layout.js"></script>
-    <link rel="stylesheet" href="../assets/style/style.css" />
-
-    <!-- 퍼블리싱 ia와 연동 임시 파일 -->
-    <script src="../assets/script/_ia_layout.js"></script>
-
-    <!-- main -->
-    <script src="../assets/script/swiper.js"></script>
-    <script src="../assets/script/main.js"></script>
+    <!-- css -->
     <link rel="stylesheet" href="../assets/style/swiper.css" />
-    <!-- <link rel="stylesheet" href="../assets/style/page/main.css" /> -->
+    <link rel="stylesheet" href="../assets/style/style.css" />
     <link rel="stylesheet" href="../assets/style/page/pages.css" />
-</head>
 
+    <!-- script -->
+    <script src="../assets/script/jquery-1.12.4.min.js"></script>
+    <script src="../assets/script/main.js"></script>
+
+    <!-- swiper -->
+    <script src="../assets/script/swiper.js"></script>
+</head>
 <body>
     <div id="skipnav">
         <a href="#gnb">주메뉴 바로가기</a>
@@ -405,9 +402,7 @@
             <section class="sub-sec banner price">
                 <div class="inner">
                     <strong>궁금한 점이 있으시면 <br class="d-mb"/>언제든지 물어보세요!</strong>
-                    <a href="../html/contact.html">
-                        <button class="h62" type="button">서비스 문의하기</button>
-                    </a>
+                    <button class="h62" type="button" onclick="location.href='../html/contact.html'">서비스 문의하기</button>
                 </div>
             </section>
             <!-- //sub-content -->
@@ -528,10 +523,10 @@
                         </div>
                     </div>
                     <div class="modal_header bp-mb">
-                        <h1 class="business">비즈니스</h1>
-                        <h1 class="hospital">병원</h1>
-                        <h1 class="education">교육</h1>
-                        <h1 class="interior">인테리어</h1>
+                        <strong class="business">비즈니스</strong>
+                        <strong class="hospital">병원</strong>
+                        <strong class="education">교육</strong>
+                        <strong class="interior">인테리어</strong>
                         <button class="close_btn" type="button"></button>
                     </div>
                     <div class="modal_body">
@@ -550,8 +545,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- <script type="text/javascript" src="../assets/script/main.js"></script> -->
         </main>
         <!--// container -->
 

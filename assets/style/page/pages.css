@@ -1268,7 +1268,7 @@
     justify-content: space-between;
     align-items: center;
   }
-  .modal-wrap .modal .modal_header h1 {
+  .modal-wrap .modal .modal_header strong {
     display: none;
     font-size: 2rem;
     font-weight: 700;
@@ -1415,16 +1415,16 @@
     max-height: 100%;
   }
 }
-.modal-wrap[data-type=business] .modal_header h1.business {
+.modal-wrap[data-type=business] .modal_header strong.business {
   display: block;
 }
-.modal-wrap[data-type=hospital] .modal_header h1.hospital {
+.modal-wrap[data-type=hospital] .modal_header strong.hospital {
   display: block;
 }
-.modal-wrap[data-type=education] .modal_header h1.education {
+.modal-wrap[data-type=education] .modal_header strong.education {
   display: block;
 }
-.modal-wrap[data-type=interior] .modal_header h1.interior {
+.modal-wrap[data-type=interior] .modal_header strong.interior {
   display: block;
 }
 .modal-wrap .bp-pc {
@@ -2448,6 +2448,18 @@
     transform: translateY(0);
   }
 }
+/* 텍스트 입력 효과 커서 */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .main-sec section {
   min-height: 70rem;
 }
@@ -2792,18 +2804,69 @@
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-.main-sec.sec03 .img-wrap {
+.main-sec.sec03 .figure-wrap {
+  position: relative;
   width: calc(100% - 4.6rem);
-  height: 100%;
   max-width: 81.9rem;
   margin: 0 auto;
+}
+.main-sec.sec03 .img-wrap {
+  width: 100%;
+  height: 14.1rem;
 }
 .main-sec.sec03 .img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: center;
+}
+@media (max-width: 930px) {
+  .main-sec.sec03 .img-wrap img.type01 {
+    display: none;
+  }
+}
+.main-sec.sec03 .img-wrap img.type02 {
+  display: none;
+}
+@media (max-width: 930px) {
+  .main-sec.sec03 .img-wrap img.type02 {
+    display: block;
+  }
+}
+.main-sec.sec03 .typing-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 63.4rem;
+  height: 11rem;
+  padding-left: 3rem;
+  font-size: 6rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.04em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  word-break: keep-all;
+}
+@media (max-width: 930px) {
+  .main-sec.sec03 .typing-container {
+    display: none;
+  }
+}
+.main-sec.sec03 .typing-container #cursor {
+  border-left: 2px solid #fff; /* 커서 스타일 */
+  animation: blink 0.7s infinite;
+  display: inline-block;
+  margin-left: 2px;
+  height: 6rem; /* 폰트 크기와 동일하게 설정 */
+  vertical-align: middle;
 }
 .main-sec.sec04 {
   position: relative;
