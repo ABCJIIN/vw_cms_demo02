@@ -778,7 +778,7 @@
                 padding: 1.6rem 2rem;
                 @include flexbox(row, space-between, center);
 
-                h1 {
+                strong {
                     display: none;
                     font-size: 2rem;
                     font-weight: 700;
@@ -951,7 +951,7 @@
 
     &[data-type="business"] {
         .modal_header {
-            h1 {
+            strong {
                 &.business {
                     display: block;
                 }
@@ -961,7 +961,7 @@
 
     &[data-type="hospital"] {
         .modal_header {
-            h1 {
+            strong {
                 &.hospital {
                     display: block;
                 }
@@ -971,7 +971,7 @@
 
     &[data-type="education"] {
         .modal_header {
-            h1 {
+            strong {
                 &.education {
                     display: block;
                 }
@@ -981,7 +981,7 @@
 
     &[data-type="interior"] {
         .modal_header {
-            h1 {
+            strong {
                 &.interior {
                     display: block;
                 }
