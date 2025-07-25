@@ -1019,6 +1019,7 @@
                             height: 22.8rem;
                         }
                         @include mobile_plus {
+                            right: -1rem;
                             top: calc(50% + 2.2rem);
                             width: 22.5rem;
                             height: 21.2rem;
