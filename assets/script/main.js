@@ -496,42 +496,56 @@ $(function () {
         $(this).siblings(".input-name").val(e.target.files[0].name);
     });
 
+    const scrollPositions = {
+        pc: 0,
+        mb: 0,
+    };
+
     // 가격 안내 모달 토글
     function toggleModal(type) {
         const $modal = $(".modal-wrap");
         const modalState = $modal.attr("aria-modal");
 
-        type && $modal.attr("data-type", type); // business, hospital, education, interior
+        type && $modal.attr("data-type", type);
+
+        const $scrollArea = $modal.find(".modal_body .inner");
 
         if (modalState == "true") {
-        $modal.attr("aria-modal", "false");
-        $("body").css("overflow", "auto");
+            $modal.attr("aria-modal", "false");
+            $("body").css("overflow", "auto");
         } else {
-        $modal.attr("aria-modal", "true");
-        $("body").css("overflow", "hidden");
+            $modal.attr("aria-modal", "true");
+            $("body").css("overflow", "hidden");
+
+            // 🔁 스크롤 위치 초기화
+            scrollPositions.pc = 0;
+            scrollPositions.mb = 0;
+
+            $scrollArea.scrollTop(0);
         }
     }
+
 
     // 모달 이미지 소스 매핑
     // clickType = business, hospital, education, interior
     // setMode = pc, mb
     function mappedImageSrc(clickType, setMode) {
-        const $modal = $(".modal-wrap");
-        const $modalInner = $modal.find(".modal_body .inner");
-        const type = clickType || $modal.attr("data-type");
-        if (setMode) {
+    const $modal = $(".modal-wrap");
+    const $modalInner = $modal.find(".modal_body .inner");
+    const type = clickType || $modal.attr("data-type");
+
+    if (setMode) {
         $modal.attr("data-mode", setMode);
-        }
-
-        const mode = $modal.attr("data-mode");
-
-        $modalInner
-        .find("img")
-        .attr(
-            "src",
-            `../assets/images/price/${mode}_${type}.png`
-        );
     }
+
+    const mode = $modal.attr("data-mode");
+    const $img = $modalInner.find("img");
+    const newSrc = `../assets/images/price/${mode}_${type}.png`;
+
+    // 이미지 깜빡임 방지용: 일단 비워줬다가 다시 설정
+    $img.attr("src", "").attr("src", newSrc);
+    }
+
 
     function changeMode() {
         const $modal = $(".modal-wrap");
@@ -540,74 +554,95 @@ $(function () {
         let mode = $modal.attr("data-mode");
 
         if (isMobile) {
-        $modal.attr("data-mode", "mb");
+            $modal.attr("data-mode", "mb");
         } else {
-        $modal.attr("data-mode", mode); // 기본값 pc 추가
+            $modal.attr("data-mode", mode); // 기본값 pc 추가
         }
 
         const $modalTab = $modal.find(
-        ".modal_header .center_header .btn_wrap .tabs"
+            ".modal_header .center_header .btn_wrap .tabs"
         );
         $modalTab.each(function () {
-        const $item = $(this);
-        const itemMode = $item.attr("data-mode");
-        $item.attr(
-            "aria-selected",
-            itemMode === (isMobile ? "mb" : $modal.attr("data-mode"))
-        );
+            const $item = $(this);
+            const itemMode = $item.attr("data-mode");
+            $item.attr(
+                "aria-selected",
+                itemMode === (isMobile ? "mb" : $modal.attr("data-mode"))
+            );
         });
-
         mappedImageSrc();
     }
 
     window.addEventListener("resize", changeMode);
 
-    // 가격 안내 카드 버튼 클릭
+    // 가격 안내 카드 or 템플릿 버튼 클릭
     function clickPriceCardDetail() {
-        const $cardBtns = $(".price-card-wrap .card button");
+        const $cardBtns = $(".price-card-wrap .card button, .sec01.template .list-wrap button, .d-mb"); // 가격안내 + 템플릿 페이지용
+
         const $modal = $(".modal-wrap");
 
-        
         $cardBtns.on("click", function (e) {
-        e.preventDefault();
-        
-        const type = $(this).closest(".card").attr("data-type");
-        const mode = window.innerWidth <= 500 ? "mb" : "pc"; // 현재 화면 크기에 따라 모드 설정
-        $modal.attr("data-mode", mode);
-        $("html, body").animate({ scrollTop: 0 }, 400); // 모달 오픈 시 페이지 상단으로 이동
-        
-        changeMode();
-        toggleModal(type);
-        mappedImageSrc(type, mode);
+            e.preventDefault();
+
+            const $btn = $(this);
+            const type =
+                $btn.closest(".card").data("type") ||
+                $btn.closest("li").data("type");
+
+            // 버튼 클래스 기반 모드 판별
+            let mode = "pc"; // 기본값
+            if ($btn.hasClass("mo-btn")) mode = "mb";
+            else if ($btn.hasClass("pc-btn")) mode = "pc";
+            else mode = window.innerWidth <= 500 ? "mb" : "pc";
+
+            $modal.attr("data-mode", mode);
+            $("html, body").animate({ scrollTop: 0 }, 400);
+
+            changeMode(); // 내부 탭 aria-selected 상태 갱신
+            toggleModal(type);
+            mappedImageSrc(type, mode);
         });
     }
-
     clickPriceCardDetail();
 
-    // 가격 안내 모달 닫기
+    // 가격 안내 or 템플릿 모달 닫기
     function clickModalClose() {
         $(".modal-wrap .modal_header .close_btn").on("click", function (e) {
-        e.preventDefault();
-        toggleModal();
+            e.preventDefault();
+            toggleModal();
         });
     }
     clickModalClose();
 
     function handleModalTabClick() {
-        const $tabButtons = $(".modal-wrap .center_header .btn_wrap .tabs");
+        const $modal = $(".modal-wrap");
+        const $tabButtons = $modal.find(".center_header .btn_wrap .tabs");
+        const $scrollArea = $modal.find(".modal_body .inner");
 
         $tabButtons.on("click", function (e) {
-        e.preventDefault();
-        // 모든 탭 비활성화
-        $tabButtons.attr("aria-selected", false);
-        // 클릭한 탭만 활성화
-        $(this).attr("aria-selected", true);
+            e.preventDefault();
 
-        const mode = $(this).attr("data-mode");
-        $(".modal-wrap").attr("data-mode", mode);
-        mappedImageSrc();
+            const prevMode = $modal.attr("data-mode");
+            const newMode = $(this).attr("data-mode");
+
+            if (prevMode === newMode) return; // 같은 탭 다시 누른 경우 무시
+
+            // 1. 현재 탭의 스크롤 위치 저장
+            scrollPositions[prevMode] = $scrollArea.scrollTop();
+
+            // 2. 탭 전환
+            $modal.attr("data-mode", newMode);
+            $tabButtons.attr("aria-selected", false);
+            $(this).attr("aria-selected", true);
+
+            // 3. 이미지 변경
+            mappedImageSrc();
+
+            // 4. 전환한 탭의 스크롤 위치 복원 (기억된 값 없으면 0)
+            $scrollArea.scrollTop(scrollPositions[newMode] || 0);
         });
     }
+
     handleModalTabClick();
 
     // 가격 안내 설명 툴팁
@@ -621,35 +656,12 @@ $(function () {
 
     // 가격 안내 테이블 슬라이드
     var storySlide = new Swiper('.tb-swiper', {
-        // effect: 'coverflow',
-        // slidesPerView: 1.2, // 모바일 기준
         centeredSlides: true,
         loop: false,
-        // coverflowEffect: {
-        //     rotate: 0,
-        //     stretch: 80,
-        //     depth: 0,
-        //     modifier: 1,
-        //     slideShadows: false,
-        // },
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-        // breakpoints: {
-        //     700: {
-        //         slidesPerView: 2,
-        //         centeredSlides: false,
-        //         loop: false,
-        //         autoplay: false
-        //     },
-        //     1070: {
-        //         slidesPerView: 3,
-        //         centeredSlides: false,
-        //         loop: false,
-        //         autoplay: false
-        //     }
-        // }
     });
 
     // PC환경 마우스 터치 스크롤
