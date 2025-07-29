@@ -464,7 +464,7 @@ $(function () {
 
     // 가격안내 -> 서비스 신청하기 페이지 이동
     // 1단계: 버튼 클릭 → 페이지 이동
-    $(".btn_wrap.apply button").on("click", function () {
+    $(".btn-wrap.apply button").on("click", function () {
         const grade = $(this).data("grade");
         // const url = `./html/apply.html?grade=${grade}`;
         const url = `../html/apply.html?grade=${grade}`;
@@ -610,13 +610,46 @@ $(function () {
     }
     handleModalTabClick();
 
-    // 가격 안내 툴팁 마우스오버
-    $(".info-wrap .info-icon, .tooltip-wrap button").on("mouseenter", function(){
+    // 가격 안내 설명 툴팁
+    $(".tooltip-wrap .info-icon").on("mouseenter", function(){
         $(this).next(".tooltip").stop().fadeIn();
     });
 
-    $(".info-wrap .info-icon, .tooltip-wrap button").on("mouseleave", function(){
+    $(".tooltip-wrap .info-icon").on("mouseleave", function(){
         $(this).next(".tooltip").stop().fadeOut();
+    });
+
+    // 가격 안내 테이블 슬라이드
+    var storySlide = new Swiper('.tb-swiper', {
+        // effect: 'coverflow',
+        // slidesPerView: 1.2, // 모바일 기준
+        centeredSlides: true,
+        loop: false,
+        // coverflowEffect: {
+        //     rotate: 0,
+        //     stretch: 80,
+        //     depth: 0,
+        //     modifier: 1,
+        //     slideShadows: false,
+        // },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        // breakpoints: {
+        //     700: {
+        //         slidesPerView: 2,
+        //         centeredSlides: false,
+        //         loop: false,
+        //         autoplay: false
+        //     },
+        //     1070: {
+        //         slidesPerView: 3,
+        //         centeredSlides: false,
+        //         loop: false,
+        //         autoplay: false
+        //     }
+        // }
     });
 
     // PC환경 마우스 터치 스크롤
