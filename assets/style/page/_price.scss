@@ -11,10 +11,17 @@
 
         .tit-wrap {
             margin-bottom: 6rem;
+            strong {
+                font-size: 5.2rem;
+                font-size: clamp(4rem, 2.71vw, 5.2rem);
+                @include tablet {
+                    font-size: 2.6rem;
+                }
+            }
         }
 
         .price-card-wrap {
-            >ul {
+            > ul {
                 width: 100%;
                 @include flexbox(row, flex-start, flex-start);
                 flex-wrap: wrap;
@@ -238,6 +245,16 @@
 
         .tit-wrap {
             margin-bottom: 6rem;
+            @include tablet {
+                margin-bottom: 4.5rem;
+            }
+            strong {
+                font-size: 5.2rem;
+                font-size: clamp(4rem, 2.71vw, 5.2rem);
+                @include tablet {
+                    font-size: 2.6rem;
+                }
+            }
         }
 
         .search-wrap {
@@ -359,7 +376,6 @@
         .tb-wrap {
             position: relative;
             margin-bottom: 6rem;
-
             @include notebook {
                 padding-right: 2rem;
                 overflow-x: auto;
@@ -379,128 +395,104 @@
                 -webkit-overflow-scrolling: touch;
                 /* iOS 자연 스크롤 */
             }
-
-            &.green {
-                table {
-                    span {
-                        &.include {
-                            background: url(../../../assets/images/icon/check-circle-green.svg) no-repeat center/contain;
-                        }
-                    }
-                }
-            }
-
             table {
                 width: 100%;
                 min-width: 1110px;
-
                 @include tablet {
                     min-width: 900px;
                 }
-
                 thead {
-
-                    // border-bottom: 1px solid $black;
                     tr {
                         th {
                             padding: 1.1rem 1.6rem;
                             font-size: 3rem;
                             font-weight: 700;
                             background: $white;
-
-                            @include tablet {
-                                font-size: 2.8rem;
-                            }
-
-                            &:first-of-type {
-                                position: sticky;
-                                left: 0;
-                            }
                         }
                     }
                 }
-
                 tbody {
-                    border-top: 1px solid $black;
-
+                    border-top: 1px solid $gray_100;
                     tr {
-                        &:not(:last-child) {
-                            border-bottom: 1px solid #c2c4c8;
-                        }
-
-                        &:not( :nth-last-of-type(2),
-                            :nth-last-of-type(3),
-                            :nth-last-of-type(4),
-                            :nth-last-of-type(5),
-                            :nth-last-of-type(6)) {
-                            td {
-                                &:first-of-type {
-                                    position: sticky;
-                                    left: 0;
-                                    text-align: left;
-                                    z-index: 1;
-                                }
+                        th {
+                            padding: 0 2rem;
+                            text-align: left;
+                            font-weight: 700;
+                            color: $gray_100;
+                            white-space: nowrap;
+                            border-right: 1px solid $gray_10;
+                            border-bottom: 1px solid $gray_10;
+                            &.last-th {
+                                border-bottom: 1px solid $gray_100;
                             }
-                        }
-
-                        &:not( :nth-last-of-type(1),
-                            :nth-last-of-type(2),
-                            :nth-last-of-type(3),
-                            :nth-last-of-type(4),
-                            :nth-last-of-type(5),
-                            :nth-last-of-type(6)) {
-                            td {
-                                &:first-of-type {
-                                    &::before {
-                                        content: "";
+                            /* 툴팁 */
+                            .tooltip-wrap {
+                                position: relative;
+                                @include flexbox(row, flex-start, center);
+                                gap: 1rem;
+                                .info {
+                                    position: relative;
+                                    width: 1.6rem;
+                                    @include flexbox(row, center, center);
+                                    .info-icon {
+                                        display: inline-block;
+                                        width: 1.6rem;
+                                        height: 1.6rem;
+                                        background: url(../../../assets/images/icon/info_gray.svg) no-repeat center/contain;
+                                    }
+                                    .tooltip {
                                         position: absolute;
-                                        top: 0;
-                                        right: 0;
-                                        width: 1px;
-                                        height: 100%;
-                                        background: #c2c4c8;
+                                        top: 3.1rem;
+                                        left: -2rem;
+                                        width: max-content;
+                                        padding: 1rem;
+                                        color: $white;
+                                        font-size: 1.6rem;
+                                        font-weight: 500;
+                                        text-align: left;
+                                        border-radius: .8rem;
+                                        background: $gray_80;
+                                        box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.30);
+                                        display: none;
+                                        z-index: 10;
+                                        &::before {
+                                            content: '';
+                                            position: absolute;
+                                            top: -1.3rem;
+                                            left: 2rem;
+                                            width: 0;
+                                            height: 0;
+                                            border-left: 8px solid transparent;
+                                            border-right: 8px solid transparent;
+                                            border-bottom: 13px solid $gray_80;
+                                        }
                                     }
                                 }
                             }
                         }
-
-                        &:nth-last-of-type(2) {
-                            border-bottom: 1px solid $black;
-                        }
-
                         td {
                             padding: 1.2rem 2rem;
                             font-size: 1.6rem;
                             font-weight: 500;
-                            color: #24252e;
+                            color: $gray_100;
                             text-align: center;
                             white-space: nowrap;
+                            border-bottom: 1px solid $gray_10;
                             background: $white;
-
-                            @include tablet {
-                                font-size: 1.3rem;
-
-                                &:not(:first-of-type) {
-                                    font-size: 1.4rem;
-                                }
-                            }
-
-                            &:first-of-type {
-                                font-weight: 700;
-                            }
-
-                            span {
+                            > span {
                                 display: inline-block;
                                 width: 2.4rem;
                                 height: 2.4rem;
                                 border-radius: 50%;
-
+                                vertical-align: middle;
+                                &.include {
+                                    background: url(../../../assets/images/icon/check-circle-green.svg) no-repeat center/contain;
+                                }
                                 &.exclude {
                                     background: url(../../../assets/images/icon/exclude.png) no-repeat center #e8e9ec;
                                 }
                             }
-
-                            &.btn_wrap {
+                            &.btn-wrap {
                                 padding: 1.6rem 1.1rem;
 
                                 button {
@@ -516,50 +508,190 @@
                                 }
                             }
                         }
+                        &:nth-last-of-type(2) {
+                            td {
+                                border-bottom: 1px solid $gray_100;
+                            }
+                        }
+                        &:last-of-type {
+                            td {
+                                border-bottom: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
-                        /* 툴팁 */
-                        .tooltip-wrap {
-                            position: relative;
-                            @include flexbox(row, flex-start, center);
-                            gap: 1rem;
-                            .info {
-                                position: relative;
-                                .info-icon {
-                                    width: 1.6rem;
-                                    height: 1.6rem;
-                                    background: url(../../../assets/images/icon/info_gray.svg) no-repeat center/contain;
+        .tb-swiper {
+            position: relative;
+            overflow: hidden;
+            .swiper-slide {
+                @include flexbox(column, flex-start, center);
+                .m-tb-wrap {
+                    width: 100%;
+                    margin-bottom: 5rem;
+                    table {
+                        width: 100%;
+                        thead {
+                            tr {
+                                th {
+                                    text-align: center;
+                                    padding: 1.6rem 1.1rem 2.5rem;
+                                    font-size: 2.4rem;
+                                    font-weight: 700;
+                                    background: $white;
                                 }
-                                .tooltip {
-                                    position: absolute;
-                                    top: 3.7rem;
-                                    left: -1.9rem;
-                                    width: 28.9rem;
-                                    padding: 1.2rem 1.6rem;
-                                    color: $white;
-                                    font-size: 1.4rem;
+                            }
+                        }
+                        tbody {
+                            border-top: 1px solid $gray_100;
+                            border-bottom: 1px solid $gray_100;
+                            tr {
+                                th {
+                                    padding: 1.2rem 0 1.2rem 3rem;
+                                    font-size: 1.6rem;
+                                    font-weight: 700;
+                                    color: $gray_100;
+                                    white-space: nowrap;
+                                    border-right: 1px solid $gray_10;
+                                    border-bottom: 1px solid $gray_10;
+                                    @include mobile_plus {
+                                        font-size: 1.3rem;
+                                    }
+                                    &.last-th {
+                                        border-bottom: none;
+                                    }
+                                    /* 툴팁 */
+                                    .tooltip-wrap {
+                                        position: relative;
+                                        @include flexbox(row, flex-start, center);
+                                        gap: .4rem;
+                                        .info {
+                                            position: relative;
+                                            width: 1.6rem;
+                                            @include flexbox(row, center, center);
+                                            .info-icon {
+                                                display: inline-block;
+                                                width: 1.6rem;
+                                                height: 1.6rem;
+                                                background: url(../../../assets/images/icon/info_gray.svg) no-repeat center/contain;
+                                            }
+                                            .tooltip {
+                                                position: absolute;
+                                                top: 3.1rem;
+                                                left: -2rem;
+                                                width: max-content;
+                                                padding: 1rem;
+                                                color: $white;
+                                                font-size: 1.6rem;
+                                                font-weight: 500;
+                                                text-align: left;
+                                                border-radius: .8rem;
+                                                background: $gray_80;
+                                                box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.30);
+                                                display: none;
+                                                z-index: 10;
+                                                @include mobile_plus {
+                                                    font-size: 1.3rem;
+                                                }
+                                                &::before {
+                                                    content: '';
+                                                    position: absolute;
+                                                    top: -1.3rem;
+                                                    left: 2rem;
+                                                    width: 0;
+                                                    height: 0;
+                                                    border-left: 8px solid transparent;
+                                                    border-right: 8px solid transparent;
+                                                    border-bottom: 13px solid $gray_80;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                &:last-of-type {
+                                    th {
+                                        border-bottom: none;
+                                    }
+                                }
+                                td {
+                                    padding: 1.2rem 2rem;
+                                    font-size: 1.6rem;
                                     font-weight: 500;
-                                    text-align: left;
-                                    border-radius: 1.4rem;
-                                    letter-spacing: -0.56px;
-                                    background: $gray600;
-                                    display: none;
-                                    z-index: 10;
-                                    &::before {
-                                        content: '';
-                                        position: absolute;
-                                        top: -1.2rem;
-                                        left: 2rem;
-                                        width: 0;
-                                        height: 0;
-                                        border-left: 10px solid transparent;
-                                        border-right: 10px solid transparent;
-                                        border-bottom: 14px solid $gray600;
+                                    color: $gray_100;
+                                    text-align: center;
+                                    white-space: nowrap;
+                                    border-bottom: 1px solid $gray_10;
+                                    background: $white;
+                                    @include mobile_plus {
+                                        font-size: 1.3rem;
+                                    }
+                                    > span {
+                                        display: inline-block;
+                                        width: 2.4rem;
+                                        height: 2.4rem;
+                                        border-radius: 50%;
+                                        vertical-align: middle;
+                                        @include mobile_plus {
+                                            width: 1.8rem;
+                                            height: 1.8rem;
+                                        }
+                                        &.include {
+                                            background: url(../../../assets/images/icon/check-circle-green.svg) no-repeat center/contain;
+                                        }
+                                        &.exclude {
+                                            background: url(../../../assets/images/icon/exclude.png) no-repeat center #e8e9ec;
+                                        }
+                                    }
+                                }
+                                &:last-of-type {
+                                    td {
+                                        border-bottom: none;
                                     }
                                 }
                             }
                         }
                     }
                 }
+    
+                .btn-wrap {
+                    margin-bottom: 6.9rem;
+                    button {
+                        width: 14.8rem;
+                        height: 4.6rem;
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+            .swiper-button-next,
+            .swiper-button-prev {
+                width: 3.2rem;
+                height: 3.2rem;
+                border-radius: 50%;
+                border: 1px solid $gray_10;
+                box-shadow: 0px 2.667px 6.667px 0px rgba(0, 0, 0, 0.13);
+                display: none;
+                z-index: 20;
+                &::after {
+                    content: none;
+                }
+                @include tablet {
+                    display: block;
+                }
+            }
+            .swiper-button-prev {
+                margin: 0;
+                top: 1.8rem;
+                left: 0;
+                transform: rotate(180deg);
+                background: url(../../../assets/images/icon/arrow_right.svg) no-repeat center $white;
+            }
+            .swiper-button-next {
+                margin: 0;
+                top: 1.8rem;
+                right: 0;
+                background: url(../../../assets/images/icon/arrow_right.svg) no-repeat center $white;
             }
         }
 
