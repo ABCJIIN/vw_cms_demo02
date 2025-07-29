@@ -576,7 +576,7 @@ $(function () {
 
     // 가격 안내 카드 or 템플릿 버튼 클릭
     function clickPriceCardDetail() {
-        const $cardBtns = $(".price-card-wrap .card button, .sec01.template .list-wrap button"); // 가격안내 + 템플릿 페이지용
+        const $cardBtns = $(".price-card-wrap .card button, .sec01.template .list-wrap button:not(.contact-btn)"); // 가격안내 + 템플릿 페이지용
 
         const $modal = $(".modal-wrap");
 
