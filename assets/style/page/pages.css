@@ -659,6 +659,12 @@
 }
 .price.sec01 .tit-wrap {
   margin-bottom: 6rem;
+  gap: 1.6rem;
+}
+@media (max-width: 768px) {
+  .price.sec01 .tit-wrap {
+    gap: 1.2rem;
+  }
 }
 .price.sec01 .tit-wrap strong {
   font-size: 5.2rem;
@@ -828,12 +834,6 @@
   padding-bottom: 10rem;
   background: #fff;
 }
-@media (max-width: 1280px) {
-  .price.sec02 > .inner {
-    width: calc(100% - 2rem);
-    margin: 0 auto;
-  }
-}
 .price.sec02 .tit-wrap {
   margin-bottom: 6rem;
 }
@@ -849,127 +849,6 @@
 @media (max-width: 768px) {
   .price.sec02 .tit-wrap strong {
     font-size: 2.6rem;
-  }
-}
-.price.sec02 .search-wrap {
-  width: calc(100% - 4rem);
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 5rem 6rem;
-  margin-bottom: 4rem;
-  border-radius: 1.6rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-@media (max-width: 1400px) {
-  .price.sec02 .search-wrap {
-    justify-content: center;
-  }
-}
-@media (max-width: 768px) {
-  .price.sec02 .search-wrap {
-    width: 100%;
-    padding: 4rem 0;
-    border-radius: 0;
-    margin-bottom: 2.4rem;
-  }
-}
-.price.sec02 .search-wrap.pink {
-  background: #FF7CC0;
-}
-.price.sec02 .search-wrap.green {
-  background: #198A56;
-}
-.price.sec02 .search-wrap.purple {
-  background: #9574BA;
-}
-.price.sec02 .search-wrap.orange {
-  background: #FFAF19;
-}
-.price.sec02 .search-wrap .search-tit strong {
-  font-size: 3.4rem;
-  font-weight: 700;
-  color: #fff;
-}
-@media (max-width: 768px) {
-  .price.sec02 .search-wrap .search-tit strong {
-    font-size: 2.1rem;
-  }
-}
-.price.sec02 .search-wrap .search-tit p {
-  padding-top: 0.4rem;
-  font-size: 2rem;
-  color: rgba(255, 255, 255, 0.8);
-}
-@media (max-width: 1400px) {
-  .price.sec02 .search-wrap .search-tit p {
-    text-align: center;
-  }
-}
-@media (max-width: 768px) {
-  .price.sec02 .search-wrap .search-tit p {
-    font-size: 1.4rem;
-  }
-}
-.price.sec02 .search-wrap .con-wrap {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 1.2rem;
-  flex-wrap: wrap;
-}
-@media (max-width: 1400px) {
-  .price.sec02 .search-wrap .con-wrap {
-    justify-content: center;
-  }
-}
-@media (max-width: 768px) {
-  .price.sec02 .search-wrap .con-wrap {
-    width: calc(100% - 4rem);
-    margin: 0 auto;
-  }
-}
-@media (max-width: 768px) {
-  .price.sec02 .search-wrap .con-wrap .select-box {
-    width: 100%;
-  }
-}
-@media (max-width: 768px) {
-  .price.sec02 .search-wrap .con-wrap .select-box .select-item {
-    width: 100%;
-  }
-}
-.price.sec02 .search-wrap .con-wrap .btn-wrap {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 1.2rem;
-}
-@media (max-width: 1400px) {
-  .price.sec02 .search-wrap .con-wrap .btn-wrap {
-    justify-content: center;
-  }
-}
-@media (max-width: 768px) {
-  .price.sec02 .search-wrap .con-wrap .btn-wrap {
-    width: 100%;
-  }
-}
-.price.sec02 .search-wrap .con-wrap .btn-wrap button {
-  width: 16rem;
-  height: 6.4rem;
-}
-@media (max-width: 768px) {
-  .price.sec02 .search-wrap .con-wrap .btn-wrap button {
-    width: calc(50% - 0.8rem);
-    height: 4.8rem;
-    font-size: 1.4rem;
   }
 }
 .price.sec02 .tb-wrap {
@@ -1501,31 +1380,16 @@
 }
 .modal-wrap .modal .modal_body .inner {
   width: 100%;
-  height: calc(100vh - 17.6rem);
+  height: calc(100vh - 20rem);
   max-height: 80rem;
   margin: 0 auto;
   overflow-y: overlay;
   overflow-x: hidden;
   background: #fff;
   border-radius: 2rem;
-}
-.modal-wrap .modal .modal_body .inner::-webkit-scrollbar {
-  width: 14px;
-  height: 14px;
-}
-.modal-wrap .modal .modal_body .inner::-webkit-scrollbar-thumb {
-  outline: none;
-  border-radius: 10px;
-  border: 4px solid transparent;
-  box-shadow: inset 6px 6px 0 rgba(34, 34, 34, 0.15);
-}
-.modal-wrap .modal .modal_body .inner::-webkit-scrollbar-thumb:hover {
-  border: 4px solid transparent;
-  box-shadow: inset 6px 6px 0 rgba(34, 34, 34, 0.3);
-}
-.modal-wrap .modal .modal_body .inner::-webkit-scrollbar-track {
-  box-shadow: none;
-  background-color: transparent;
+  -ms-overflow-style: none;
+  /* IE, Edge */
+  scrollbar-width: none;
 }
 .modal-wrap .modal .modal_body .inner img {
   width: 100%;
@@ -1628,6 +1492,9 @@
     max-width: 100%;
     height: calc(100vh - 12.6rem);
     max-height: 100%;
+  }
+  .modal-wrap[data-mode=mb] .modal_body .inner::before {
+    content: none;
   }
 }
 .modal-wrap[data-type=business] .modal_header strong.business {
