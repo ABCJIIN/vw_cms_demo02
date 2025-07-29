@@ -220,6 +220,16 @@
                                         </div>
                                     </div>
                                 </li>
+                                <li>
+                                    <div class="input-cont type01 captcha">
+                                        <div class="input-tit required">
+                                            <label for="captchaAnswer">자동 방지 질문: <span id="captchaQuestion"></span></label>
+                                        </div>
+                                        <div class="input-wrap">
+                                            <input id="captchaAnswer" type="text" placeholder="정답 입력 (예: 10)" />
+                                        </div>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -358,4 +368,130 @@
         <!--// footer -->
     </div>
 </body>
+
+<script>
+    let captchaCorrectAnswer = 0;
+
+    function generateCaptcha() {
+        const a = Math.floor(Math.random() * 10) + 1;
+        const b = Math.floor(Math.random() * 10) + 1;
+        captchaCorrectAnswer = a + b;
+        $("#captchaQuestion").text(`${a} + ${b} = ?`);
+    }
+
+    // 이메일 유효성 검사
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    // 특수문자 필터링 (간단한 위험 문자 제거)
+    function isSafeInput(str) {
+        const unsafePattern = /[<>{};$`]/g; // 필요시 확장
+        return !unsafePattern.test(str);
+    }
+
+    function f_sendContactForm() {
+        const userAnswer = parseInt($("#captchaAnswer").val());
+
+        // 캡차 검증
+        if (isNaN(userAnswer) || userAnswer !== captchaCorrectAnswer) {
+            alert("자동 방지 질문의 정답이 올바르지 않습니다.");
+            generateCaptcha();
+            return;
+        }
+
+        // 필수 항목 확인
+        const companyName = $("#companyName").val().trim();
+        const managerName = $("#managerName").val().trim();
+        const email = $("#email").val().trim();
+        const phoneNumber = $("#phoneNumber").val().trim();
+
+        if (!companyName || !managerName || !email || !phoneNumber) {
+            alert("필수 항목을 입력해 주세요.");
+            return;
+        }
+
+        // 이메일 유효성 검증
+        if (!isValidEmail(email)) {
+            alert("올바른 이메일 형식이 아닙니다.");
+            return;
+        }
+
+        // 특수문자 필터링
+        const fieldsToCheck = [companyName, managerName, email, phoneNumber, $("#detailContents").val()];
+        for (const field of fieldsToCheck) {
+            if (!isSafeInput(field)) {
+                alert("입력값에 허용되지 않는 특수문자가 포함되어 있습니다.");
+                return;
+            }
+        }
+
+        // 길이 제한 검사 (예시: 100자 이상이면 거부)
+        if (companyName.length > 100 || managerName.length > 100 || email.length > 100 || phoneNumber.length > 20) {
+            alert("입력값이 너무 깁니다. 100자 이하로 입력해 주세요.");
+            return;
+        }
+
+        // 개인정보 동의 체크
+        if (!$("#privacyPolicy").is(":checked")) {
+            alert("개인정보처리방침에 동의해 주세요.");
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append("companyName", companyName);
+        formData.append("managerName", managerName);
+        formData.append("email", email);
+        formData.append("phoneNumber", phoneNumber);
+        formData.append("inquiryType", $(".select-box .select-item").text().trim());
+        formData.append("design", $("#design").val());
+        formData.append("detailContents", $("#detailContents").val());
+        formData.append("siteOrSns", $("#siteOrSns").val());
+        formData.append("reference", $("#reference").val());
+        formData.append("contactByPhone", $("#choicePhone").is(":checked") ? "Y" : "N");
+        formData.append("contactByEmail", $("#choiceEmail").is(":checked") ? "Y" : "N");
+        formData.append("privacyAgreed", $("#privacyPolicy").is(":checked") ? "Y" : "N");
+
+        const file = $("#fileUpload")[0].files[0];
+        if (file) {
+            if (file.size > 20 * 1024 * 1024) {
+                alert("첨부파일은 10MB 이하만 업로드 가능합니다.");
+                return;
+            }
+            formData.append("file", file);
+        }
+
+        $.ajax({
+            type: "post",
+            url: "https://theme.yooncoms.com/humanmst/ajax/mailPush",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                if (data === "true" || data === true) {
+                    alert("문의가 정상적으로 접수되었습니다.");
+                    $("input[type='text'], textarea").val("");
+                    $("input[type='checkbox']").prop("checked", false);
+                    $(".select-box .select-item").text("문의 유형 선택");
+                } else {
+					console.log(data);
+                    alert("전송 실패 또는 오류 응답이 반환되었습니다.");
+                }
+                generateCaptcha();
+            },
+            error: function (xhr, status, err) {
+                console.error("전송 실패", err);
+                alert("오류가 발생했습니다. 다시 시도해 주세요.");
+                generateCaptcha();
+            }
+        });
+    }
+
+    $(function () {
+        generateCaptcha();
+        $(".btn-wrap .type01").on("click", f_sendContactForm);
+    });
+</script>
+
 </html>
