@@ -972,17 +972,8 @@
     /* Chrome, Safari, Opera */
   }
 }
-.price.sec02 .tb-wrap.pink table span.include {
-  background: url(../../../assets/images/icon/check-circle-pink.svg) no-repeat center/contain;
-}
 .price.sec02 .tb-wrap.green table span.include {
   background: url(../../../assets/images/icon/check-circle-green.svg) no-repeat center/contain;
-}
-.price.sec02 .tb-wrap.purple table span.include {
-  background: url(../../../assets/images/icon/check-circle-purple.svg) no-repeat center/contain;
-}
-.price.sec02 .tb-wrap.orange table span.include {
-  background: url(../../../assets/images/icon/check-circle-orange.svg) no-repeat center/contain;
 }
 .price.sec02 .tb-wrap table {
   width: 100%;

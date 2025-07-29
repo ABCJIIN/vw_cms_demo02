@@ -380,41 +380,11 @@
                 /* iOS 자연 스크롤 */
             }
 
-            &.pink {
-                table {
-                    span {
-                        &.include {
-                            background: url(../../../assets/images/icon/check-circle-pink.svg) no-repeat center/contain;
-                        }
-                    }
-                }
-            }
-
             &.green {
                 table {
                     span {
                         &.include {
                             background: url(../../../assets/images/icon/check-circle-green.svg) no-repeat center/contain;
-                        }
-                    }
-                }
-            }
-
-            &.purple {
-                table {
-                    span {
-                        &.include {
-                            background: url(../../../assets/images/icon/check-circle-purple.svg) no-repeat center/contain;
-                        }
-                    }
-                }
-            }
-
-            &.orange {
-                table {
-                    span {
-                        &.include {
-                            background: url(../../../assets/images/icon/check-circle-orange.svg) no-repeat center/contain;
                         }
                     }
                 }
@@ -548,7 +518,7 @@
                         }
 
                         /* 툴팁 */
-                        .info-wrap {
+                        .tooltip-wrap {
                             position: relative;
                             @include flexbox(row, flex-start, center);
                             gap: 1rem;
@@ -585,39 +555,12 @@
                                         border-right: 10px solid transparent;
                                         border-bottom: 14px solid $gray600;
                                     }
-                                    ul {
-                                        li {
-                                            &:not(:last-of-type) {
-                                                margin-bottom: 1rem;
-                                            }
-                                        }
-                                    }
                                 }
                             }
                         }
                     }
                 }
             }
-
-
-            // .btn-wrap {
-            //   position: relative;
-            //   width: 100%;
-            //   @include flexbox(row, flex-start, center);
-            //   gap: 2.2rem;
-            //   @include tablet {
-            //     min-width: 900px;
-            //   }
-            //   button {
-            //     flex: 1;
-            //     height: 4.6rem;
-            //     white-space: nowrap;
-            //     @include tablet {
-            //       width: 14.8rem;
-            //       font-size: 1.4rem;
-            //     }
-            //   }
-            // }
         }
 
         .notice {
