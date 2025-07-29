@@ -546,9 +546,59 @@
                                 }
                             }
                         }
+
+                        /* 툴팁 */
+                        .info-wrap {
+                            position: relative;
+                            @include flexbox(row, flex-start, center);
+                            gap: 1rem;
+                            .info {
+                                position: relative;
+                                .info-icon {
+                                    width: 1.6rem;
+                                    height: 1.6rem;
+                                    background: url(../../../assets/images/icon/info_gray.svg) no-repeat center/contain;
+                                }
+                                .tooltip {
+                                    position: absolute;
+                                    top: 3.7rem;
+                                    left: -1.9rem;
+                                    width: 28.9rem;
+                                    padding: 1.2rem 1.6rem;
+                                    color: $white;
+                                    font-size: 1.4rem;
+                                    font-weight: 500;
+                                    text-align: left;
+                                    border-radius: 1.4rem;
+                                    letter-spacing: -0.56px;
+                                    background: $gray600;
+                                    display: none;
+                                    z-index: 10;
+                                    &::before {
+                                        content: '';
+                                        position: absolute;
+                                        top: -1.2rem;
+                                        left: 2rem;
+                                        width: 0;
+                                        height: 0;
+                                        border-left: 10px solid transparent;
+                                        border-right: 10px solid transparent;
+                                        border-bottom: 14px solid $gray600;
+                                    }
+                                    ul {
+                                        li {
+                                            &:not(:last-of-type) {
+                                                margin-bottom: 1rem;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
+
 
             // .btn-wrap {
             //   position: relative;

@@ -325,11 +325,14 @@ $(function () {
     $(window).on("scroll", function () {
         if (hasTyped) return;
 
+        const $sec03 = $(".main-sec.sec03");
+        if ($sec03.length === 0) return; // 요소 없으면 중단
+
         const scrollTop = $(window).scrollTop();
         const windowHeight = $(window).height();
-        const triggerPoint = scrollTop + windowHeight * 0.2; // 아래쪽 20%쯤에 도달할 때
+        const triggerPoint = scrollTop + windowHeight * 0.2;
 
-        const sec03Top = $(".sec03").offset().top;
+        const sec03Top = $sec03.offset().top;
 
         if (triggerPoint >= sec03Top) {
             hasTyped = true;
@@ -606,6 +609,15 @@ $(function () {
         });
     }
     handleModalTabClick();
+
+    // 가격 안내 툴팁 마우스오버
+    $(".info-wrap .info-icon, .tooltip-wrap button").on("mouseenter", function(){
+        $(this).next(".tooltip").stop().fadeIn();
+    });
+
+    $(".info-wrap .info-icon, .tooltip-wrap button").on("mouseleave", function(){
+        $(this).next(".tooltip").stop().fadeOut();
+    });
 
     // PC환경 마우스 터치 스크롤
     function bindDragScroll(selector) {
