@@ -525,7 +525,6 @@ $(function () {
         }
     }
 
-
     // 모달 이미지 소스 매핑
     // clickType = business, hospital, education, interior
     // setMode = pc, mb
@@ -577,7 +576,7 @@ $(function () {
 
     // 가격 안내 카드 or 템플릿 버튼 클릭
     function clickPriceCardDetail() {
-        const $cardBtns = $(".price-card-wrap .card button, .sec01.template .list-wrap button, .d-mb"); // 가격안내 + 템플릿 페이지용
+        const $cardBtns = $(".price-card-wrap .card button, .sec01.template .list-wrap button"); // 가격안내 + 템플릿 페이지용
 
         const $modal = $(".modal-wrap");
 
@@ -596,7 +595,8 @@ $(function () {
             else mode = window.innerWidth <= 500 ? "mb" : "pc";
 
             $modal.attr("data-mode", mode);
-            $("html, body").animate({ scrollTop: 0 }, 400);
+            // $("html, body").animate({ scrollTop: 0 }, 400);
+            $modal.find(".modal_body .inner").scrollTop(0);
 
             changeMode(); // 내부 탭 aria-selected 상태 갱신
             toggleModal(type);
