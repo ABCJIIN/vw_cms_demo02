@@ -477,33 +477,4 @@ textarea {
             }
         }
     }
-
-    &.type01 {
-        .select-item {
-            width: 45.2rem;
-            height: 6.4rem;
-            padding: 0 5.7rem 0 2.3rem;
-            font-size: 2rem;
-            color: #000;
-            font-weight: 700;
-
-            @media (max-width: 768px) {
-                font-size: 1.6rem;
-            }
-        }
-
-        .option-list {
-            top: 6.4rem;
-
-            >li {
-                height: 6.4rem;
-                font-size: 2rem;
-
-                @media (max-width: 768px) {
-                    padding: 0 2.3rem;
-                    font-size: 1.6rem;
-                }
-            }
-        }
-    }
 }
