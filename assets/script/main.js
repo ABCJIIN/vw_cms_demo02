@@ -113,6 +113,31 @@ $(function () {
         menuBtn.focus();
     });
 
+    // 768px 이하에서 footer 배경 컬러 제어
+    function setFooterBgColor() {
+        const pathname = window.location.pathname;
+        const isMobile = $(window).width() <= 768;
+
+        if (isMobile) {
+            if (pathname.includes("template.html")) {
+                $("footer").css("background-color", "#ffffff");
+            } else if (pathname.includes("apply.html") || pathname.includes("contact.html")) {
+                $("footer").css("background-color", "#F8F9FB");
+            }
+            } else {
+            // PC 화면으로 돌아올 경우 기본 색상으로 초기화
+            $("footer").css("background-color", "");
+        }
+    }
+
+    // 최초 실행
+    setFooterBgColor();
+
+    // 리사이즈 시 재검사
+    $(window).on("resize", function () {
+        setFooterBgColor();
+    });
+
     // 자주 묻는 질문
     $(".qna .q-wrap").on("click", function () {
         if ($(this).hasClass("on") == false) {
@@ -500,6 +525,11 @@ $(function () {
         pc: 0,
         mb: 0,
     };
+
+    // 가격 안내 스크롤 안내
+    $(".scroll-guide").on("mousedown", function(){
+        $(this).hide();
+    });
 
     // 가격 안내 모달 토글
     function toggleModal(type) {
