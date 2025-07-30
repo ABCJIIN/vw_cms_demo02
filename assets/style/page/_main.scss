@@ -687,6 +687,9 @@
                             font-weight: 700;
                             border-radius: 50%;
                             @include flexbox(row, center, center);
+                            @include mobile_plus {
+                                margin-bottom: 2.2rem;
+                            }
                             &.num01 {
                                 background: $pink;
                             }
@@ -755,7 +758,7 @@
         min-height: 100vh;
         background: $white;
         @include notebook {
-            padding: 10rem 0 6rem;
+            padding: 4rem 0;
         }
         .inner {
             height: 100vh;
@@ -987,6 +990,14 @@
                     }
                     .bottom {
                         background: url(../../../assets/images/main/bun-bottom_g.svg) no-repeat center/contain;
+                    }
+                }
+                @media (max-width: 630px) {
+                    .external {
+                        .top {
+                            padding-right: 5.2rem;
+                            @include flexbox(row, flex-end, center);
+                        }
                     }
                 }
                 @media (max-width: 500px) {

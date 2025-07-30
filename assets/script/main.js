@@ -398,7 +398,28 @@ $(function () {
         }
     });
 
-    // 서비스 소개
+    // 서비스 소개 sec02
+    function handleScroll() {
+        if ($(window).width() <= 768) return; // 768 이하일 때는 무시
+
+        const windowHeight = $(window).height();
+
+        $(".manage-card-wrap > ul > li").each(function () {
+            const elementTop = $(this).offset().top;
+            const scrollTop = $(window).scrollTop();
+            const elementVisible = elementTop < (scrollTop + windowHeight * 0.8); // 80% 이상 보이면
+
+            if (elementVisible) {
+                $(this).addClass("on");
+            }
+        });
+    }
+
+    $(window).on("scroll resize load", function () {
+        handleScroll();
+    });
+
+    // 서비스 소개 sec04
     function checkItemsOnScroll() {
         let windowHeight = $(window).height();
         let scrollTop = $(window).scrollTop();
