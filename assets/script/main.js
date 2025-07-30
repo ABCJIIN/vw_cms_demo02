@@ -119,7 +119,7 @@ $(function () {
         const isMobile = $(window).width() <= 768;
 
         if (isMobile) {
-            if (pathname.includes("template.html")) {
+            if (pathname.includes("template.html") || pathname.includes("policy.html")) {
                 $("footer").css("background-color", "#ffffff");
             } else if (pathname.includes("apply.html") || pathname.includes("contact.html")) {
                 $("footer").css("background-color", "#F8F9FB");
@@ -461,22 +461,6 @@ $(function () {
     }
     selectCustom();
 
-    // 가격안내 페이지 select
-    $(".select-box.type01 .option-list li").on("click", function (e) {
-        e.preventDefault();
-        const searchWrap = $(this).closest(".search-wrap");
-        const tbWrap = $(this).closest(".sub-sec").find(".tb-wrap");
-        const colors = ["green", "purple", "pink", "orange"];
-
-        // 현재 li에 있는 색상 클래스를 찾아서 적용
-        const selectedColor = colors.find((color) => $(this).hasClass(color));
-
-        if (selectedColor) {
-            searchWrap.removeClass(colors.join(" ")).addClass(selectedColor);
-            tbWrap.removeClass(colors.join(" ")).addClass(selectedColor);
-        }
-    });
-
     // 문의하기 페이지 select
     $(".contact .option-list li").on("click", function (e) {
         e.preventDefault();
@@ -758,5 +742,37 @@ $(function () {
 
         const offset = window.innerWidth <= 786 ? 28 : 46;
         $(this).height(this.scrollHeight - offset);
+    });
+
+    // 탭 메뉴
+    $(".tab-menu").each(function () {
+        const $tabMenu = $(this);
+        const $tabList = $tabMenu.find(".tab-list > li");
+        const $tabCont = $tabMenu.find(".tab-cont > div");
+        const $currentTab = $tabList.filter(".on");
+        const initIndex = $tabList.index($currentTab);
+        const $initPanel = $tabCont.eq(initIndex);
+
+        $tabCont.removeClass("on");
+        $initPanel.addClass("on");
+
+        // 클릭 이벤트
+        $tabList.on("click", function () {
+            const $newTab = $(this);
+            const tabIndex = $tabList.index(this);
+            const $newPanel = $tabCont.eq(tabIndex);
+
+            $tabList.removeClass("on");
+            $tabCont.removeClass("on");
+
+            $newTab.addClass("on");
+            $newPanel.addClass("on");
+
+            setTimeout(() => {
+                if (typeof window.updateBarWidths === 'function') {
+                    window.updateBarWidths();
+                }
+            }, 0);
+        });
     });
 });
