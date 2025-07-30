@@ -4,6 +4,9 @@
 .template {
     &.sec01 {
         padding-top: 18rem;
+        @include mobile_plus {
+            padding-top: 10.2rem;
+        }
         .tit-wrap {
             margin-bottom: 6rem;
             @include flexbox(column, flex-start, flex-start);
