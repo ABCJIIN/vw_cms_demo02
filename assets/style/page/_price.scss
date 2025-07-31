@@ -45,17 +45,6 @@
 
         .tit-wrap {
             margin-bottom: 6rem;
-            gap: 1.6rem;
-            @include tablet {
-                gap: 1.2rem;
-            }
-            strong {
-                font-size: 5.2rem;
-                font-size: clamp(4rem, 2.71vw, 5.2rem);
-                @include tablet {
-                    font-size: 2.6rem;
-                }
-            }
         }
 
         .price-card-wrap {
@@ -278,13 +267,6 @@
             margin-bottom: 6rem;
             @include tablet {
                 margin-bottom: 4.5rem;
-            }
-            strong {
-                font-size: 5.2rem;
-                font-size: clamp(4rem, 2.71vw, 5.2rem);
-                @include tablet {
-                    font-size: 2.6rem;
-                }
             }
         }
 
