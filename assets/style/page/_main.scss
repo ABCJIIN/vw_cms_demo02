@@ -39,7 +39,6 @@
         .inner {
             padding-top: 4.4rem;
             @include flexbox(column, start, center);
-            color: $gray_100;
             text-align: center;
             .tit-wrap {
                 margin-bottom: 2.4rem;
