@@ -220,7 +220,6 @@ header .inner.mo {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  overflow-y: auto;
 }
 header .inner.mo .btn-wrap {
   width: 100%;

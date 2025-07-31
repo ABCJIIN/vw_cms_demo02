@@ -32,13 +32,16 @@ $(function () {
         return false;
     });
 
-    
+
     // vh 단위 보정 (모바일 Safari 대응)
     function setVhUnit() {
-        const vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
+
+    window.addEventListener('load', setVhUnit); // 페이지 완전히 로드 후
     window.addEventListener('resize', setVhUnit);
+    document.addEventListener('DOMContentLoaded', setVhUnit);
     setVhUnit();
 
 
