@@ -72,7 +72,6 @@ header {
                             font-size: 2rem;
                             font-weight: 400;
                             color: $gray_100;
-
                             @include notebook {
                                 font-size: 1.6rem;
                             }
@@ -338,6 +337,9 @@ footer {
                         color: $gray_30;
                         @include tablet_junction {
                             font-size: 1.4rem;
+                        }
+                        a {
+                            color: $gray_30;
                         }
                         &:first-child {
                             &::after {

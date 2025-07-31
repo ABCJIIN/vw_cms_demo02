@@ -943,6 +943,9 @@ footer .inner .info .detail ul li {
     font-size: 1.4rem;
   }
 }
+footer .inner .info .detail ul li a {
+  color: #B4B4B4;
+}
 footer .inner .info .detail ul li:first-child::after {
   content: "";
   position: absolute;
