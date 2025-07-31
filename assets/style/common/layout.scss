@@ -16,27 +16,24 @@
 header {
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     width: 100%;
-    height: 8rem;
+    // height: 8rem;
     z-index: 999;
     transition: background-color 0.3s ease;
     background-color: transparent;
     /* 초기 상태 */
     @include flexbox(row, center, center);
-
-    @include tablet {
-        height: 6.2rem;
-    }
-
     .inner {
         &:not(.mo) {
             width: calc(100% - 4rem);
             max-width: 1440px;
             margin: 0 auto;
+            height: 8rem;
             @include flexbox(row, space-between, center);
-
+            @include tablet {
+                height: 6.2rem;
+            }
             .logo {
                 width: 16.6rem;
                 height: 4rem;
