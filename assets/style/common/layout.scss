@@ -145,7 +145,6 @@ header {
 
     &.scrolled {
         background: $bg;
-
         .inner {
             .logo {
                 a {
@@ -178,16 +177,6 @@ header {
                     }
                 }
             }
-
-            // .gnb {
-            //     ul {
-            //         li {
-            //             a {
-            //                 color: $white;
-            //             }
-            //         }
-            //     }
-            // }
             button {
                 &.menu-btn {
                     background: url(../../assets/images/icon/menu.svg) no-repeat center/contain;
@@ -203,19 +192,17 @@ header {
             top: 0;
             right: -110vw;
             width: 100vw;
-            height: 100vh;
+            height: calc(var(--vh) * 100);
             background: $gray_100;
             z-index: 999;
             transition: right 0.5s;
             @include flexbox(column, flex-start, flex-start);
             overflow-y: auto;
-
             .btn-wrap {
                 width: 100%;
                 height: 6.2rem;
                 padding: 0 2rem;
                 @include flexbox(row, flex-end, center);
-
                 button {
                     &.close-btn {
                         width: 2.4rem;
@@ -224,26 +211,20 @@ header {
                     }
                 }
             }
-
             .con-wrap {
                 width: 100%;
                 height: calc(100vh - 6.2rem);
                 margin-bottom: 4.9rem;
                 @include flexbox(column, space-between, flex-start);
-
                 .gnb {
                     width: 100%;
-
-                    // padding-bottom: 6.8rem;
                     ul {
                         width: 100%;
                         @include flexbox(column, flex-start, flex-start);
                         gap: .8rem;
-
                         li {
                             width: 100%;
                             padding: 1.2rem 4rem;
-
                             a {
                                 font-size: 2.4rem;
                                 font-weight: 700;
@@ -253,27 +234,22 @@ header {
                         }
                     }
                 }
-
                 .family-site {
                     width: 100%;
                     padding: 1.2rem 4rem;
-
                     span {
                         font-size: 2rem;
                         font-weight: 700;
                         color: $gray_40;
                         line-height: 1.5;
                     }
-
                     ul {
                         width: 100%;
                         padding-top: 1.6rem;
                         @include flexbox(column, flex-start, flex-start);
                         gap: .8rem;
-
                         li {
                             width: 100%;
-
                             a {
                                 font-size: 1.6rem;
                                 font-weight: 700;
@@ -284,7 +260,6 @@ header {
                     }
                 }
             }
-
             &.on {
                 right: 0;
                 transition: right 0.5s;
