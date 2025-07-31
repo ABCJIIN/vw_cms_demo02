@@ -657,12 +657,10 @@ section {
                             }
                             strong {
                                 font-size: 3.6rem;
+                                font-size: clamp(2.4rem, 1.88vw, 3.6rem);
                                 font-weight: 700;
                                 line-height: 1.5;
                                 color: $white;
-                                @include tablet_junction {
-                                    font-size: 3rem;
-                                }
                                 @include tablet {
                                     font-size: 2rem;
                                     word-break: keep-all;
@@ -685,10 +683,8 @@ section {
                             p {
                                 position: relative;
                                 font-size: 2.8rem;
+                                font-size: clamp(2rem, 1.46vw, 2.8rem);
                                 line-height: 1.5;
-                                @include tablet_junction {
-                                    font-size: 2.2rem;
-                                }
                                 @include tablet {
                                     font-size: 1.6rem;
                                 }
