@@ -750,6 +750,7 @@ header.scrolled .inner button.menu-btn {
   background: url(../../assets/images/icon/menu.svg) no-repeat center/contain;
 }
 header .inner.mo {
+  padding-top: 4.4rem;
   position: fixed;
   top: 0;
   right: -110vw;
