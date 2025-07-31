@@ -262,7 +262,6 @@
                         p {
                             font-weight: 600;
                             font-size: 2.4rem;
-                            letter-spacing: -0.02em;
                         }
                         &.active {
                             width: 100%;
@@ -413,7 +412,6 @@
             font-size: 6rem;
             font-weight:700;
             color: $white;
-            letter-spacing: -0.04em;
             @include flexbox(row, flex-start, center);
             word-break:keep-all;
             @include tablet_junction {
@@ -842,7 +840,6 @@
                             padding: 1rem 2rem;
                             text-align: center;
                             font-size: 2.4rem;
-                            letter-spacing: -0.02em;
                             line-height: 1.5;
                             border-radius: 1rem;
                         }
@@ -1092,7 +1089,6 @@
                         margin-bottom: .6rem;
                         font-size: 2.4rem;
                         font-weight: 500;
-                        letter-spacing: -0.02em;
                         line-height: 1.37;
                         @include notebook {
                             font-size: 2rem;
@@ -1105,7 +1101,6 @@
                     strong {
                         font-size: 4rem;
                         font-weight: 700;
-                        letter-spacing: -0.02em;
                         @include notebook {
                             font-size: 3rem;
                         }
