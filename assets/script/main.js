@@ -74,6 +74,7 @@ $(function () {
 
     menuBtn.on("click", function () {
         if (isMobile()) {
+            setVhUnit();
             $("header .inner.mo").addClass("on");
         }
     });
