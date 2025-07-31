@@ -463,18 +463,18 @@ section {
     }
     .tit-wrap {
         @include flexbox(column, center, center);
-        gap: 2rem;
+        gap: 1.6rem;
         @include tablet {
-            gap: 1rem;
+            gap: 1.2rem;
         }
         strong {
-            font-size: 4.4rem;
-            font-size: clamp(3rem, 2.29vw, 4.4rem);
+            font-size: 5.2rem;
+            font-size: clamp(3.6rem, 2.71vw, 5.2rem);
             font-weight: 700;
             line-height: 1.5;
             text-align: center;
             @include tablet {
-                font-size: 2.4rem;
+                font-size: 2.6rem;
             }
         }
         p {
@@ -487,6 +487,28 @@ section {
                 font-size: 1.6rem;
             }
         }
+        &.type01 {
+            gap: 2rem;
+            @include tablet {
+                gap: 1.2rem;
+            }
+            strong {
+                @include tablet {
+                    font-size: 2.8rem;
+                }
+            }
+        }
+        &.type02 {
+            gap: 2rem;
+            @include tablet {
+                gap: 1.2rem;
+            }
+            strong {
+                @include tablet {
+                    font-size: 2.2rem;
+                }
+            }
+        }
     }
 }
 
@@ -497,30 +519,26 @@ section {
         background: url(../../assets/images/common/banner_bg.png) no-repeat center/cover;
         padding: 4rem 0;
         @include flexbox(column, center, center);
-
         .inner {
             padding: 4rem 0;
             @include flexbox(column, center, center);
             gap: 4rem;
-
             strong {
                 color: $white;
                 text-align: center;
                 font-size: 5.2rem;
+                font-size: clamp(3.6rem, 2.71vw, 5.2rem);
                 font-weight: 700;
                 line-height: 150%;
             }
         }
-
         @include tablet {
             background: url(../../assets/images/common/mo/banner_bg.png) no-repeat center/cover;
-
             .inner {
                 padding: 4rem 0;
                 border-radius: 0.8rem;
-
                 strong {
-                    font-size: 2.8rem;
+                    font-size: 2.6rem;
                 }
             }
         }
@@ -543,12 +561,13 @@ section {
                     margin-bottom: 4rem;
                 }
                 strong {
-                    font-size: 4.8rem;
+                    font-size: 5.2rem;
+                    font-size: clamp(3.6rem, 2.71vw, 5.2rem);
                     font-weight: 700;
                     line-height: 1.5;
                     color: $white;
                     @include tablet {
-                        font-size: 2.9rem;
+                        font-size: 2.6rem;
                     }
                 }
             }

@@ -1091,23 +1091,23 @@ section .tit-wrap {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1.6rem;
 }
 @media (max-width: 768px) {
   section .tit-wrap {
-    gap: 1rem;
+    gap: 1.2rem;
   }
 }
 section .tit-wrap strong {
-  font-size: 4.4rem;
-  font-size: clamp(3rem, 2.29vw, 4.4rem);
+  font-size: 5.2rem;
+  font-size: clamp(3.6rem, 2.71vw, 5.2rem);
   font-weight: 700;
   line-height: 1.5;
   text-align: center;
 }
 @media (max-width: 768px) {
   section .tit-wrap strong {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
   }
 }
 section .tit-wrap p {
@@ -1120,6 +1120,32 @@ section .tit-wrap p {
 @media (max-width: 768px) {
   section .tit-wrap p {
     font-size: 1.6rem;
+  }
+}
+section .tit-wrap.type01 {
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  section .tit-wrap.type01 {
+    gap: 1.2rem;
+  }
+}
+@media (max-width: 768px) {
+  section .tit-wrap.type01 strong {
+    font-size: 2.8rem;
+  }
+}
+section .tit-wrap.type02 {
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  section .tit-wrap.type02 {
+    gap: 1.2rem;
+  }
+}
+@media (max-width: 768px) {
+  section .tit-wrap.type02 strong {
+    font-size: 2.2rem;
   }
 }
 
@@ -1145,6 +1171,7 @@ section.banner .inner strong {
   color: #fff;
   text-align: center;
   font-size: 5.2rem;
+  font-size: clamp(3.6rem, 2.71vw, 5.2rem);
   font-weight: 700;
   line-height: 150%;
 }
@@ -1157,7 +1184,7 @@ section.banner .inner strong {
     border-radius: 0.8rem;
   }
   section.banner .inner strong {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
   }
 }
 
@@ -1181,14 +1208,15 @@ section.qna .inner > .title {
   }
 }
 section.qna .inner > .title strong {
-  font-size: 4.8rem;
+  font-size: 5.2rem;
+  font-size: clamp(3.6rem, 2.71vw, 5.2rem);
   font-weight: 700;
   line-height: 1.5;
   color: #fff;
 }
 @media (max-width: 768px) {
   section.qna .inner > .title strong {
-    font-size: 2.9rem;
+    font-size: 2.6rem;
   }
 }
 section.qna .inner .con-wrap ul {

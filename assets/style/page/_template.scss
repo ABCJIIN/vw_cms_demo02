@@ -10,17 +10,8 @@
         .tit-wrap {
             margin-bottom: 6rem;
             @include flexbox(column, flex-start, flex-start);
-            gap: 1.6rem;
             @include tablet {
                 @include flexbox(column, center, center);
-                gap: 1.2rem;
-            }
-            strong {
-                font-size: 5.2rem;
-                font-size: clamp(4rem, 2.71vw, 5.2rem);
-                @include mobile_plus {
-                    font-size: 2.6rem;
-                }
             }
         }
         .list-wrap {

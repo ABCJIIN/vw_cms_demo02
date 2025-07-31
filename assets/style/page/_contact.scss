@@ -17,9 +17,8 @@
         .tit-wrap {
             width: 100%;
             @include flexbox(column, flex-start, flex-start);
-
             @include tablet {
-                padding: 4rem 2.4rem 2rem 2.4rem;
+                padding: 0 2.4rem 2rem 2.4rem;
                 @include flexbox(column, center, center);
             }
         }
@@ -95,7 +94,7 @@
                         content: "*";
                         display: inline-block;
                         font-size: 1.6rem;
-                        color: #ee1408;
+                        color: $pink;
                         margin-right: 0.2rem;
                     }
                 }
@@ -199,7 +198,7 @@
                                     content: "*";
                                     display: inline-block;
                                     font-size: 1.6rem;
-                                    color: #ee1408;
+                                    color: $pink;
                                     margin-right: 0.4rem;
                                 }
 
@@ -434,15 +433,13 @@
         .tit-wrap {
             width: 100%;
             @include flexbox(row, space-between, center);
-
             @include tablet {
                 @include flexbox(column-reverse, center, center);
-                gap: 1rem;
+                gap: 2.5rem;
             }
-
             .txt {
                 @include flexbox(column, flex-start, flex-start);
-
+                gap: 1.6rem;
                 @include tablet {
                     @include flexbox(column, center, center);
                     gap: 1.2rem;
