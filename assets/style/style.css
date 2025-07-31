@@ -781,7 +781,7 @@ header .inner.mo .btn-wrap button.close-btn {
 }
 header .inner.mo .con-wrap {
   width: 100%;
-  height: calc(100vh - 6.2rem);
+  height: calc(var(--vh) * 100 - 6.2rem);
   margin-bottom: 4.9rem;
   display: flex;
   flex-direction: column;
