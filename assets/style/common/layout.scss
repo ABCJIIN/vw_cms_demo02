@@ -213,7 +213,7 @@ header {
             .con-wrap {
                 width: 100%;
                 height: calc((var(--vh) * 100) - 6.2rem);
-                margin-bottom: 4.9rem;
+                padding-bottom: 4.9rem;
                 @include flexbox(column, space-between, flex-start);
                 .gnb {
                     width: 100%;
